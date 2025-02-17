@@ -1,0 +1,39 @@
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.vertical-line {
+  width: 2.5px;
+  height: 50px;
+  background: linear-gradient(to bottom, #000000, #FFFFFF, #000000);
+  border: none;
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: white;
+  line-height: 45.49px;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.gradient-line {
+  width: 600px;
+  height: 1px;
+  border: none;
+  background-image: linear-gradient(to right, #000000, #ffffff, #000000);
+}
+
