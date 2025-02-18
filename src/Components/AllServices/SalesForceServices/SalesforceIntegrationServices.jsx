@@ -134,7 +134,7 @@ const SalesforceIntegrationServices = () => {
               ></div>
             </div>
 
-            <h5 className="text-[32px] uppercase font-medium tracking-[4.8px]" ref={consultingRef}>
+            <h5 className="text-[29px] uppercase font-medium tracking-[4.8px]" ref={consultingRef}>
             Salesforce Integration Services
             </h5>
             <div className="flex items-center" ref={line2Ref}>

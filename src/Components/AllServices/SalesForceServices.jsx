@@ -13,6 +13,8 @@ import SalesforceIntegrationServices from "./SalesForceServices/SalesforceIntegr
 import SalesForceDevlopmentServices from "./SalesForceServices/SalesForceDevlopmentService";
 import lines from "./images/2x lines.png";
 import SalesForce from "./images/SalesForceIn Services.png";
+import NavBar from '../NavBar';
+import { useTheme } from '../../Context/ThemeContext';
 
 const SalesForceServices = () => {
 
@@ -21,6 +23,8 @@ const SalesForceServices = () => {
   const paragraphRef = useRef(null);
   const paragraph2Ref = useRef(null);
   const spanRef = useRef(null);
+  const { isDarkTheme } = useTheme();
+
 
   useEffect(() => {
     gsap.fromTo(
@@ -51,9 +55,10 @@ const SalesForceServices = () => {
   }, []);
 
   return (
-    <div className="w-full font-raleway salesforceservice min-h-screen  grid grid-row-5 gap-44">
+    <div className={`w-full font-raleway salesforceservice min-h-screen  grid grid-row-5 gap-44 ${isDarkTheme ? "bg-black text-white" : "bg-white text-black "}`}>
+<NavBar/>
 
-    <div className="flex flex-col items-center justify-center text-center text-white uppercase pt-20 ">
+    <div className="flex flex-col items-center justify-center text-center uppercase pt-20 ">
        <div ref={textRef} className="leading-[4rem] tracking-[0.4em] text-[2.25rem] font-bold">
            <span> Empower Your Business with The</span><br/>
            <span> #1 CRM Solution</span>

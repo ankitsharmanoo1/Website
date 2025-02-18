@@ -110,7 +110,7 @@ const AppexchangeAppDevelopmentServices = () => {
             </div>
 
             <h5 className="uppercase text-[32px] font-medium tracking-[4.8px]" ref={consultingRef}>
-              Appexchange AppDevelopment Services
+              Appexchange App Developmet
             </h5>
             <div className="flex items-center" ref={line2Ref}>
               <hr
@@ -129,13 +129,13 @@ const AppexchangeAppDevelopmentServices = () => {
           </div>
 
           <div className="uppercase text-[2.875rem] font-medium mt-5 text-white tracking-[3.02px] leading-normal text-left" ref={paraRef}>
-            <p>Elevate Your Sales</p>
-            <p>With Salesforce Sales</p>
-            <p>Cloud Solutions</p>
+            <p>Custom Salesforce</p>
+            <p>Appexchange Solutions</p>
+            <p>for your Business</p>
           </div>
 
           <div className="text-base uppercase mt-5 font-medium text-white tracking-[2.4px] h-[38px] text-[16px] leading-[18.78px] w-[700px] text-left" ref={para2Ref}>
-            <p>Empowering sales teams with cutting-edge tools to close deals faster</p>
+            <p>Build, Publish and scale your salesforce apps seamlessly with our expert development services</p>
           </div>
 
           <div className="flex justify-center">
@@ -146,7 +146,7 @@ const AppexchangeAppDevelopmentServices = () => {
                 form-item`}
               ref={btnRef}
             >
-              Talk to Our Experts
+               Get Started
             </button>
           </div>
         </div>
@@ -164,7 +164,7 @@ const AppexchangeAppDevelopmentServices = () => {
       <div className="min-h-screen text-white mx-auto items-center justify-center">
   <div className="flex justify-center">
     <p className="w-[1118px] h-[75px] text-base font-raleway font-bold text-white text-[20px] leading-[21.59px] tracking-[0.1em] text-center">
-    {`"Our implementation process ensures that Service Cloud is not only set up to meet your current requirements but also aligned with your future growth plans."`}
+    {`"AppExchange is a marketplace offering solutions, such as apps, components, and consulting services. To make your own solution publicly available to potential customers, you must be a Salesforce partner."`}
     </p>
   </div>
 
@@ -186,26 +186,29 @@ const AppexchangeAppDevelopmentServices = () => {
   <div className="">
 
   <div className="firstdiv flex flex-col md:flex-row justify-between items-center mt-8 gap-8">
-    <div className="text-left max-w-[720px] max-h-[190px] p-[10px] gap-[10px] ml-8">
+    <div className="text-left  max-w-[950px] max-h-[190px] p-[10px] gap-[10px] ml-8">
   <h6 className="font-bold text-[30px] leading-[45.49px] tracking-[0.1em] text-left">
-  Configuration of Core Features:
-  </h6>   
-  
-  <div className="flex justify-left items-center mt-0.5">
-    <hr
-      className="w-[522px] h-[1px] border-none"
+  Why Invest in Salesforce AppExchange Development?
+  <hr
+      className="w-[920px] h-[1px] border-none"
       style={{
         backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
         height: "px",
         border: "none",
       }}
     />
+  </h6>   
+  
+  <div className="flex justify-left items-center mt-0.5">
+   
   </div>  
       <p className="font-raleway font-medium   text-white p-[10px] text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
-      Our developers build custom Apex classes, Lightning Web Components (LWCs), and automation workflows using Salesforce tools like Flow and Process Builder
-      <ul className="list-disc pl-5 font-raleway font-medium text-white text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
-    <li>
-    Example: For an e-commerce client, we developed a custom chatbot using Einstein Bots to handle FAQ responses, gather customer data, and escalate complex queries to agents.</li>
+      AppExchange offers an incredible opportunity for businesses to enhance their Salesforce experience. By developing applications for the AppExchange marketplace, companies can:
+      <ul className="list-disc p-6 font-raleway font-medium text-white text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
+    <li>Extend the core functionalities of Salesforce.</li>
+    <li>Reach thousands of Salesforce users globally.</li>
+    <li>Improve business productivity with tailored applications.</li>
+    <li>Generate revenue through paid applications and subscriptions.</li>
     
   </ul>
       </p>
@@ -221,9 +224,9 @@ const AppexchangeAppDevelopmentServices = () => {
   </div>
 
   <div className="seconddiv flex flex-col md:flex-row justify-between items-center mt-8 gap-8">
-  <div className="flex justify-center items-center md:order-1 ml-10">
+  <div className="flex  m-10">
     <img
-      src={CustumFeature}
+      src={CustumFeature} 
       alt="Solution Design"
       className="max-w-[300px] max-h-[298.39px] object-contain"
     />
@@ -231,27 +234,32 @@ const AppexchangeAppDevelopmentServices = () => {
 
   <div className="text-left max-w-[720px] max-h-[190px] p-[10px] gap-[10px] md:order-2">
     <h6 className="font-bold text-[30px] leading-[45.49px] tracking-[0.1em] text-left">
-    Einstein Chatbot and Messaging:
-    </h6>
-
-    <div className="flex justify-left items-center mt-0.5">
-      <hr
-        className="w-[540px] h-[1px] border-none"
+    What We Provide
+    <hr
+        className="w-[286px] h-[1px] border-none"
         style={{
           backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
           height: "px",
           border: "none",
         }}
       />
-    </div>
-    
-    <div className="text-left max-w-[720px] max-h-[190px] p-[10px] gap-[10px]">
-  <ul className="list-disc pl-5 font-raleway font-medium text-white text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
-    <li>Automated Case Management: Custom triggers to route cases to specific agents based on criteria like geography or product expertise</li>
-    <li>Custom Knowledge Articles: Development of article templates with dynamic layouts and multilingual suppor.</li>
-    <li>
-    Dashboards & Reporting: We develop tailored dashboards in Salesforce Reports & Dashboards or Tableau CRM to provide real-time insights into agent productivity, customer satisfaction, and case trends.</li>
+    </h6>
+
+
+    <div className="text-left max-w-[720p] max-h-[190px]  gap-[10px]">
+
+  <p className="font-raleway font-medium   text-white p-[10px] text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
+  Our company provides comprehensive services to ensure seamless development, deployment, and management of applications on Salesforce AppExchange. Here’s what we offer:
+  <ul className="list-disc  font-raleway font-medium text-white text-[20px] ml-11 text-justify leading-[24.59px] tracking-[0.1em]">
+    <li>AppExchange App Consulting</li>
+    <li>AppExchange App Development</li>
+    <li>AppExchange Security Review Assistance</li>
+    <li>AppExchange App Compliance & Listing Support</li>
+    <li>AppExchange App Management & Maintenance</li>
+    <li>Salesforce AppExchange Technical Support</li>
+
   </ul>
+  </p>
 </div>
   </div>
 </div>

@@ -46,7 +46,7 @@ const WebServicesHeading = () => {
   }, []);
 
   return (
-    <div className={`4th-content w-full h-screen overflow-hidden relative mt-16  ${isDarkTheme ? "bg-[#121212] text-white" : "bg-white text-black"}`}>
+    <div className={`4th-content w-full h-screen overflow-hidden relative mt-16  ${isDarkTheme ? "bg-black text-white" : "bg-white text-black"}`}>
       {/* Row 1 */}
       <div className="1heading flex flex-row relative justify-center items-center">
         <h6 ref={(el) => (headingRefs.current[0] = el)} className="heading">

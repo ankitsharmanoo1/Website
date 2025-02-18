@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import SalesForceServices from "./SalesForceServices";
 import ServiceNow from "./ServiceNOw";
+import WebDevelopment from "./WebDevelopment";
 
 const skills = ["Salesforce Services", "ServiceNow", "Web Development"];
 
@@ -8,11 +9,13 @@ const skills = ["Salesforce Services", "ServiceNow", "Web Development"];
 const reducer = (state, action) => {
   switch (action.type) {
     case "TOGGLE_SALESFORCE":
-      return { salesforce: !state.salesforce, servicenow: false };
+      return { salesforce: !state.salesforce, servicenow: false, webdevelopment: false };
     case "TOGGLE_SERVICENOW":
-      return { salesforce: false, servicenow: !state.servicenow };
+      return { salesforce: false, servicenow: !state.servicenow, webdevelopment: false };
+    case "TOGGLE_WEBDEVELOPMENT":
+      return { salesforce: false, servicenow: false, webdevelopment: !state.webdevelopment };
     case "CLOSE_ALL":
-      return { salesforce: false, servicenow: false };
+      return { salesforce: false, servicenow: false, webdevelopment: false };
     default:
       return state;
   }
@@ -22,6 +25,7 @@ function SkillsMenu() {
   const [state, dispatch] = useReducer(reducer, {
     salesforce: false,
     servicenow: false,
+    webdevelopment: false,
   });
 
   // Close dropdown when clicking outside
@@ -52,6 +56,8 @@ function SkillsMenu() {
                 dispatch({ type: "TOGGLE_SALESFORCE" });
               } else if (skill === "ServiceNow") {
                 dispatch({ type: "TOGGLE_SERVICENOW" });
+              } else if (skill === "Web Development") {
+                dispatch({ type: "TOGGLE_WEBDEVELOPMENT" });
               }
             }}
           >
@@ -63,6 +69,7 @@ function SkillsMenu() {
       {/* Dropdowns */}
       {state.salesforce && <SalesForceServices />}
       {state.servicenow && <ServiceNow />}
+      {state.webdevelopment && <WebDevelopment />}
     </div>
   );
 }

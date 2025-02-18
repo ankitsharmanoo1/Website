@@ -134,6 +134,9 @@ const SalesForceMarketingCloud = () => {
   }, [inView]);
 
   return (
+
+  <>
+
     <div ref={ref} className="w-full h-full">
       <div className="w-full h-auto font-raleway grid grid-cols-1 md:grid-cols-2 relative min-h-screen px-4">
         {/* Left Section */}
@@ -144,7 +147,7 @@ const SalesForceMarketingCloud = () => {
             </h5>
             <div className="flex items-center" ref={line1Ref}>
               <hr
-                className="border-t-2 border-white my-2 w-[255px] sm:w-[300px] md:w-[400px]"
+                className="border-t-2 border-white my-2 w-[310px]"
                 style={{
                   backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
                   height: "2px",
@@ -157,12 +160,12 @@ const SalesForceMarketingCloud = () => {
               ></div>
             </div>
 
-            <h5 className="text-[32px] md:text-[40px] uppercase font-medium tracking-[4.8px]" ref={consultingRef}>
+            <h5 className="text-[31px]  uppercase font-medium tracking-[4.8px]" ref={consultingRef}>
               Marketing Cloud Solutions
             </h5>
             <div className="flex items-center" ref={line2Ref}>
               <hr
-                className="border-t-2 border-white my-2 w-[620px] sm:w-[700px] md:w-[800px]"
+                className="border-t-2 border-white my-2 w-[600px]"
                 style={{
                   backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
                   height: "2px",
@@ -300,18 +303,19 @@ const SalesForceMarketingCloud = () => {
 
 
       </div>
+      
+    </div>
       <div className="scrollanimation relative w-full h-[300px] top-20 font-raleway overflow-hidden">
       <img src={backLetter} className="absolute top-0 left-10 z-0" />
-      <img src={frontLetter} className="absolute top-0 left-10 pb-10 z-10 object-cover" style={{ width: "300px", height: "298.39px" }} />
+      <img src={frontLetter} className="absolute top-0 left-10 pb-10 pr-5 z-10 object-cover" style={{ width: "300px", height: "298.39px" }} />
       <div className="absolute top-0 left-10 z-20 flex items-center justify-center pb-10" style={{ width: "300px", height: "298.39px" }}>
         <h2 className="text-5xl text-center mr-16">Features</h2>
       </div>
-      <div ref={featuresRef} className="relative pt-1.5">
+      <div ref={featuresRef} className="relative">
         {/* <AllFeatures /> */}
       </div>
     </div>
-      
-    </div>
+  </>
   );
 }; 
 

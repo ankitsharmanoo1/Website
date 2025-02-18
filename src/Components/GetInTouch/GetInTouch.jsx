@@ -29,82 +29,71 @@ const GetInTouch = () => {
   const mapRef = useRef(null);
 
   useEffect(() => {
-    const formItems = formRef.current.querySelectorAll(".form-item");
-    const addressItems = addressRef.current.querySelectorAll(".all-item");
-
-    // GSAP Animation for Form Items
-    gsap.fromTo(
-      formItems,
-      { x: -230, opacity: 0 }, // Start position: Off-screen left
-      {
-        x: 0,
-        opacity: 1,
-        duration: 2.5,
-        stagger: 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: formRef.current, // Trigger animation when form comes into view
-          start: "top 80%", // Start animation when the top of the form is 80% down the viewport
-          toggleActions: "play none none none", // Only play animation once
-        },
+    const animateForm = () => {
+      const formItems = formRef.current.querySelectorAll(".form-item");
+      const addressItems = addressRef.current.querySelectorAll(".all-item");
+  
+      gsap.fromTo(
+        formItems,
+        { x: -230, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 2.5,
+          stagger: 0.2,
+          ease: "power3.out",
+        }
+      );
+  
+      gsap.fromTo(
+        addressItems,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 2.5,
+          stagger: 0.2,
+          ease: "power3.out",
+        }
+      );
+  
+      gsap.fromTo(
+        headingRef.current,
+        { y: -100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 2.5,
+          stagger: 0.2,
+          ease: "power3.out",
+        }
+      );
+  
+      gsap.fromTo(
+        mapRef.current,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 3,
+          delay: 0.5,
+          ease: "power3.out",
+        }
+      );
+    };
+  
+    // Attach animation to mouse enter event
+    const container = document.getElementById("contact-us");
+    if (container) {
+      container.addEventListener("mouseenter", animateForm);
+    }
+  
+    return () => {
+      if (container) {
+        // container.removeEventListener("mouseenter", animateForm);
       }
-    );
-
-    // GSAP Animation for Address Items
-    gsap.fromTo(
-      addressItems,
-      { y: 100, opacity: 0 }, // Start position: Off-screen top
-      {
-        y: 0,
-        opacity: 1,
-        duration: 2.5,
-        stagger: 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: addressRef.current, // Trigger animation when address section comes into view
-          start: "top 80%", // Start animation when the top of the address section is 80% down the viewport
-          toggleActions: "play none none none", // Only play animation once
-        },
-      }
-    );
-
-    // GSAP Animation for Heading
-    gsap.fromTo(
-      headingRef.current,
-      { y: -100, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 2.5,
-        stagger: 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
-
-    // GSAP Animation for Map
-    gsap.fromTo(
-      mapRef.current,
-      { opacity: 1 },
-      {
-        opacity: 0,
-        duration: 3,
-        delay: 0.5, // Small delay to allow for proper animation sequencing
-        stagger: 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
+    };
   }, []);
-
+  
   const handleSubmit = (e) => {
     setSubmitted(true); // Show success message
     setTimeout(() => {
@@ -114,7 +103,7 @@ const GetInTouch = () => {
   };
 
   return (
-    <div id="contact-us" className={` flex flex-col items-center w-full px-10 py-5  relative z-10 
+    <div id="contact-us" className={` flex flex-col items-center w-full  px-10 py-5  relative z-10 
     ${
         isDarkTheme ? "bg-[#000000]" : "bg-white"
       }

@@ -15,6 +15,7 @@ import lines from ".././images/2x lines.png"
 import blackLines from ".././images/blackLines.png";
 
 import { useTheme } from '../../../Context/ThemeContext';
+import NavBar from '../../NavBar';
 
 
 const ServiceNow = () => {
@@ -67,12 +68,13 @@ const ServiceNow = () => {
     });
   
     // Ensure no gap by resetting position instantly after full cycle
-    gsap.set(movingImageRef.current, { x: -70 });
+    gsap.set(movingImageRef.current, { x: -200 });
 
   }, []);
 
   return (
-    <div className={`w-full font-raleway salesforceservice min-h-screen  grid grid-row-5 gap-28 ${isDarkTheme ? 'bg-[#121212] text-white' : 'bg-white text-[#121212]' }`}>
+    <div className={`w-full font-raleway salesforceservice min-h-screen  grid grid-row-5 gap-28 ${isDarkTheme ? 'bg-black text-white' : 'bg-white text-black' }`}>
+<NavBar/>
       <div className="flex flex-col items-center justify-center text-center   uppercase pt-20">
         <div ref={textRef} className="leading-[5rem] tracking-[0.4em] text-[2.25rem] font-bold">
           <span>Revolutionize Your IT</span><br />
@@ -81,11 +83,13 @@ const ServiceNow = () => {
         </div>
         <img ref={imageRef} src={isDarkTheme ? ServiceNowpng : blackService} className="w-[33rem] left-[20px] p-[0.625rem] gap-[0.625rem]" alt="SalesForce" /><br/>
         <div className="text-[1.3rem] leading-[1.125rem] tracking-[0.26em] p-[0.625rem] mt-16">
-          <p>
+          <div className='flex flex-row justify-center items-center'>
             <span ref={span1Ref}>Trusted by 70M+ Users | </span>
             <span ref={span2Ref}>AI-Powered Automation | </span>
             <span ref={span3Ref}>Scalable IT Solutions</span>
-          </p>
+          </div>
+
+        
         </div>
       </div>
       <div className="flex justify-center mb-10">
@@ -120,10 +124,13 @@ const ServiceNow = () => {
   
 
        </div>
-       <div className=" w-full h-20 p-20 overflow-hidden relative">
+       <div className=" w-full h-70 p-20 overflow-hidden relative">
   <div className="flex absolute left-0" ref={movingImageRef}>
     <img src={allServices} className="w-auto h-auto" alt="Services"/>
     <img src={allServices} className="w-auto h-auto" alt="Services"/>
+    <img src={allServices} className="w-auto h-auto" alt="Services"/>
+    <img src={allServices} className="w-auto h-auto" alt="Services"/>
+
   </div>
 </div>
 

@@ -249,11 +249,11 @@ const SalesCloudSolutionServices = () => {
         </div>
 
         {/* Right Section */}
-        <div className="relative flex justify-end w-full h-full">
+        <div className="relative flex justify-end w-full h-full right-0">
           <img
             src={SolutionServices}
             alt="salesforce"
-            className="absolute right-0  h-[29.5rem] w-auto max-w-[31.25rem] lg:max-w-[43.75rem] xl:max-w-[56.25rem]  object-contain left-41 mr-10"
+            className="absolute right-0  h-[29.5rem] w-auto max-w-[31.25rem] lg:max-w-[43.75rem] xl:max-w-[56.25rem]  object-contain"
             ref={imgRef}
           />
         </div>
@@ -372,9 +372,9 @@ Sales Cloud the #1 CRM for sales Let us help you sell faster, smarter, and more 
                 />
               </div>
           <p className="font-thin text-[1.5rem] text-justify leading-[2.1000rem] tracking-[10%] justify-center p-16">{`"At softshala, we specialize in helping businesses unlock the full potential of Salesforce Sales Cloud to drive growth, enhance productivity, and build lasting customer relationships. With our expertise in consulting, development, integration, and implementation, we deliver solutions tailored to your sales needs."`}</p>
-
+                                
              <div className="flex flex-row  items-center mt-8 p-[0.625rem]">
-               <img src={whyChoose} className="w-[400px] mr-24 cursor-pointer" ref={img2Ref} onClick={handleImageClick}/>
+               <img src={whyChoose} className="w-[400px] mr-24 cursor-pointer" ref={img2Ref} onMouseEnter={handleImageClick}/>
                 <div>
                   <ul className="hidden list-disc mt-16 font-raleway text-[1.4rem] leading-[1.9375rem]  tracking-[10%]" ref={listRef}>
                      <li>Certified Salesforce experts with a proven track record of success.</li>

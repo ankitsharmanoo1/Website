@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const services = [
   "ServiceNow Consulting",
   "ServiceNow Implementaion",
@@ -24,12 +26,13 @@ const ServiceNow = () => {
     <h2 className="text-center font-bold text-white text-2xl mb-4">ServiceNow Services</h2>
 
     {services.map((service, index) => (
-      <div
+      <NavLink
+        to="/service-now"
         key={index}
         className="p-[20px] w-[310px] h-[34px] bg-transparent text-white pl-2 pt-0.5 pb-0.5 rounded-[6px] hover:bg-white hover:text-black cursor-pointer"
       >
         {service}
-      </div>
+      </NavLink>
     ))}
   </nav>
   )

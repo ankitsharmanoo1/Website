@@ -64,7 +64,7 @@ const Phone = ({onChange}) => {
 
       {/* Input */}
       <input
-        type="name"
+        type="number"
         id="numberInput"
         required= "true"
         value={phone}

@@ -9,6 +9,7 @@ import WebServices from "./WebServices/WebServices";
 import "./WebServices/web.css";
 import WebServicesHeading from "./WebServices/WebServicesHeading";
 import { useTheme } from "../../../Context/ThemeContext";
+import NavBar from "../../NavBar";
 
 
 const WebDevelopment = () => {
@@ -54,11 +55,12 @@ const WebDevelopment = () => {
 
   return (
     <>
-    <div className={isDarkTheme ? "bg-[#121212] text-white" : "bg-white text-black"}>
+<NavBar/>
+    <div className={isDarkTheme ? "bg-black text-white" : "bg-white text-black"}>
 
     <div
       ref={containerRef}
-      className="flex flex-col items-center mt-20 gap-10 font-raleway w-full h-screen"
+      className="flex flex-col items-center gap-10 font-raleway w-full h-screen"
     >
       <h4 className="font-thin text-2xl uppercase tracking-[0.55em] leading-[36px]">
         Transform Ideas into Scalable Web Solutions

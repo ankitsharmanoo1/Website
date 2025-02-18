@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const services = [
   "Salesforce Consulting",
   "Salesforce Development",
@@ -21,15 +23,18 @@ function SalesForceServices() {
       onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
     >
       {/* Centered Salesforce Title */}
-      <h2 className="text-center font-bold text-white text-2xl mb-4">SalesForce</h2>
+      <h2 className="text-center font-bold text-white text-2xl mb-4">
+        SalesForce
+      </h2>
 
       {services.map((service, index) => (
-        <div
+        <NavLink
+          to="/salesforce-services"
           key={index}
           className="p-[20px] w-[434px] h-[34px] bg-transparent text-white pl-2 pt-0.5 pb-0.5 rounded-[6px] hover:bg-white hover:text-black cursor-pointer"
         >
           {service}
-        </div>
+        </NavLink>
       ))}
     </nav>
   );
