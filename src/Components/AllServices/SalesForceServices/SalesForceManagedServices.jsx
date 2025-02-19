@@ -61,8 +61,8 @@ const SalesForceManagedServices = () => {
       gsap.fromTo(btnRef.current, { opacity: 0 }, { opacity: 1, x: 300, duration: 1.3, ease: "power3.inOut" });
       gsap.fromTo(
         imgRef.current,
-        { y: -400, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.8, ease: "power3.out" }
+        { y: -400, opacity: 0 , scale:0},
+        { y: 0, opacity: 1, duration: 1.8, ease: "power3.out",scale:1 }
       );
 
       const salesforceLetters = salesforceRef.current.innerText.split("");
@@ -113,26 +113,26 @@ const SalesForceManagedServices = () => {
   }, [inView]);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className={isDarkTheme ? "bg-black text-white" : "bg-white text-black"}>
       <div className="w-full h-auto font-raleway grid grid-cols-2 relative min-h-screen">
         {/* Left Section */}
         <div className="flex flex-col justify-start gap-6 ml-10">
-          <div className="text-white text-left">
+          <div className=" text-left">
             <h5 className="text-[32px] font-medium tracking-[4.8px]" ref={salesforceRef}>
               SALESFORCE
             </h5>
             <div className="flex items-center" ref={line1Ref}>
               <hr
-                className="border-t-2 border-white my-2 w-[255px]"
+                className="border-t-2  my-2 w-[255px]"
                 style={{
-                  backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+                  backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "2px",
                   border: "none",
                 }}
               />
               <div
                 className="w-2 h-2 rounded-full"
-                style={{ backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)" }}
+                style={{ backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)" }}
               ></div>
             </div>
 
@@ -141,27 +141,27 @@ const SalesForceManagedServices = () => {
             </h5>
             <div className="flex items-center" ref={line2Ref}>
               <hr
-                className="border-t-2 border-white my-2 w-[677px]"
+                className="border-t-2  my-2 w-[677px]"
                 style={{
-                  backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+                  backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "2px",
                   border: "none",
                 }}
               />
               <div
                 className="w-2 h-2 rounded-full"
-                style={{ backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)" }}
+                style={{ backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)" }}
               ></div>
             </div>
           </div>
 
-          <div className="text-[46px] font-medium mt-5 text-white tracking-[3.02px] leading-normal text-left" ref={paraRef}>
+          <div className="text-[46px] font-medium mt-5  tracking-[3.02px] leading-normal text-left" ref={paraRef}>
             <p>SEAMLESS SALESFORCE</p>
             <p>IMPLEMENTATION FOR</p>
             <p>YOUR BUSINESS SUCCESS</p>
           </div>
 
-          <div className="text-base uppercase mt-5 font-medium text-white tracking-[2.4px] h-[38px] text-[16px] leading-[18.78px] w-[700px] text-left" ref={para2Ref}>
+          <div className="text-base uppercase mt-5 font-medium  tracking-[2.4px] h-[38px] text-[16px] leading-[18.78px] w-[700px] text-left" ref={para2Ref}>
             <p>Accelerating your digital transformation with tailored Salesforce solutions</p>
           </div>
 
@@ -190,9 +190,9 @@ const SalesForceManagedServices = () => {
 
         {/* Additional Content Section */}
       </div>
-      <div className="min-h-screen text-white mx-auto items-center justify-center">
+      <div className="min-h-screen  mx-auto items-center justify-center">
   <div className="flex justify-center">
-    <p className="w-[1118px] h-[75px] text-base font-raleway font-bold text-white text-[20px] leading-[21.59px] tracking-[0.1em] text-center">
+    <p className="w-[1118px] h-[75px] text-base font-raleway font-bold  text-[20px] leading-[21.59px] tracking-[0.1em] text-center">
     {`"Our implementation process ensures that Service Cloud is not only set up to meet your current requirements but also aligned with your future growth plans."`}
     </p>
   </div>
@@ -206,7 +206,7 @@ const SalesForceManagedServices = () => {
     <hr
       className="w-[250px] h-[1px] border-none"
       style={{
-        backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+        backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
         height: "px",
         border: "none",
       }}
@@ -224,15 +224,15 @@ const SalesForceManagedServices = () => {
     <hr
       className="w-[522px] h-[1px] border-none"
       style={{
-        backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+        backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
         height: "px",
         border: "none",
       }}
     />
   </div>  
-      <p className="font-raleway font-medium   text-white p-[10px] text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
+      <p className="font-raleway font-medium  p-[10px] text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
       Our developers build custom Apex classes, Lightning Web Components (LWCs), and automation workflows using Salesforce tools like Flow and Process Builder
-      <ul className="list-disc pl-5 font-raleway font-medium text-white text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
+      <ul className="list-disc pl-5 font-raleway font-medium  text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
     <li>
     Example: For an e-commerce client, we developed a custom chatbot using Einstein Bots to handle FAQ responses, gather customer data, and escalate complex queries to agents.</li>
     
@@ -267,7 +267,7 @@ const SalesForceManagedServices = () => {
       <hr
         className="w-[540px] h-[1px] border-none"
         style={{
-          backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+          backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
           height: "px",
           border: "none",
         }}
@@ -275,7 +275,7 @@ const SalesForceManagedServices = () => {
     </div>
     
     <div className="text-left max-w-[720px] max-h-[190px] p-[10px] gap-[10px]">
-  <ul className="list-disc pl-5 font-raleway font-medium text-white text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
+  <ul className="list-disc pl-5 font-raleway font-medium  text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
     <li>Automated Case Management: Custom triggers to route cases to specific agents based on criteria like geography or product expertise</li>
     <li>Custom Knowledge Articles: Development of article templates with dynamic layouts and multilingual suppor.</li>
     <li>

@@ -36,7 +36,7 @@ const ServiceNowManagedServices = () => {
 
   return (
     <div ref={ref}>
-      <div className="flex justify-center items-center mt-20 p-[10px] ml-20">
+      <div className="flex justify-center items-center mt-20 p-[10px] ml-20 ">
         <h6 className="font-bold text-[34px] leading-[45.49px] tracking-[0.1em] text-center">
           ServiceNow Managed Services
         </h6>
@@ -85,8 +85,8 @@ const ServiceNowManagedServices = () => {
           >
             <img src={isDarkTheme ? ManagedService : BlackManagedService} className="w-[3589px] h-auto" />
             <img src={isDarkTheme ? ManagedService : BlackManagedService} className="w-[3589px] h-auto" />
-            <img src={isDarkTheme ? ManagedService : BlackManagedService} className="w-[3589px] h-auto" />
-            <img src={isDarkTheme ? ManagedService : BlackManagedService} className="w-[3589px] h-auto" />
+            {/* <img src={isDarkTheme ? ManagedService : BlackManagedService} className="w-[3589px] h-auto" />
+            <img src={isDarkTheme ? ManagedService : BlackManagedService} className="w-[3589px] h-auto" /> */}
           </div>
         </div>
       </div>

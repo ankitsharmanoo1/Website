@@ -7,10 +7,17 @@ import Messaging from "../images/Messagingforweb.png";
 import KnowledgeBase from "../images/KnowledgeBaseImplementation.png";
 import { useTheme } from "../../../Context/ThemeContext";
 import { useInView } from "react-intersection-observer";
+// import { useNavigate } from "react-router-dom";
+// import GetInTouch from "../../GetInTouch/GetInTouch";
+
+
 
 
 const SalesCloudSolutions = () => {
   const { isDarkTheme } = useTheme();
+  // const [showModal, setShowModal] = useState(false);
+
+  // const navigate = useNavigate();
 
   const paraRef = useRef(null);
   const para2Ref = useRef(null);
@@ -60,8 +67,8 @@ const SalesCloudSolutions = () => {
       gsap.fromTo(btnRef.current, { opacity: 0 }, { opacity: 1, x: 300, duration: 1.3, ease: "power3.inOut" });
       gsap.fromTo(
         imgRef.current,
-        { y: -400, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.8, ease: "power3.out" }
+        { y: -400, opacity: 0 ,scale:0 },
+        { y: 0, opacity: 1, duration: 1.8, scale:1, ease: "power3.out" }
       );
 
       const salesforceLetters = salesforceRef.current.innerText.split("");
@@ -112,26 +119,26 @@ const SalesCloudSolutions = () => {
   }, [inView]);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className={isDarkTheme ? "bg-black text-white" : "bg-white text-black"}>
       <div className="w-full h-auto font-raleway grid grid-cols-2 relative min-h-screen">
         {/* Left Section */}
         <div className="flex flex-col justify-start gap-6 ml-10">
-          <div className="text-white text-left">
+          <div className=" text-left">
             <h5 className="text-[30px] font-medium tracking-[4.8px]" ref={salesforceRef}>
               SALESFORCE
             </h5>
             <div className="flex items-center" ref={line1Ref}>
               <hr
-                className="border-t-2 border-white my-2 w-[255px]"
+                className="border-t-2  my-2 w-[255px]"
                 style={{
-                  backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+                  backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "2px",
                   border: "none",
                 }}
               />
               <div
                 className="w-2 h-2 rounded-full"
-                style={{ backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)" }}
+                style={{ backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)" }}
               ></div>
             </div>
 
@@ -140,27 +147,27 @@ const SalesCloudSolutions = () => {
             </h5>
             <div className="flex items-center" ref={line2Ref}>
               <hr
-                className="border-t-2 border-white my-2 w-[747px]"
+                className="border-t-2 my-2 w-[747px]"
                 style={{
-                  backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+                  backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "2px",
                   border: "none",
                 }}
               />
               <div
                 className="w-2 h-2 rounded-full"
-                style={{ backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)" }}
+                style={{ backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)" }}
               ></div>
             </div>
           </div>
 
-          <div className="uppercase text-[43px] font-medium mt-5 text-white tracking-[3.02px] leading-normal text-left" ref={paraRef}>
+          <div className="uppercase text-[43px] font-medium mt-5  tracking-[3.02px] leading-normal text-left" ref={paraRef}>
             <p>Deliver Exceptional</p>
             <p>Customer Service with</p>
             <p>Salesforce Service Cloud</p>
           </div>
 
-          <div className=" text-base uppercase mt-5 font-medium text-white tracking-[2.4px] h-[38px] text-[16px] leading-[18.78px] w-[700px] text-left" ref={para2Ref}>
+          <div className=" text-base uppercase mt-5 font-medium tracking-[2.4px] h-[38px] text-[16px] leading-[18.78px] w-[700px] text-left" ref={para2Ref}>
             <p>AI-driven, omni-channel solutions to enhance customer experience and boost agent productivity</p>
           </div>
 
@@ -171,9 +178,11 @@ const SalesCloudSolutions = () => {
                 ${isDarkTheme ? "bg-white text-black hover:bg-gray-500" : "bg-black text-white hover:bg-[#525252]"}
                 form-item`}
               ref={btnRef}
+              // onClick={() => setShowModal(true)} // Open modal
             >
               Talk to Our Experts
             </button>
+              {/* {showModal && <GetInTouch onClose={() => setShowModal(false)} />} */}
           </div>
         </div>
 
@@ -189,9 +198,9 @@ const SalesCloudSolutions = () => {
 
         {/* Additional Content Section */}
       </div>
-      <div className="min-h-screen text-white mx-auto items-center justify-center">
+      <div className="min-h-screen  mx-auto items-center justify-center">
   <div className="flex justify-center">
-    <p className="w-[1118px] h-[75px] text-base font-raleway font-bold text-white text-[22px] leading-[21.59px] tracking-[0.1em] text-center">
+    <p className="w-[1118px] h-[75px] text-base font-raleway font-bold  text-[22px] leading-[21.59px] tracking-[0.1em] text-center">
    {`"Our implementation process ensures that Service Cloud is not only set up to meet your current requirements but also aligned with your future growth plans."`}
     </p>
   </div>
@@ -205,7 +214,7 @@ const SalesCloudSolutions = () => {
     <hr
       className="w-[250px] h-[1px] border-none"
       style={{
-        backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+        backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
         height: "px",
         border: "none",
       }}
@@ -223,14 +232,14 @@ const SalesCloudSolutions = () => {
     <hr
       className="w-[306px] h-[1px] border-none"
       style={{
-        backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+        backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
         height: "px",
         border: "none",
       }}
     />
   </div>  
-      <p className="font-raleway font-medium   text-white p-[10px] text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
-      <ul className="list-disc pl-5 font-raleway font-medium text-white text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
+      <p className="font-raleway font-medium  p-[10px] text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
+      <ul className="list-disc pl-5 font-raleway font-medium  text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
     <li>We automated case creation from multiple channels, including email, web forms, and social media, using Email-to-Case and Web-to-Case functionalities.</li>
     <li>Using Salesforce Flows, we implemented escalation rules to ensure urgent cases were addressed within SLA timelines.</li>
     
@@ -265,7 +274,7 @@ const SalesCloudSolutions = () => {
       <hr
         className="w-[540px] h-[1px] border-none"
         style={{
-          backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+          backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
           height: "px",
           border: "none",
         }}
@@ -273,7 +282,7 @@ const SalesCloudSolutions = () => {
     </div>
     
     <div className="text-left max-w-[920px] max-h-[190px] p-[10px] gap-[10px]">
-  <ul className="list-disc pl-5 font-raleway font-medium text-white text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
+  <ul className="list-disc pl-5 font-raleway font-medium text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
     <li>Our developers configured Omni-Channel routing to distribute work based on agent skills, availability, and workload. </li>
     <li>We implemented Presence Status to let agents manage their availability dynamically.</li>
     <li>Routing logic was customized using Flow, ensuring priority cases were always routed first.</li>
@@ -293,14 +302,14 @@ const SalesCloudSolutions = () => {
     <hr
       className="w-[515px] h-[1px] border-none"
       style={{
-        backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+        backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
         height: "px",
         border: "none",
       }}
     />
   </div>  
-      <p className="font-raleway font-medium   text-white p-[10px] text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
-      <ul className="list-disc pl-5 font-raleway font-medium text-white text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
+      <p className="font-raleway font-medium p-[10px] text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
+      <ul className="list-disc pl-5 font-raleway font-medium  text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
     <li>Deployed Messaging channels integrated with Einstein Bots to handle FAQs and route complex queries to agents.</li>
     <li>Customized the chatbot experience with contextual greetings and proactive engagement using Einstein AI.</li>
     
@@ -335,7 +344,7 @@ const SalesCloudSolutions = () => {
       <hr
         className="w-[540px] h-[1px] border-none"
         style={{
-          backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+          backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
           height: "px",
           border: "none",
         }}
@@ -343,7 +352,7 @@ const SalesCloudSolutions = () => {
     </div>
     
     <div className="text-left max-w-[920px] max-h-[190px] p-[10px] gap-[10px]">
-  <ul className="list-disc pl-5 font-raleway font-medium text-white text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
+  <ul className="list-disc pl-5 font-raleway font-medium text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
     <li> We created a robust Knowledge Base by developing custom article categories, ensuring customers and agents could quickly find solutions.</li>
     <li>Integrated the Knowledge Base into the Self-Service Portal and Service Console for seamless access.</li>
     <li>Enabled multilingual support to serve a global customer base.</li>

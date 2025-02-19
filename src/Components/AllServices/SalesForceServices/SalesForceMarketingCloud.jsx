@@ -66,8 +66,8 @@ const SalesForceMarketingCloud = () => {
       gsap.fromTo(btnRef.current, { opacity: 0 }, { opacity: 1, x: 300, duration: 1.3, ease: "power3.inOut" });
       gsap.fromTo(
         imgRef.current,
-        { y: -400, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.8, ease: "power3.out" }
+        { y: -400, opacity: 0, scale:0 },
+        { y: 0, opacity: 1, duration: 1.8, ease: "power3.out" ,scale:1}
       );
 
       const salesforceLetters = salesforceRef.current.innerText.split("");
@@ -137,26 +137,26 @@ const SalesForceMarketingCloud = () => {
 
   <>
 
-    <div ref={ref} className="w-full h-full">
+    <div ref={ref} className={isDarkTheme ? "bg-black text-white" : "bg-white text-black"}>
       <div className="w-full h-auto font-raleway grid grid-cols-1 md:grid-cols-2 relative min-h-screen px-4">
         {/* Left Section */}
         <div className="flex flex-col justify-start gap-6 ml-10 md:ml-0">
-          <div className="text-white text-left">                    
+          <div className=" text-left">                    
             <h5 className="text-[32px] md:text-[40px] font-medium tracking-[4.8px]" ref={salesforceRef}>
               SALESFORCE
             </h5>
             <div className="flex items-center" ref={line1Ref}>
               <hr
-                className="border-t-2 border-white my-2 w-[310px]"
+                className="border-t-2  my-2 w-[310px]"
                 style={{
-                  backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+                  backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "2px",
                   border: "none",
                 }}
               />
               <div
                 className="w-2 h-2 rounded-full"
-                style={{ backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)" }}
+                style={{ backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)" }}
               ></div>
             </div>
 
@@ -165,22 +165,22 @@ const SalesForceMarketingCloud = () => {
             </h5>
             <div className="flex items-center" ref={line2Ref}>
               <hr
-                className="border-t-2 border-white my-2 w-[600px]"
+                className="border-t-2 my-2 w-[600px]"
                 style={{
-                  backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+                  backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "2px",
                   border: "none",
                 }}
               />
               <div
                 className="w-2 h-2 rounded-full"
-                style={{ backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)" }}
+                style={{ backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)" }}
               ></div>
             </div>
           </div>
 
           <div
-  className="text-[48px] uppercase font-medium mt-5 text-white tracking-[3.02px] leading-normal text-left responsive-heading"
+  className="text-[48px] uppercase font-medium mt-5 tracking-[3.02px] leading-normal text-left responsive-heading"
   ref={paraRef}
 >
   <p className="break-words md:whitespace-nowrap">Revolutionize Your</p>
@@ -191,7 +191,7 @@ const SalesForceMarketingCloud = () => {
 </div>
 
 
-          <div className="text-base md:text-lg uppercase font-medium text-white tracking-[2.4px] h-[38px] text-[16px] leading-[18.78px] w-[700px] sm:w-[800px] text-left" ref={para2Ref}>
+          <div className="text-base md:text-lg uppercase font-medium tracking-[2.4px] h-[38px] text-[16px] leading-[18.78px] w-[700px] sm:w-[800px] text-left" ref={para2Ref}>
             <p>Personalized, data-driven marketing solutions to engage your customers anywhere</p>
           </div>
 
@@ -220,9 +220,9 @@ const SalesForceMarketingCloud = () => {
       </div>
 
       {/* Additional Content Section */}
-      <div className="min-h-screen text-white mx-auto items-center justify-center">
+      <div className="min-h-screen  mx-auto items-center justify-center">
         <div className="flex justify-center">
-          <p className="w-[1118px] h-[75px] text-base font-raleway font-bold text-white text-[20px] leading-[21.59px] tracking-[0.1em] text-center">
+          <p className="w-[1118px] h-[75px] text-base font-raleway font-bold  text-[20px] leading-[21.59px] tracking-[0.1em] text-center">
             {`"Our implementation process ensures that Service Cloud is not only set up to meet your current requirements but also aligned with your future growth plans."`}
           </p>
         </div>
@@ -234,15 +234,15 @@ const SalesForceMarketingCloud = () => {
               <hr
                 className="w-[250px] h-[1px] border-none"
                 style={{
-                  backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+                  backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "px",
                   border: "none",
                 }}
               />
             </div>
-            <p className="font-raleway font-medium text-white p-[20px] text-[20px] text-justify leading-7 tracking-[0.1em]">
+            <p className="font-raleway font-medium  p-[20px] text-[20px] text-justify leading-7 tracking-[0.1em]">
               Building relationships in the B2B world takes time, and we’ve got the perfect solutions to help you do it right. With Salesforce Marketing Cloud and Account Engagement (formerly Pardot), we make lead generation and nurturing simple while ensuring your sales funnel runs like a well-oiled machine.<br />
-              <ul className="mt-2 list-disc pl-5 font-raleway font-medium text-white text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
+              <ul className="mt-2 list-disc pl-5 font-raleway font-medium text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
                 <li>Score and grade leads to focus on the hottest prospects</li>
                 <li>Implement smart Account-Based Marketing (ABM) strategies</li>
                 <li>Send personalized email campaigns that truly resonate</li>
@@ -271,7 +271,7 @@ const SalesForceMarketingCloud = () => {
           />
         </div>
       
-        <div className="text-left max-w-[790px] text-white p-[10px] gap-[10px] md:order-2">
+        <div className="text-left max-w-[790px]  p-[10px] gap-[10px] md:order-2">
           <h6 className="font-bold text-[30px] ml-7 leading-[45.49px] tracking-[0.1em] text-left">
              B2C Marketing
           </h6>
@@ -280,7 +280,7 @@ const SalesForceMarketingCloud = () => {
             <hr
               className="w-[250px] h-[1px] border-none"
               style={{
-                backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+                backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                 height: "px",
                 border: "none",
               }}
@@ -288,9 +288,9 @@ const SalesForceMarketingCloud = () => {
           </div>
           
           <div className="text-left w-full p-[10px] gap-[10px]">
-          <p className="font-raleway font-medium text-white p-[20px] text-[20px] text-justify leading-7 tracking-[0.1em]">
+          <p className="font-raleway font-medium  p-[20px] text-[20px] text-justify leading-7 tracking-[0.1em]">
               Building relationships in the B2B world takes time, and we’ve got the perfect solutions to help you do it right. With Salesforce Marketing Cloud and Account Engagement (formerly Pardot), we make lead generation and nurturing simple while ensuring your sales funnel runs like a well-oiled machine.<br />
-              <ul className="mt-2 list-disc pl-5 font-raleway font-medium text-white text-[20px] text-justify leading-[23.59px] tracking-[0.1em]">
+              <ul className="mt-2 list-disc pl-5 font-raleway font-medium  text-[20px] text-justify leading-[23.59px] tracking-[0.1em]">
                 <li>Score and grade leads to focus on the hottest prospects</li>
                 <li>Implement smart Account-Based Marketing (ABM) strategies</li>
                 <li>Send personalized email campaigns that truly resonate</li>

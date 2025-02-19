@@ -93,7 +93,7 @@ export function Process() {
 
   return (
     <section
-      className={`flex flex-col justify-center items-center min-h-screen relative overflow-hidden ${
+      className={`flex flex-col justify-center items-center  relative  overflow-hidden ${
         isDarkTheme ? "bg-[#000000]" : "bg-white"
       }`}
       role="region"

@@ -131,8 +131,8 @@ const SalesCloudSolutionServices = () => {
       gsap.fromTo(btnRef.current, { opacity: 0 }, { opacity: 1, x: "18.75rem", duration: 1.3, ease: "power3.inOut" });
       gsap.fromTo(
         imgRef.current,
-        { y: "-25rem", opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.8, ease: "power3.out" }
+        { y: "-25rem", opacity: 0,scale:0 },
+        { y: 0, opacity: 1, duration: 1.8, scale:1, ease: "power3.out" }
       );
 
       const salesforceLetters = salesforceRef.current.innerText.split("");
@@ -183,26 +183,26 @@ const SalesCloudSolutionServices = () => {
   }, [inView]);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className={isDarkTheme ? "bg-black text-white" : "bg-white text-black"}>
       <div className="w-full h-auto font-raleway grid grid-cols-2 relative min-h-screen">
         {/* Left Section */}
         <div className="flex flex-col justify-start gap-6 ml-10">
-          <div className="text-white text-left">
+          <div className=" text-left">
             <h5 className="text-[2rem] font-medium tracking-[0.3rem]" ref={salesforceRef}>
               SALESFORCE
             </h5>
             <div className="flex items-center" ref={line1Ref}>
               <hr
-                className="border-t-2 border-white my-2 w-[15.9375rem]"
+                className="border-t-2  my-2 w-[15.9375rem]"
                 style={{
-                  backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+                  backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "0.125rem",
                   border: "none",
                 }}
               />
               <div
                 className="w-2 h-2 rounded-full"
-                style={{ backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)" }}
+                style={{ backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)" }}
               ></div>
             </div>
 
@@ -211,27 +211,27 @@ const SalesCloudSolutionServices = () => {
             </h5>
             <div className="flex items-center" ref={line2Ref}>
               <hr
-                className="border-t-2 border-white my-2 w-[42.125rem]"
+                className="border-t-2  my-2 w-[42.125rem]"
                 style={{
-                  backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+                  backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "0.125rem",
                   border: "none",
                 }}
               />
               <div
                 className="w-2 h-2 rounded-full"
-                style={{ backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)" }}
+                style={{ backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)" }}
               ></div>
             </div>
           </div>
 
-          <div className="text-[2.875rem] uppercase font-medium mt-5 text-white tracking-[0.18875rem] leading-normal text-left" ref={paraRef}>
+          <div className="text-[2.875rem] uppercase font-medium mt-5 tracking-[0.18875rem] leading-normal text-left" ref={paraRef}>
             <p>Elevate Your Sales</p>
             <p>With Salesforce Sales</p>
             <p>Cloud Solutions</p>
           </div>
 
-          <div className="text-base uppercase mt-5 font-medium text-white tracking-[0.15rem] h-[2.375rem] text-[1rem] leading-[1.17375rem] w-[43.75rem] text-left" ref={para2Ref}>
+          <div className="text-base uppercase mt-5 font-medium  tracking-[0.15rem] h-[2.375rem] text-[1rem] leading-[1.17375rem] w-[43.75rem] text-left" ref={para2Ref}>
             <p>Empowering sales teams with cutting-edge tools to close deals faster</p>
           </div>
 
@@ -260,9 +260,9 @@ const SalesCloudSolutionServices = () => {
 
         {/* Additional Content Section */}
       </div>
-      <div className="min-h-screen text-white mx-auto items-center justify-center">
+      <div className="min-h-screen  mx-auto items-center justify-center">
         <div className="flex justify-center">
-          <p className="w-[69.875rem] h-[4.6875rem] text-base font-raleway font-bold text-white text-[1.25rem] leading-[1.349375rem] tracking-[0.1em] text-center">
+          <p className="w-[69.875rem] h-[4.6875rem] text-base font-raleway font-bold text-[1.25rem] leading-[1.349375rem] tracking-[0.1em] text-center">
             {`"Build strong customer relationships and grow revenue with a single source of truth.
 Sales Cloud the #1 CRM for sales Let us help you sell faster, smarter, and more efficiently. With built-in automation, intelligence, and real-time data, we will help you boost productivity and growth.
 "`}
@@ -278,7 +278,7 @@ Sales Cloud the #1 CRM for sales Let us help you sell faster, smarter, and more 
           <hr
             className="w-[15.625rem] h-[0.0625rem] border-none"
             style={{
-              backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+              backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
               height: "0.0625rem",
               border: "none",
             }}
@@ -296,14 +296,14 @@ Sales Cloud the #1 CRM for sales Let us help you sell faster, smarter, and more 
                 <hr
                   className="w-[14.375rem] h-[0.0625rem] border-none"
                   style={{
-                    backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+                    backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                     height: "0.0625rem",
                     border: "none",
                   }}
                 />
               </div>
-              <p className="font-raleway font-medium text-white p-[0.625rem] text-[1.25rem] text-justify leading-[1.537375rem] tracking-[0.1em]">
-                <ul className="list-disc pl-5 font-raleway font-medium text-white text-[1.25rem] text-justify leading-[1.537375rem] tracking-[0.1em]">
+              <p className="font-raleway font-medium p-[0.625rem] text-[1.25rem] text-justify leading-[1.537375rem] tracking-[0.1em]">
+                <ul className="list-disc pl-5 font-raleway font-medium  text-[1.25rem] text-justify leading-[1.537375rem] tracking-[0.1em]">
                   <li>Consulting: We analyze your unique business challenges and design a roadmap for success using Salesforce’s powerful suite of tools.</li>
                   <li>Development: From custom applications to tailored features, we develop solutions that align perfectly with your business goals.</li>
                   <li>Integration: Seamlessly connect Salesforce with your existing systems to create a unified and efficient workflow.</li>
@@ -339,7 +339,7 @@ Sales Cloud the #1 CRM for sales Let us help you sell faster, smarter, and more 
                 <hr
                   className="w-[33.75rem] h-[0.0625rem] border-none"
                   style={{
-                    backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+                    backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                     height: "0.0625rem",
                     border: "none",
                   }}
@@ -347,7 +347,7 @@ Sales Cloud the #1 CRM for sales Let us help you sell faster, smarter, and more 
               </div>
 
               <div className="text-left max-w-[45rem] p-[0.625rem] gap-[0.625rem]">
-                <ul className="list-disc pl-5 font-raleway font-medium text-white text-[1.25rem] text-justify leading-[1.537375rem] tracking-[0.1em]">
+                <ul className="list-disc pl-5 font-raleway font-medium  text-[1.25rem] text-justify leading-[1.537375rem] tracking-[0.1em]">
                   <li>Boost Sales Productivity with Salesforce Maps, Einstein AI, and Sales Cloud in Slack to accelerate deal cycles and optimize sales strategies.</li>
                   <li>Engage Buyers at Every Step by aligning marketing and sales with built-in CRM intelligence and revenue analytics.</li>
                   <li>Streamline Revenue Processes through Revenue Cloud and CPQ to automate quotes, contracts, and revenue lifecycle management.</li>
@@ -389,14 +389,14 @@ Sales Cloud the #1 CRM for sales Let us help you sell faster, smarter, and more 
                 <hr
                   className="w-[36rem] h-[0.0625rem] border-none"
                   style={{
-                    backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+                    backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                     height: "0.0625rem",
                     border: "none",
                   }}
                 />
               </div>
 
-              <div className="flex font-bold flex-row items-center mt-8 p-[0.625rem] gap-56 text-white font-raleway text-[0.9rem] cursor-pointer">
+              <div className={`flex font-bold flex-row items-center mt-8 p-[0.625rem] gap-56 text-white font-raleway text-[0.9rem] cursor-pointer  `}>
                 <span className="option-span bg-white text-black w-[10rem] gap-[2rem] p-[1rem] rounded-[0.5rem] text-center" onClick={() => handleClick2(0)}>Enhance Sales Productivity</span>
                 <span className="option-span bg-white text-black w-[13rem] gap-[2rem] p-[1rem] rounded-[0.5rem] text-center" onClick={() => handleClick2(1)}>Build Stronger Customer Relationships</span>
                 <span className="option-span bg-white text-black w-[10rem] gap-[2rem] p-[1rem] rounded-[0.5rem] text-center" onClick={() => handleClick2(2)}>Drive Data-Driven Decisions</span>
@@ -436,14 +436,14 @@ Sales Cloud the #1 CRM for sales Let us help you sell faster, smarter, and more 
                 <hr
                   className="w-[24.575rem] h-[0.0625rem] border-none"
                   style={{
-                    backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+                    backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                     height: "0.0625rem",
                     border: "none",
                   }}
                 />
               </div>
-              <p className="font-raleway font-medium text-white p-[0.625rem] text-[1.25rem] text-justify leading-[1.537375rem] tracking-[0.1em]">
-                <ul className="list-disc pl-5 font-raleway font-medium text-white text-[1.25rem] text-justify leading-[1.537375rem] tracking-[0.1em]">
+              <p className="font-raleway font-medium p-[0.625rem] text-[1.25rem] text-justify leading-[1.537375rem] tracking-[0.1em]">
+                <ul className="list-disc pl-5 font-raleway font-medium  text-[1.25rem] text-justify leading-[1.537375rem] tracking-[0.1em]">
                   <li>Faster sales cycles and improved team productivity.</li>
                   <li>Strengthened customer relationships and increased deal win rates.</li>
                   <li>Actionable insights to make informed, data-driven decisions.</li>

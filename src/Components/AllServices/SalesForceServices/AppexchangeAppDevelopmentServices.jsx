@@ -5,6 +5,7 @@ import CustumDev from "../images/salesforceDev.png";
 import CustumFeature from "../images/CustomFeature.png";
 import { useTheme } from "../../../Context/ThemeContext";
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 const AppexchangeAppDevelopmentServices = () => {
   const { isDarkTheme } = useTheme();
@@ -43,7 +44,11 @@ const AppexchangeAppDevelopmentServices = () => {
         { y: 130, opacity: 0 },
         { y: 0, opacity: 1, duration: 2.5, stagger: 0.2, ease: "power3.out" }
       );
-      gsap.fromTo(btnRef.current, { opacity: 0 }, { opacity: 1, x: 300, duration: 1.3, ease: "power3.inOut" });
+      gsap.fromTo(
+        btnRef.current,
+        { opacity: 0 },
+        { opacity: 1, x: 300, duration: 1.3, ease: "power3.inOut" }
+      );
       gsap.fromTo(
         imgRef.current,
         { y: -400, opacity: 0 },
@@ -51,7 +56,9 @@ const AppexchangeAppDevelopmentServices = () => {
       );
 
       const salesforceLetters = salesforceRef.current.innerText.split("");
-      salesforceRef.current.innerHTML = salesforceLetters.map((char) => `<span class="letter">${char}</span>`).join("");
+      salesforceRef.current.innerHTML = salesforceLetters
+        .map((char) => `<span class="letter">${char}</span>`)
+        .join("");
 
       timeline
         .fromTo(
@@ -62,92 +69,138 @@ const AppexchangeAppDevelopmentServices = () => {
         .fromTo(
           line1Ref.current,
           { scaleX: 0 },
-          { scaleX: 1, transformOrigin: "left", duration: 3, ease: "power3.out" },
+          {
+            scaleX: 1,
+            transformOrigin: "left",
+            duration: 3,
+            ease: "power3.out",
+          },
           "<"
         );
 
       const consultingLetters = consultingRef.current.innerText.split("");
-      consultingRef.current.innerHTML = consultingLetters.map((char) => `<span class="letter">${char}</span>`).join("");
+      consultingRef.current.innerHTML = consultingLetters
+        .map((char) => `<span class="letter">${char}</span>`)
+        .join("");
 
       timeline
         .fromTo(
           consultingRef.current.querySelectorAll(".letter"),
-          { opacity: 0, y: 50 },
-          { opacity: 1, y: 0, duration: 2, stagger: 0.1, ease: "power3.out" },
+          { opacity: 0, y: 50, scale:0 },
+          { opacity: 1, y: 0, duration: 1, scale:1, stagger: 0.05, ease: "power3.out" }, // Reduced duration and stagger
           "+=0.2"
         )
         .fromTo(
           line2Ref.current,
           { scaleX: 0 },
-          { scaleX: 1, transformOrigin: "left", duration: 7, ease: "power3.out" },
+          {
+            scaleX: 1,
+            transformOrigin: "left",
+            duration: 3,
+            ease: "power3.out",
+          },
           "<"
         );
     }
   }, [inView]); // Runs animation only when inView changes
 
   return (
-    <div ref={ref}> {/* Attach the observer reference here */}
+    <div
+      ref={ref}
+      className={isDarkTheme ? "bg-black text-white" : "bg-white text-black"}
+    >
+      {" "}
+      {/* Attach the observer reference here */}
       <div className="w-full h-auto font-raleway grid grid-cols-2 relative min-h-screen">
         {/* Left Section */}
         <div className="flex flex-col justify-start gap-6 ml-10">
-          <div className="text-white text-left">
-            <h5 className="text-[32px] font-medium tracking-[4.8px]" ref={salesforceRef}>
+          <div className=" text-left">
+            <h5
+              className="text-[32px] font-medium tracking-[4.8px]"
+              ref={salesforceRef}
+            >
               SALESFORCE
             </h5>
             <div className="flex items-center" ref={line1Ref}>
               <hr
-                className="border-t-2 border-white my-2 w-[255px]"
+                className="border-t-2  my-2 w-[255px]"
                 style={{
-                  backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+                  backgroundImage:
+                    isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "2px",
                   border: "none",
                 }}
               />
               <div
                 className="w-2 h-2 rounded-full"
-                style={{ backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)" }}
+                style={{
+                  backgroundImage:
+                    isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
+                }}
               ></div>
             </div>
 
-            <h5 className="uppercase text-[32px] font-medium tracking-[4.8px]" ref={consultingRef}>
+            <h5
+              className="uppercase text-[32px] font-medium tracking-[4.8px]"
+              ref={consultingRef}
+            >
               Appexchange App Developmet
             </h5>
             <div className="flex items-center" ref={line2Ref}>
               <hr
-                className="border-t-2 border-white my-2 w-[890px]"
+                className="border-t-2 my-2 w-[650px]"
                 style={{
-                  backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+                  backgroundImage:
+                    isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "2px",
                   border: "none",
                 }}
               />
               <div
                 className="w-2 h-2 rounded-full"
-                style={{ backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)" }}
+                style={{
+                  backgroundImage:
+                    isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
+                }}
               ></div>
             </div>
           </div>
 
-          <div className="uppercase text-[2.875rem] font-medium mt-5 text-white tracking-[3.02px] leading-normal text-left" ref={paraRef}>
+          <div
+            className="uppercase text-[2.875rem] font-medium mt-5  tracking-[3.02px] leading-normal text-left"
+            ref={paraRef}
+          >
             <p>Custom Salesforce</p>
             <p>Appexchange Solutions</p>
             <p>for your Business</p>
           </div>
 
-          <div className="text-base uppercase mt-5 font-medium text-white tracking-[2.4px] h-[38px] text-[16px] leading-[18.78px] w-[700px] text-left" ref={para2Ref}>
-            <p>Build, Publish and scale your salesforce apps seamlessly with our expert development services</p>
+          <div
+            className="text-base uppercase mt-5 font-medium tracking-[2.4px] h-[38px] text-[16px] leading-[18.78px] w-[700px] text-left"
+            ref={para2Ref}
+          >
+            <p>
+              Build, Publish and scale your salesforce apps seamlessly with our
+              expert development services
+            </p>
           </div>
 
           <div className="flex justify-center">
-            <button
-              type="submit"
-              className={`w-[210px] h-[42px] font-raleway leading-[18.78px] text-[16px] font-bold rounded-[13px] p-[10px] gap-[10px] 
-                ${isDarkTheme ? "bg-white text-black hover:bg-gray-500" : "bg-black text-white hover:bg-[#525252]"}
+            <Link to="get-in-touch">
+              <button
+                type="submit"
+                className={`w-[210px] h-[42px] font-raleway leading-[18.78px] text-[16px] font-bold rounded-[13px] p-[10px] gap-[10px] 
+                ${
+                  isDarkTheme
+                    ? "bg-white text-black hover:bg-gray-500"
+                    : "bg-black text-white hover:bg-[#525252]"
+                }
                 form-item`}
-              ref={btnRef}
-            >
-               Get Started
-            </button>
+                ref={btnRef}
+              >
+                Get Started
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -161,114 +214,114 @@ const AppexchangeAppDevelopmentServices = () => {
           />
         </div>
       </div>
-      <div className="min-h-screen text-white mx-auto items-center justify-center">
-  <div className="flex justify-center">
-    <p className="w-[1118px] h-[75px] text-base font-raleway font-bold text-white text-[20px] leading-[21.59px] tracking-[0.1em] text-center">
-    {`"AppExchange is a marketplace offering solutions, such as apps, components, and consulting services. To make your own solution publicly available to potential customers, you must be a Salesforce partner."`}
-    </p>
-  </div>
+      <div className="min-h-screen mx-auto items-center justify-center">
+        <div className="flex justify-center">
+          <p className="w-[1118px] h-[75px] text-base font-raleway font-bold  text-[20px] leading-[21.59px] tracking-[0.1em] text-center">
+            {`"AppExchange is a marketplace offering solutions, such as apps, components, and consulting services. To make your own solution publicly available to potential customers, you must be a Salesforce partner."`}
+          </p>
+        </div>
 
-  <div className="flex justify-center items-center mt-8 p-[10px]">
-    <h6 className="font-bold text-[37px] leading-[45.49px] tracking-[0.1em] text-center">
-      What We Do
-    </h6>
-  </div>
-  <div className="flex justify-center items-center mt-0.5">
-    <hr
-      className="w-[250px] h-[1px] border-none"
-      style={{
-        backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
-        height: "px",
-        border: "none",
-      }}
-    />
-  </div>
-  <div className="">
+        <div className="flex justify-center items-center mt-8 p-[10px]">
+          <h6 className="font-bold text-[37px] leading-[45.49px] tracking-[0.1em] text-center">
+            What We Do
+          </h6>
+        </div>
+        <div className="flex justify-center items-center mt-0.5">
+          <hr
+            className="w-[250px] h-[1px] border-none"
+            style={{
+              backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
+              height: "px",
+              border: "none",
+            }}
+          />
+        </div>
+        <div className="">
+          <div className="firstdiv flex flex-col md:flex-row justify-between items-center mt-8 gap-8">
+            <div className="text-left  max-w-[950px] max-h-[190px] p-[10px] gap-[10px] ml-8">
+              <h6 className="font-bold text-[30px] leading-[45.49px] tracking-[0.1em] text-left">
+                Why Invest in Salesforce AppExchange Development?
+                <hr
+                  className="w-[920px] h-[1px] border-none"
+                  style={{
+                    backgroundImage:
+                     isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
+                    height: "px",
+                    border: "none",
+                  }}
+                />
+              </h6>
 
-  <div className="firstdiv flex flex-col md:flex-row justify-between items-center mt-8 gap-8">
-    <div className="text-left  max-w-[950px] max-h-[190px] p-[10px] gap-[10px] ml-8">
-  <h6 className="font-bold text-[30px] leading-[45.49px] tracking-[0.1em] text-left">
-  Why Invest in Salesforce AppExchange Development?
-  <hr
-      className="w-[920px] h-[1px] border-none"
-      style={{
-        backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
-        height: "px",
-        border: "none",
-      }}
-    />
-  </h6>   
-  
-  <div className="flex justify-left items-center mt-0.5">
-   
-  </div>  
-      <p className="font-raleway font-medium   text-white p-[10px] text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
-      AppExchange offers an incredible opportunity for businesses to enhance their Salesforce experience. By developing applications for the AppExchange marketplace, companies can:
-      <ul className="list-disc p-6 font-raleway font-medium text-white text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
-    <li>Extend the core functionalities of Salesforce.</li>
-    <li>Reach thousands of Salesforce users globally.</li>
-    <li>Improve business productivity with tailored applications.</li>
-    <li>Generate revenue through paid applications and subscriptions.</li>
-    
-  </ul>
-      </p>
-    </div>
+              <div className="flex justify-left items-center mt-0.5"></div>
+              <p className="font-raleway font-medium   p-[10px] text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
+                AppExchange offers an incredible opportunity for businesses to
+                enhance their Salesforce experience. By developing applications
+                for the AppExchange marketplace, companies can:
+                <ul className="list-disc p-6 font-raleway font-medium  text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
+                  <li>Extend the core functionalities of Salesforce.</li>
+                  <li>Reach thousands of Salesforce users globally.</li>
+                  <li>
+                    Improve business productivity with tailored applications.
+                  </li>
+                  <li>
+                    Generate revenue through paid applications and
+                    subscriptions.
+                  </li>
+                </ul>
+              </p>
+            </div>
 
-    <div className="flex justify-center items-center mr-10">
-      <img
-        src={CustumDev}
-        alt="Discovery & Analysis"
-        className="max-w-[300px]  max-h-[298.39px] object-contain"
-      />
-    </div>
-  </div>
+            <div className="flex justify-center items-center mr-10">
+              <img
+                src={CustumDev}
+                alt="Discovery & Analysis"
+                className="max-w-[300px]  max-h-[298.39px] object-contain"
+              />
+            </div>
+          </div>
 
-  <div className="seconddiv flex flex-col md:flex-row justify-between items-center mt-8 gap-8">
-  <div className="flex  m-10">
-    <img
-      src={CustumFeature} 
-      alt="Solution Design"
-      className="max-w-[300px] max-h-[298.39px] object-contain"
-    />
-  </div>
+          <div className="seconddiv flex flex-col md:flex-row justify-between items-center mt-8 gap-8">
+            <div className="flex  m-10">
+              <img
+                src={CustumFeature}
+                alt="Solution Design"
+                className="max-w-[300px] max-h-[298.39px] object-contain"
+              />
+            </div>
 
-  <div className="text-left max-w-[720px] max-h-[190px] p-[10px] gap-[10px] md:order-2">
-    <h6 className="font-bold text-[30px] leading-[45.49px] tracking-[0.1em] text-left">
-    What We Provide
-    <hr
-        className="w-[286px] h-[1px] border-none"
-        style={{
-          backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
-          height: "px",
-          border: "none",
-        }}
-      />
-    </h6>
+            <div className="text-left max-w-[720px] max-h-[190px] p-[10px] gap-[10px] md:order-2">
+              <h6 className="font-bold text-[30px] leading-[45.49px] tracking-[0.1em] text-left">
+                What We Provide
+                <hr
+                  className="w-[286px] h-[1px] border-none"
+                  style={{
+                    backgroundImage:
+                      isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
+                    height: "px",
+                    border: "none",
+                  }}
+                />
+              </h6>
 
-
-    <div className="text-left max-w-[720p] max-h-[190px]  gap-[10px]">
-
-  <p className="font-raleway font-medium   text-white p-[10px] text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
-  Our company provides comprehensive services to ensure seamless development, deployment, and management of applications on Salesforce AppExchange. Here’s what we offer:
-  <ul className="list-disc  font-raleway font-medium text-white text-[20px] ml-11 text-justify leading-[24.59px] tracking-[0.1em]">
-    <li>AppExchange App Consulting</li>
-    <li>AppExchange App Development</li>
-    <li>AppExchange Security Review Assistance</li>
-    <li>AppExchange App Compliance & Listing Support</li>
-    <li>AppExchange App Management & Maintenance</li>
-    <li>Salesforce AppExchange Technical Support</li>
-
-  </ul>
-  </p>
-</div>
-  </div>
-</div>
-
-
-
-</div>
-
-</div>
+              <div className="text-left max-w-[720p] max-h-[190px]  gap-[10px]">
+                <p className="font-raleway font-medium  p-[10px] text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
+                  Our company provides comprehensive services to ensure seamless
+                  development, deployment, and management of applications on
+                  Salesforce AppExchange. Here’s what we offer:
+                  <ul className="list-disc  font-raleway font-medium  text-[20px] ml-11 text-justify leading-[24.59px] tracking-[0.1em]">
+                    <li>AppExchange App Consulting</li>
+                    <li>AppExchange App Development</li>
+                    <li>AppExchange Security Review Assistance</li>
+                    <li>AppExchange App Compliance & Listing Support</li>
+                    <li>AppExchange App Management & Maintenance</li>
+                    <li>Salesforce AppExchange Technical Support</li>
+                  </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -61,8 +61,8 @@ const SalesForceCPQ = () => {
       gsap.fromTo(btnRef.current, { opacity: 0 }, { opacity: 1, x: 300, duration: 1.3, ease: "power3.inOut" });
       gsap.fromTo(
         imgRef.current,
-        { y: -400, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.8, ease: "power3.out" }
+        { y: -400, opacity: 0, scale:0 },
+        { y: 0, opacity: 1, duration: 1.8, ease: "power3.out", scale:1 }
       );
 
       const salesforceLetters = salesforceRef.current.innerText.split("");
@@ -113,19 +113,19 @@ const SalesForceCPQ = () => {
   }, [inView]);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className={isDarkTheme ? "bg-black text-white" : "bg-white text-black"}>
       <div className="w-full h-auto font-raleway grid grid-cols-2 relative min-h-screen">
         {/* Left Section */}
         <div className="flex flex-col justify-start gap-6 ml-10">
-          <div className="text-white text-left">
+          <div className=" text-left">
             <h5 className="text-[32px] font-medium tracking-[4.8px]" ref={salesforceRef}>
               SALESFORCE
             </h5>
             <div className="flex items-center" ref={line1Ref}>
               <hr
-                className="border-t-2 border-white my-2 w-[255px]"
+                className="border-t-2  my-2 w-[255px]"
                 style={{
-                  backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+                  backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "2px",
                   border: "none",
                 }}
@@ -141,9 +141,9 @@ const SalesForceCPQ = () => {
             </h5>
             <div className="flex items-center" ref={line2Ref}>
               <hr
-                className="border-t-2 border-white my-2 w-[350px]"
+                className="border-t-2  my-2 w-[350px]"
                 style={{
-                  backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+                  backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "2px",
                   border: "none",
                 }}
@@ -155,13 +155,13 @@ const SalesForceCPQ = () => {
             </div>
           </div>
 
-          <div className="text-[46px] font-medium mt-5 text-white tracking-[3.02px] leading-normal text-left" ref={paraRef}>
+          <div className="text-[46px] font-medium mt-5  tracking-[3.02px] leading-normal text-left" ref={paraRef}>
             <p>REVOLUTIONIZE</p>
             <p>YOUR BUSINESS WITH</p>
             <p>SALESFORCE CONSULTING</p>
           </div>
 
-          <div className="uppercase text-base mt-5 font-medium text-white tracking-[2.4px] h-[38px] text-[16px] leading-[18.78px] w-[700px] text-left" ref={para2Ref}>
+          <div className="uppercase text-base mt-5 font-medium  tracking-[2.4px] h-[38px] text-[16px] leading-[18.78px] w-[700px] text-left" ref={para2Ref}>
             <p>Maximizing Salesforce capabilities to streamline your operations and drive growth.</p>
           </div>
 
@@ -190,9 +190,9 @@ const SalesForceCPQ = () => {
 
         {/* Additional Content Section */}
       </div>
-      <div className="min-h-screen text-white mx-auto items-center justify-center">
+      <div className="min-h-screen  mx-auto items-center justify-center">
   <div className="flex justify-center">
-    <p className="w-[1118px] h-[75px] text-base font-raleway font-bold text-white text-[22px] leading-[23.59px] tracking-[0.1em] text-center">
+    <p className="w-[1118px] h-[75px] text-base font-raleway font-bold  text-[22px] leading-[23.59px] tracking-[0.1em] text-center">
       {`"At the core of every successful Salesforce Service Cloud project is a thorough understanding  of the client&apos;s  unique business needs. Our consulting approach ensures that every solution aligns  with your customer service goals."`}
     </p>
   </div>
@@ -206,7 +206,7 @@ const SalesForceCPQ = () => {
     <hr
       className="w-[250px] h-[1px] border-none"
       style={{
-        backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+        backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
         height: "px",
         border: "none",
       }}
@@ -224,13 +224,13 @@ const SalesForceCPQ = () => {
     <hr
       className="w-[350px] h-[1px] border-none"
       style={{
-        backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+        backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
         height: "px",
         border: "none",
       }}
     />
   </div>  
-      <p className="font-raleway font-medium   text-white p-[10px] text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
+      <p className="font-raleway font-medium    p-[10px] text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
         We collaborate with your team to assess your existing customer service processes, pain points, and KPIs. Whether you need to improve case
         resolution times, implement automation, or enhance self-service options, we
         define a roadmap tailored to your goals. 
@@ -264,14 +264,14 @@ const SalesForceCPQ = () => {
       <hr
         className="w-[273px] h-[1px] border-none"
         style={{
-          backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+          backgroundImage:  isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
           height: "px",
           border: "none",
         }}
       />
     </div>
     
-    <p className="font-raleway font-medium text-white p-[10px] text-[20px] text-justify mr-10 leading-[24.59px] tracking-[0.1em]">
+    <p className="font-raleway font-medium  p-[10px] text-[20px] text-justify mr-10 leading-[24.59px] tracking-[0.1em]">
     We design a scalable and future-proof Service Cloud architecture that aligns
  with your workflows and customer needs. This includes feature
  recommendations such as Omni-Channel routing, Knowledge Base, or
@@ -290,7 +290,7 @@ const SalesForceCPQ = () => {
     <hr
       className="w-[400px] h-[1px] border-none"
       style={{
-        backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
+        backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
         height: "px",
         border: "none",
       }}
@@ -301,7 +301,7 @@ const SalesForceCPQ = () => {
 
 <div className="thirddiv flex flex-col md:flex-row justify-between items-center mt-4 gap-8">
 <div className="text-left max-w-[720px] max-h-[190px] p-[10px] gap-[10px] ml-8">
-  <ul className="list-disc pl-5 font-raleway font-medium text-white text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
+  <ul className="list-disc pl-5 font-raleway font-medium  text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
     <li>Define clear use cases for Service Cloud features and align them with business objectives.</li>
     <li>Ensure scalability by designing a system that accommodates future growth and additional channels (social media, chat, etc).</li>
     <li>Conduct a gap analysis to identify customizations needed beyond out-of-the-box features.</li>
