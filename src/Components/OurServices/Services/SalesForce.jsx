@@ -11,21 +11,23 @@ const SalesForce = () => {
   const headingRef = useRef(null);
   const paragraphRef = useRef(null);
   const listRef = useRef(null);
+  const listRef2 = useRef(null);
+
 
   const [hasAnimated, setHasAnimated] = useState(false); // Track animation state
 
   useEffect(() => {
     // Set the initial opacity for all elements
     gsap.set(imageRef.current, { opacity: 1 });
-    gsap.set([headingRef.current, paragraphRef.current, listRef.current], {
+    gsap.set([headingRef.current, paragraphRef.current, listRef.current,listRef2.current], {
       opacity: 0,
     });
   }, []);
 
   const handleMouseEnter = () => {
-    if (hasAnimated) return; // Prevent animation if already triggered
-
-    // Trigger animations
+    if (hasAnimated) return;
+  
+    
     gsap.fromTo(
       imageRef.current,
       {
@@ -39,7 +41,7 @@ const SalesForce = () => {
         y: "-45%", // Moves upward a little
         scale: 0.5, // Shrinks the image
         opacity: 1, // Keeps the image visible
-        duration: 1,
+        duration: 2,
         ease: "power3.inOut",
         marginLeft: "120px",
       }
@@ -50,7 +52,8 @@ const SalesForce = () => {
       {
         x: 0,
         opacity: 1,
-        duration: 2.9,
+        delay:1.2,
+        duration: 1,
         ease: "power3.out",
       }
     );
@@ -60,7 +63,8 @@ const SalesForce = () => {
       {
         y: 0,
         opacity: 1,
-        duration: 2.9,
+        delay:1.4,
+        duration: 1.2,
         stagger: 0.9,
         ease: "power3.out",
       }
@@ -71,26 +75,39 @@ const SalesForce = () => {
       {
         y: 0,
         opacity: 1,
-        duration: 3,
+        delay:1.8,
+        duration: 2,
         stagger: 0.9,
         ease: "power3.out",
       }
     );
-
+  
+    gsap.fromTo(
+      listRef2.current,
+      { y: 100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        delay:2,
+        duration: 1.5,
+        stagger: 0.9,
+        ease: "power3.out",
+      }
+    );
     setHasAnimated(true); // Mark the animation as triggered
   };
 
   return (
     <div
       ref={containerRef}
-      className="w-[1055px] h-[544.81px] gap-[20px] left-[20px] relative"
+      className="w-[1055px] h-[544.81px] gap-[20px] left-[20px] relative mt-8"
       onMouseEnter={handleMouseEnter} // Trigger animation on mouse enter
     >
       <img
         ref={imageRef}
         src={salesforce}
         alt="Salesforce"
-        className="service-img absolute" // Position image absolutely inside the container
+        className="service-img absolute z-20" // Position image absolutely inside the container
       />
       <h1
         className="w-[288px] h-[31px] font-raleway font-thin text-3xl p-[10px] gap-[10px] ml-28 mb-12"
@@ -100,7 +117,7 @@ const SalesForce = () => {
       </h1>
 
       <p
-        className="w-[1035px] h-[225px] font-raleway text-[20px] text-justify leading-[24.6px] p-[10px] gap-[10px] mb-9"
+        className="w-[1035px] h-[225px] font-raleway text-[20px] text-justify leading-[24.6px] p-[10px] gap-[10px] mb-9 z-0"
         ref={paragraphRef}
       >
         At Softshala Technologies, as a Premium Salesforce Consulting Partner, we are dedicated to
@@ -119,9 +136,9 @@ const SalesForce = () => {
 
       <div
         className="flex justify-between mx-auto w-[1055px] h-[170px] p-[10px] ml-16"
-        ref={listRef}
+       
       >
-        <ul className="list-disc flex flex-col w-1/2 space-y-2 pl-6 ">
+        <ul className="list-disc flex flex-col w-1/2 space-y-2 pl-6 "  ref={listRef}>
           <li>Salesforce Consulting</li>
           <li>Salesforce Development</li>
           <li>Salesforce Implementation</li>
@@ -130,7 +147,7 @@ const SalesForce = () => {
           <li>Salesforce Managed Services</li>
         </ul>
 
-        <ul className="list-disc flex flex-col w-1/2 space-y-2 pl-6">
+        <ul className="list-disc flex flex-col w-1/2 space-y-2 pl-6"  ref={listRef2}>
           <li>Salesforce CPQ (Configure, Price, Quote)</li>
           <li>Salesforce Marketing Cloud Solutions</li>
           <li>Salesforce Sales Cloud Solutions</li>

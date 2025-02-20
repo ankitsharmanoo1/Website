@@ -42,7 +42,7 @@ export function WhyChooseUs() {
 
   return (
     <section
-      className={`flex flex-col justify-center items-center min-h-screen ${
+      className={`flex flex-col mt-14 justify-center items-center min-h-screen ${
         isDarkTheme ? "bg-[#000000]" : "bg-white"
       }`}
       role="region"

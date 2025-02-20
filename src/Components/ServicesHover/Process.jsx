@@ -93,14 +93,14 @@ export function Process() {
 
   return (
     <section
-      className={`flex flex-col justify-center items-center  relative  overflow-hidden ${
+      className={`flex flex-col justify-center items-center font-raleway  relative  overflow-hidden ${
         isDarkTheme ? "bg-[#000000]" : "bg-white"
       }`}
       role="region"
       aria-labelledby="whyChooseUsTitle"
     >
       <div
-        className="w-[1193px] h-[273px]  gap-[10px] relative flex justify-center items-center"
+        className="w-[1193px] h-[273px] leading-[24.6px]  gap-[10px] relative flex justify-center items-center text-xl  text-justify"
         onMouseEnter={handleMouseEnter} // Trigger content display on hover
       >
         {/* Image */}

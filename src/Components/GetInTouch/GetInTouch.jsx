@@ -14,11 +14,14 @@ import officeImgBlack from "../GetInTouch/formsIcons/office.png"
 import Map from "../GetInTouch/Map";
 import BackgroundAnimation from "../BackgroundAnimation/BackgroundAnimation";
 import { useTheme } from "../../Context/ThemeContext";
+import { useLocation } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger); 
 
 const GetInTouch = () => {
 
+
+  const location = useLocation();
   const { isDarkTheme } = useTheme();
 
   const [submitted, setSubmitted] = useState(false);
@@ -29,9 +32,20 @@ const GetInTouch = () => {
   const mapRef = useRef(null);
 
   useEffect(() => {
+    const scrollToContact = () => {
+      if (location.state?.scrollToContact) {
+        const contactUs = document.getElementById("contact-us");
+        if (contactUs) {
+          contactUs.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    };
+  
+    scrollToContact(); // Call the function to check location state
+  
     const animateForm = () => {
-      const formItems = formRef.current.querySelectorAll(".form-item");
-      const addressItems = addressRef.current.querySelectorAll(".all-item");
+      const formItems = formRef.current?.querySelectorAll(".form-item");
+      const addressItems = addressRef.current?.querySelectorAll(".all-item");
   
       gsap.fromTo(
         formItems,
@@ -81,7 +95,6 @@ const GetInTouch = () => {
       );
     };
   
-    // Attach animation to mouse enter event
     const container = document.getElementById("contact-us");
     if (container) {
       container.addEventListener("mouseenter", animateForm);
@@ -89,10 +102,11 @@ const GetInTouch = () => {
   
     return () => {
       if (container) {
-        // container.removeEventListener("mouseenter", animateForm);
+        container.removeEventListener("mouseenter", animateForm);
       }
     };
-  }, []);
+  }, [location]); // Dependency array ensures it runs when location changes
+  
   
   const handleSubmit = (e) => {
     setSubmitted(true); // Show success message

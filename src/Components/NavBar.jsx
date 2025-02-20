@@ -30,8 +30,8 @@ const NavBar = () => {
   };
 
   return (
-    <div className={`${isDarkTheme ? "bg-[#000000]" : "bg-white"}`}>
-      <div className=" z-20 flex flex-col w-full items-start gap-2.5 px-[70px] text-base py-2.5 cursor-pointer font-raleway">
+    <div className={`${isDarkTheme ? "bg-black bg-opacity-10" : "bg-white"} z-1000 fixed top-0 w-full h-24  backdrop-blur-md`}>
+      <div className=" flex flex-col w-full items-start gap-2.5 px-[70px] text-base py-2.5 cursor-pointer font-raleway">
         <div className="flex items-center relative self-stretch w-full">
           {/* Logo */}
           <div className="inline-flex items-center gap-2.5 p-2.5">

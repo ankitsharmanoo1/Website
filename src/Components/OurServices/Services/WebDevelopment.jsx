@@ -14,78 +14,94 @@ const WebDevelopment = () => {
   const headingRef  = useRef(null);
   const paragraphRef = useRef(null);
   const listRef = useRef(null);
+  const listRef2 = useRef(null);
+
 
 
 
 const [hasAnimated, setHasAnimated] = useState(false); 
   
 
-  useEffect(() => {
-    // Initial state for all elements
-    gsap.set(imageRef.current,{opacity:1})
-    gsap.set([ headingRef.current, paragraphRef.current, listRef.current], {
-      opacity: 0,
-    });
-  }, []);
+useEffect(() => {
+  // Set the initial opacity for all elements
+  gsap.set(imageRef.current, { opacity: 1 });
+  gsap.set([headingRef.current, paragraphRef.current, listRef.current,listRef2.current], {
+    opacity: 0,
+  });
+}, []);
 
-  const handleMouseEnter = () => {
-    if (hasAnimated) return; // Prevent animation if already triggered
-  
-    // Trigger animations
-    gsap.fromTo(
-      imageRef.current,
-      {
-        x: "0%",
-        y: "0%",
-        scale: 1,
-        opacity: 1,
-      },
-      {
-        x: "-60%", // Moves to the right 60% of the container width
-        y: "-45%", // Moves upward a little
-        scale: 0.5, // Shrinks the image
-        opacity: 1, // Keeps the image visible
-        duration: 1,
-        ease: "power3.inOut",
-        marginLeft: "120px",
-      }
-    );
-    gsap.fromTo(
-      headingRef.current,
-      { x: 900, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 2.9,
-        ease: "power3.out",
-      }
-    );
-    gsap.fromTo(
-      paragraphRef.current,
-      { y: 200, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 2.9,
-        stagger: 0.9,
-        ease: "power3.out",
-      }
-    );
-    gsap.fromTo(
-      listRef.current,
-      { y: 100, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 3,
-        stagger: 0.9,
-        ease: "power3.out",
-      }
-    );
-  
-    setHasAnimated(true); // Mark the animation as triggered
-  };
+const handleMouseEnter = () => {
+  if (hasAnimated) return;
 
+  
+  gsap.fromTo(
+    imageRef.current,
+    {
+      x: "0%",
+      y: "0%",
+      scale: 1,
+      opacity: 1,
+    },
+    {
+      x: "-60%", // Moves to the right 60% of the container width
+      y: "-45%", // Moves upward a little
+      scale: 0.5, // Shrinks the image
+      opacity: 1, // Keeps the image visible
+      duration: 2,
+      ease: "power3.inOut",
+      marginLeft: "120px",
+    }
+  );
+  gsap.fromTo(
+    headingRef.current,
+    { x: 900, opacity: 0 },
+    {
+      x: 0,
+      opacity: 1,
+      delay:1.2,
+      duration: 1,
+      ease: "power3.out",
+    }
+  );
+  gsap.fromTo(
+    paragraphRef.current,
+    { y: 200, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      delay:1.4,
+      duration: 1.2,
+      stagger: 0.9,
+      ease: "power3.out",
+    }
+  );
+  gsap.fromTo(
+    listRef.current,
+    { y: 100, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      delay:1.8,
+      duration: 2,
+      stagger: 0.9,
+      ease: "power3.out",
+    }
+  );
+
+  gsap.fromTo(
+    listRef2.current,
+    { y: 100, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      delay:2,
+      duration: 1.5,
+      stagger: 0.9,
+      ease: "power3.out",
+    }
+  );
+  setHasAnimated(true); // Mark the animation as triggered
+};
 
 
 
@@ -109,15 +125,15 @@ const [hasAnimated, setHasAnimated] = useState(false);
               With a deep understanding of both the technical and creative aspects of web development, we craft custom solutions that bring your ideas to life while ensuring seamless functionality, user experience, and business alignment. Whether you’re building a new website, enhancing an existing platform, or integrating web-based solutions, we provide comprehensive development services designed to meet your unique needs.
               </p>
     
-              <div className="flex justify-between mx-auto w-[1055px] h-[170px] p-[10px] ml-16" ref={listRef}>
-                <ul className="list-disc flex flex-col w-1/2 space-y-2 pl-6 ">
+              <div className="flex justify-between mx-auto w-[1055px] h-[170px] p-[10px] ml-16" >
+                <ul className="list-disc flex flex-col w-1/2 space-y-2 pl-6" ref={listRef}>
                   <li>Front-End Development</li>
                   <li>Back-End Development</li>
                   <li>API Development & Integration</li>
                   <li>Custom Web Application Development</li>
                 </ul>
     
-                <ul className="list-disc flex flex-col w-1/2 space-y-2 pl-6">
+                <ul className="list-disc flex flex-col w-1/2 space-y-2 pl-6" ref={listRef2}>
                   <li>E-Commerce Solutions</li>
                   <li>Web App Security</li>
                   <li>Web Application Maintenance & Support</li>

@@ -6,6 +6,7 @@ const Home = () => {
   const beTheRef = useRef(null);
   const nextGenRef = useRef(null);
   const innovatorRef = useRef(null);
+  
   const { isDarkTheme } = useTheme(); // Access theme state and toggle function
 
   useEffect(() => {
@@ -16,19 +17,20 @@ const Home = () => {
     if (!beThe || !nextGen || !inno) return; // Debugging: Make sure refs are set
 
     // Set initial positions for "Be The" and "Next Gen"
-    gsap.set(beThe, { opacity: 0, x: -1000 });
-    gsap.set(nextGen, { opacity: 0, x: 1400 });
+    gsap.set(beThe, { opacity: 1, x: -700 });
+    gsap.set(nextGen, { opacity: 1, x: 700 });
 
     // Set initial size and position for "Innovator"
     gsap.set(inno, {
-      y: -1500,
-      x:  -4000,
-      // marginLeft:"100%",
-      opacity: 0,
-      width: "100%",
-      height: "1526px",
-      // left: "-5203px",
-      fontSize: "2378px",
+      x:  -4700,
+      y: -1850,
+    
+      letterSpacing:"530px",
+      opacity: 1,
+      width: "100vw", // Ensure it covers width
+      height: "100vh", 
+      // top:"-40px",
+      fontSize: "3378px",
     });
 
     // Animate "Be The" text from left to right
@@ -48,25 +50,25 @@ const Home = () => {
     });
 
     // Animate "Innovator" text (from large to normal size)
+
     gsap.to(inno, {
-      
       y: 0,
       x: 0,
       opacity: 1,
-      // margin:0,
-      width: "100%",
-      delay:0.2,
-      height: "100%", // Final height
-      fontSize: "6rem", // Final font size equivalent to text-8xl
-      duration: 2.5,
+      width: "auto",
+      height: "auto",
+      fontSize: "6rem", // Final size
+      delay: 1.5,
+      letterSpacing: "0px", // Animate letter spacing properly
+      duration: 3,
       ease: "power3.out",
-    });
+});
   }, []);
 
   return (
-    <div className={`${isDarkTheme ? "bg-[#000000] text-white" : "bg-white text:black"} `}
+    <div className={`${isDarkTheme ? "bg-[#000000] text-white" : "bg-white text:black" } z-50 mt-9 `}
     >
-      <div className="w-full min-h-screen max-auto top-24  gap-[58px] flex flex-col items-start relative"
+      <div className="w-[1566px] h-[692px] max-auto top-24  gap-[58px] flex flex-col items-start relative z-10"
               style={{
         background: "linear-gradient(to right, rgba(0, 0, 0, 1)100% , rgba(0, 0, 0, ) 0%)",
       }}

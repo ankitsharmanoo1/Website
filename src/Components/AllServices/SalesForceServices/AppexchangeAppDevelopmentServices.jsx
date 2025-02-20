@@ -5,9 +5,11 @@ import CustumDev from "../images/salesforceDev.png";
 import CustumFeature from "../images/CustomFeature.png";
 import { useTheme } from "../../../Context/ThemeContext";
 import { useInView } from "react-intersection-observer";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+// import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { useNavigate } from "react-router-dom";
 
 const AppexchangeAppDevelopmentServices = () => {
+  const navigate = useNavigate();
   const { isDarkTheme } = useTheme();
 
   const paraRef = useRef(null);
@@ -60,11 +62,22 @@ const AppexchangeAppDevelopmentServices = () => {
         .map((char) => `<span class="letter">${char}</span>`)
         .join("");
 
+      const consultingLetters = consultingRef.current.innerText.split("");
+      consultingRef.current.innerHTML = consultingLetters
+        .map((char) => `<span class="letter">${char}</span>`)
+        .join("");
+
       timeline
         .fromTo(
           salesforceRef.current.querySelectorAll(".letter"),
           { opacity: 0, y: 50 },
           { opacity: 1, y: 0, duration: 2, stagger: 0.1, ease: "power3.out" }
+        )
+        .fromTo(
+          consultingRef.current.querySelectorAll(".letter"),
+          { opacity: 0, y: 50 },
+          { opacity: 1, y: 0, duration: 2, stagger: 0.1, ease: "power3.out" },
+          "<" // Start at the same time as the previous animation
         )
         .fromTo(
           line1Ref.current,
@@ -76,19 +89,6 @@ const AppexchangeAppDevelopmentServices = () => {
             ease: "power3.out",
           },
           "<"
-        );
-
-      const consultingLetters = consultingRef.current.innerText.split("");
-      consultingRef.current.innerHTML = consultingLetters
-        .map((char) => `<span class="letter">${char}</span>`)
-        .join("");
-
-      timeline
-        .fromTo(
-          consultingRef.current.querySelectorAll(".letter"),
-          { opacity: 0, y: 50, scale:0 },
-          { opacity: 1, y: 0, duration: 1, scale:1, stagger: 0.05, ease: "power3.out" }, // Reduced duration and stagger
-          "+=0.2"
         )
         .fromTo(
           line2Ref.current,
@@ -104,6 +104,14 @@ const AppexchangeAppDevelopmentServices = () => {
     }
   }, [inView]); // Runs animation only when inView changes
 
+
+
+
+  const handleNavigation = () => {
+    navigate("/get-in-touch", { state: { scrollToContact: true } }); // Ensure state is passed
+  };
+
+  
   return (
     <div
       ref={ref}
@@ -125,8 +133,9 @@ const AppexchangeAppDevelopmentServices = () => {
               <hr
                 className="border-t-2  my-2 w-[255px]"
                 style={{
-                  backgroundImage:
-                    isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
+                  backgroundImage: isDarkTheme
+                    ? "linear-gradient(to right, #9CFF00, #00D1FF)"
+                    : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "2px",
                   border: "none",
                 }}
@@ -134,8 +143,9 @@ const AppexchangeAppDevelopmentServices = () => {
               <div
                 className="w-2 h-2 rounded-full"
                 style={{
-                  backgroundImage:
-                    isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
+                  backgroundImage: isDarkTheme
+                    ? "linear-gradient(to right, #9CFF00, #00D1FF)"
+                    : "linear-gradient(to right, #000000, #1F4B55)",
                 }}
               ></div>
             </div>
@@ -150,8 +160,9 @@ const AppexchangeAppDevelopmentServices = () => {
               <hr
                 className="border-t-2 my-2 w-[650px]"
                 style={{
-                  backgroundImage:
-                    isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
+                  backgroundImage: isDarkTheme
+                    ? "linear-gradient(to right, #9CFF00, #00D1FF)"
+                    : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "2px",
                   border: "none",
                 }}
@@ -159,8 +170,9 @@ const AppexchangeAppDevelopmentServices = () => {
               <div
                 className="w-2 h-2 rounded-full"
                 style={{
-                  backgroundImage:
-                    isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
+                  backgroundImage: isDarkTheme
+                    ? "linear-gradient(to right, #9CFF00, #00D1FF)"
+                    : "linear-gradient(to right, #000000, #1F4B55)",
                 }}
               ></div>
             </div>
@@ -186,7 +198,7 @@ const AppexchangeAppDevelopmentServices = () => {
           </div>
 
           <div className="flex justify-center">
-            <Link to="get-in-touch">
+            <div>
               <button
                 type="submit"
                 className={`w-[210px] h-[42px] font-raleway leading-[18.78px] text-[16px] font-bold rounded-[13px] p-[10px] gap-[10px] 
@@ -197,10 +209,11 @@ const AppexchangeAppDevelopmentServices = () => {
                 }
                 form-item`}
                 ref={btnRef}
+                onClick={handleNavigation}
               >
                 Get Started
               </button>
-            </Link>
+            </div>
           </div>
         </div>
 
@@ -230,7 +243,9 @@ const AppexchangeAppDevelopmentServices = () => {
           <hr
             className="w-[250px] h-[1px] border-none"
             style={{
-              backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
+              backgroundImage: isDarkTheme
+                ? "linear-gradient(to right, #9CFF00, #00D1FF)"
+                : "linear-gradient(to right, #000000, #1F4B55)",
               height: "px",
               border: "none",
             }}
@@ -244,8 +259,9 @@ const AppexchangeAppDevelopmentServices = () => {
                 <hr
                   className="w-[920px] h-[1px] border-none"
                   style={{
-                    backgroundImage:
-                     isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
+                    backgroundImage: isDarkTheme
+                      ? "linear-gradient(to right, #9CFF00, #00D1FF)"
+                      : "linear-gradient(to right, #000000, #1F4B55)",
                     height: "px",
                     border: "none",
                   }}
@@ -295,8 +311,9 @@ const AppexchangeAppDevelopmentServices = () => {
                 <hr
                   className="w-[286px] h-[1px] border-none"
                   style={{
-                    backgroundImage:
-                      isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
+                    backgroundImage: isDarkTheme
+                      ? "linear-gradient(to right, #9CFF00, #00D1FF)"
+                      : "linear-gradient(to right, #000000, #1F4B55)",
                     height: "px",
                     border: "none",
                   }}

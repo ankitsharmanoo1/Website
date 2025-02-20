@@ -18,14 +18,14 @@ const services = [
 function SalesForceServices() {
   return (
     <nav
-      className="absolute left-[300px] top-0 flex flex-col p-[20px] gap-[10px] text-xl [font-family:'Raleway-Regular',Helvetica] text-white bg-[#343434] bg-opacity-80 w-[480px] h-auto rounded-[0px_21px_21px_21px] shadow-lg"
+      className="absolute left-[300px] top-0 flex flex-col p-[20px] gap-[10px] text-xl [font-family:'Raleway-Regular',Helvetica] text-white bg-[#343434] bg-opacity-80 w-[480px] h-auto rounded-[0px_21px_21px_21px] shadow-lg z-50"
       role="navigation"
       aria-label="Salesforce services navigation"
       onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
     >
-      <h2 className="text-center font-bold text-white text-2xl mb-4">
+      <NavLink className="text-center font-bold text-white text-2xl mb-4" to={`/salesforce-services/`}>
         SalesForce
-      </h2>
+      </NavLink>
 
 
       {services.map((service, index) => (

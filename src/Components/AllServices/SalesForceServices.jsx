@@ -6,6 +6,17 @@ import { Outlet, Link } from "react-router-dom";
 import SalesForce from "./images/SalesForceIn Services.png";
 import NavBar from "../NavBar";
 import { useTheme } from "../../Context/ThemeContext";
+import SalesForceConsultingService from "./SalesForceServices/SalesForceConsultingService";
+import SalesForceDevlopmentServices from "./SalesForceServices/SalesForceDevlopmentService";
+import SalesFroceImplementionServices from "./SalesForceServices/SalesFroceImplementionServices";
+import SalesCloudSolutions from "./SalesForceServices/SalesCloudSolutions";
+import AppexchangeAppDevelopmentServices from "./SalesForceServices/AppexchangeAppDevelopmentServices";
+import SalesForceCPQ from "./SalesForceServices/SalesForceCPQ";
+import SalesforceExperienceCloud from "./SalesForceServices/SalesforceExperienceCloud";
+import SalesforceIntegrationServices from "./SalesForceServices/SalesforceIntegrationServices";
+import SalesForceManagedServices from "./SalesForceServices/SalesForceManagedServices";
+import SalesForceMarketingCloud from "./SalesForceServices/SalesForceMarketingCloud";
+import SalesCloudSolutionServices from "./SalesForceServices/SalesCloudSolutionServices";
 
 const SalesForceServices = () => {
   const textRef = useRef(null);
@@ -45,14 +56,16 @@ const SalesForceServices = () => {
   }, []);
 
   return (
+    <>
+
     <div
-      className={`w-full font-raleway salesforceservice  grid grid-row-5 gap-44 ${
-        isDarkTheme ? "bg-black text-white" : "bg-white text-black "
+      className={`w-full font-raleway salesforceservice  grid grid-row-5 gap-44 mt-1   ${
+        isDarkTheme ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
       <NavBar />
 
-      <div className="flex flex-col items-center justify-center text-center uppercase ">
+      <div className="flex flex-col items-center justify-center text-center uppercase mt-32 ">
         <div
           ref={textRef}
           className="leading-[4rem] tracking-[0.4em] text-[2.25rem] font-bold"
@@ -104,7 +117,21 @@ const SalesForceServices = () => {
 
       {/* <NavBar/> */}
 
+
+      <SalesForceConsultingService/>
+      <SalesForceDevlopmentServices/>
+      <SalesFroceImplementionServices/>
+      <SalesCloudSolutions/>
+      <AppexchangeAppDevelopmentServices/>
+      <SalesForceCPQ/>
+      <SalesforceExperienceCloud/>
+      <SalesforceIntegrationServices/>
+      <SalesForceManagedServices/>
+      <SalesForceMarketingCloud/>
+      <SalesCloudSolutionServices/>
+
     </div>
+    </>
   );
 };
 

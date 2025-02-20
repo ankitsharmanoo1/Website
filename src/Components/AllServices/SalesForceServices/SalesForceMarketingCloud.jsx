@@ -9,12 +9,17 @@ import { useInView } from "react-intersection-observer";
 import backLetter from "../images/Envelop back.png";
 import frontLetter from "../images/Envelop Front.png"
 import '../../../App.css';
-// import AllFeatures from "../FeaturesOfMarketingColud/AllFeatures";
+import AllFeatures from "../FeaturesOfMarketingColud/AllFeatures";
+import { useNavigate } from "react-router-dom";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 const SalesForceMarketingCloud = () => {
   const { isDarkTheme } = useTheme();
+  const navigate = useNavigate();
+
+
 
   const paraRef = useRef(null);
   const para2Ref = useRef(null);
@@ -133,6 +138,11 @@ const SalesForceMarketingCloud = () => {
     }
   }, [inView]);
 
+  const handleNavigation = () => {
+    navigate("/get-in-touch", { state: { scrollToContact: true } }); // Ensure state is passed
+  };
+
+
   return (
 
   <>
@@ -202,6 +212,7 @@ const SalesForceMarketingCloud = () => {
                 ${isDarkTheme ? "bg-white text-black hover:bg-gray-500" : "bg-black text-white hover:bg-[#525252]"}
                 form-item`}
               ref={btnRef}
+               onClick={handleNavigation}
             >
               Request a Demo
             </button>
@@ -312,7 +323,7 @@ const SalesForceMarketingCloud = () => {
         <h2 className="text-5xl text-center mr-16">Features</h2>
       </div>
       <div ref={featuresRef} className="relative">
-        {/* <AllFeatures /> */}
+        <AllFeatures />
       </div>
     </div>
   </>

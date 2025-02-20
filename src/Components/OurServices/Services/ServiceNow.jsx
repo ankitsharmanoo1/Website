@@ -14,6 +14,8 @@ const ServiceNow = () => {
   const headingRef = useRef(null);
   const paragraphRef = useRef(null);
   const listRef = useRef(null);
+  const listRef2 = useRef(null);
+
 
 const { isDarkTheme } = useTheme();
 
@@ -23,16 +25,15 @@ const [hasAnimated, setHasAnimated] = useState(false); // Track animation state
 useEffect(() => {
   // Set the initial opacity for all elements
   gsap.set(imageRef.current, { opacity: 1 });
-  gsap.set([headingRef.current, paragraphRef.current, listRef.current], {
+  gsap.set([headingRef.current, paragraphRef.current, listRef.current,listRef2.current], {
     opacity: 0,
   });
 }, []);
 
-
 const handleMouseEnter = () => {
-  if (hasAnimated) return; // Prevent animation if already triggered
+  if (hasAnimated) return;
 
-  // Trigger animations
+  
   gsap.fromTo(
     imageRef.current,
     {
@@ -46,7 +47,7 @@ const handleMouseEnter = () => {
       y: "-45%", // Moves upward a little
       scale: 0.5, // Shrinks the image
       opacity: 1, // Keeps the image visible
-      duration: 1,
+      duration: 2,
       ease: "power3.inOut",
       marginLeft: "120px",
     }
@@ -57,7 +58,8 @@ const handleMouseEnter = () => {
     {
       x: 0,
       opacity: 1,
-      duration: 2.9,
+      delay:1.2,
+      duration: 1,
       ease: "power3.out",
     }
   );
@@ -67,7 +69,8 @@ const handleMouseEnter = () => {
     {
       y: 0,
       opacity: 1,
-      duration: 2.9,
+      delay:1.4,
+      duration: 1.2,
       stagger: 0.9,
       ease: "power3.out",
     }
@@ -78,12 +81,25 @@ const handleMouseEnter = () => {
     {
       y: 0,
       opacity: 1,
-      duration: 3,
+      delay:1.8,
+      duration: 2,
       stagger: 0.9,
       ease: "power3.out",
     }
   );
 
+  gsap.fromTo(
+    listRef2.current,
+    { y: 100, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      delay:2,
+      duration: 1.5,
+      stagger: 0.9,
+      ease: "power3.out",
+    }
+  );
   setHasAnimated(true); // Mark the animation as triggered
 };
 
@@ -136,16 +152,16 @@ const handleMouseEnter = () => {
 
       <div
         className="flex justify-between mx-auto w-[1055px] h-[170px] p-[10px] ml-16"
-        ref={listRef}
+       
       >
-        <ul className="list-disc flex flex-col w-1/2 space-y-2 pl-6 ">
+        <ul className="list-disc flex flex-col w-1/2 space-y-2 pl-6"  ref={listRef}>
           <li>ServiceNow Consulting</li>
           <li>ServiceNow Implementation</li>
           <li>ServiceNow Integration</li>
           <li>ServiceNow Migration</li>
         </ul>
 
-        <ul className="list-disc flex flex-col w-1/2 space-y-2 pl-6">
+        <ul className="list-disc flex flex-col w-1/2 space-y-2 pl-6" ref={listRef2}>
           <li>ServiceNow Customization</li>
           <li>ServiceNow App Development</li>
           <li>ServiceNow Managed Services</li>

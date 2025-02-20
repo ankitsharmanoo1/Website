@@ -6,10 +6,12 @@ import solutionDesign from "../images/solutionDesign.png";
 import bestPractice from "../images/Best Practice.png";
 import { useTheme } from "../../../Context/ThemeContext";
 import { useInView } from "react-intersection-observer";
-
+import { useNavigate } from "react-router-dom";
 
 const SalesForceCPQ = () => {
   const { isDarkTheme } = useTheme();
+  const navigate = useNavigate();
+
 
   const paraRef = useRef(null);
   const para2Ref = useRef(null);
@@ -112,6 +114,11 @@ const SalesForceCPQ = () => {
     }
   }, [inView]);
 
+      
+  const handleNavigation = () => {
+    navigate("/get-in-touch", { state: { scrollToContact: true } }); // Ensure state is passed
+  };
+
   return (
     <div ref={ref} className={isDarkTheme ? "bg-black text-white" : "bg-white text-black"}>
       <div className="w-full h-auto font-raleway grid grid-cols-2 relative min-h-screen">
@@ -172,6 +179,7 @@ const SalesForceCPQ = () => {
                 ${isDarkTheme ? "bg-white text-black hover:bg-gray-500" : "bg-black text-white hover:bg-[#525252]"}
                 form-item`}
               ref={btnRef}
+              onClick={handleNavigation}
             >
               Get a Free Consultation
             </button>
