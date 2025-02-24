@@ -8,11 +8,23 @@ const skills = ["Salesforce Services", "ServiceNow", "Web Development"];
 const reducer = (state, action) => {
   switch (action.type) {
     case "TOGGLE_SALESFORCE":
-      return { salesforce: !state.salesforce, servicenow: false, webdevelopment: false };
+      return {
+        salesforce: !state.salesforce,
+        servicenow: false,
+        webdevelopment: false,
+      };
     case "TOGGLE_SERVICENOW":
-      return { salesforce: false, servicenow: !state.servicenow, webdevelopment: false };
+      return {
+        salesforce: false,
+        servicenow: !state.servicenow,
+        webdevelopment: false,
+      };
     case "TOGGLE_WEBDEVELOPMENT":
-      return { salesforce: false, servicenow: false, webdevelopment: !state.webdevelopment };
+      return {
+        salesforce: false,
+        servicenow: false,
+        webdevelopment: !state.webdevelopment,
+      };
     case "CLOSE_ALL":
       return { salesforce: false, servicenow: false, webdevelopment: false };
     default:
@@ -27,7 +39,6 @@ function SkillsMenu() {
     webdevelopment: false,
   });
 
-  // Menu aur services ka reference
   const menuRef = useRef(null);
   const serviceRef = useRef(null);
 
@@ -54,7 +65,7 @@ function SkillsMenu() {
       {/* Skills Menu */}
       <nav
         ref={menuRef}
-        className="flex flex-col p-[20px] gap-[10px] text-xl [font-family:'Raleway-Regular',Helvetica] text-white bg-[#343434] bg-opacity-80 w-[274px] h-auto rounded-[0px_21px_21px_21px] "
+        className="flex flex-col p-[20px] gap-[10px] text-xl [font-family:'Raleway-Regular',Helvetica] text-white bg-[#343434] bg-opacity-80 w-[274px] h-auto rounded-[0px_21px_21px_21px]"
         role="navigation"
         aria-label="Skills navigation"
       >
@@ -78,7 +89,7 @@ function SkillsMenu() {
         ))}
       </nav>
 
-      {/* Dropdowns - Inka ref bhi add kiya hai */}
+      {/* Dropdowns */}
       <div ref={serviceRef}>
         {state.salesforce && <SalesForceServices />}
         {state.servicenow && <ServiceNow />}

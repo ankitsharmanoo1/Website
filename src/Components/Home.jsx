@@ -88,7 +88,7 @@ const Home = () => {
             <div
               className={`box font-thin ${
                 isDarkTheme ? "text-white" : "text-black"
-              } text-8xl ml-36`}
+              } text-8xl ml-32`}
               ref={beTheRef}
             >
               BE THE
@@ -97,7 +97,7 @@ const Home = () => {
             <div
               className={` font-thin ${
                 isDarkTheme ? "text-white" : "text-black"
-              } text-8xl ml-36`}
+              } text-8xl ml-32`}
               ref={nextGenRef}
             >
               NEXT GEN
@@ -106,7 +106,7 @@ const Home = () => {
             <div
               className={` font-thin ${
                 isDarkTheme ? "text-white" : "text-black"
-              } text-8xl ml-36`}
+              } text-8xl ml-32`}
               ref={innovatorRef}
             >
               INNOVATOR

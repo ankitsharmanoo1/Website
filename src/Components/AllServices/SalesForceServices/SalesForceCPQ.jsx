@@ -1,4 +1,3 @@
-import salesFroceImg from "../images/SalesForce Services.png";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import daimg from "../images/salesforce ds1.png";
@@ -7,6 +6,7 @@ import bestPractice from "../images/Best Practice.png";
 import { useTheme } from "../../../Context/ThemeContext";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
+import CPQ from "../images/CPQ.png";
 
 const SalesForceCPQ = () => {
   const { isDarkTheme } = useTheme();
@@ -32,6 +32,7 @@ const SalesForceCPQ = () => {
   
   useEffect(() => {
     if (!inView) return; // Only trigger animations when component is in view
+
     const timeline = gsap.timeline();
 
     if (paraRef.current) {
@@ -41,78 +42,70 @@ const SalesForceCPQ = () => {
       gsap.fromTo(
         paraItems,
         { x: 430, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 2.5,
-          stagger: 0.2,
-          ease: "power3.out",
-        }
+        { x: 0, opacity: 1, duration: 2.5, stagger: 0.2, ease: "power3.out" }
       );
       gsap.fromTo(
         paraItems2,
         { y: 130, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 2.5,
-          stagger: 0.2,
-          ease: "power3.out",
-        }
+        { y: 0, opacity: 1, duration: 2.5, stagger: 0.2, ease: "power3.out" }
       );
-      gsap.fromTo(btnRef.current, { opacity: 0 }, { opacity: 1, x: 300, duration: 1.3, ease: "power3.inOut" });
+      gsap.fromTo(
+        btnRef.current,
+        { opacity: 0 },
+        { opacity: 1, x: 300, duration: 1.3, ease: "power3.inOut" }
+      );
       gsap.fromTo(
         imgRef.current,
-        { y: -400, opacity: 0, scale:0 },
-        { y: 0, opacity: 1, duration: 1.8, ease: "power3.out", scale:1 }
+        { y: -400, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.8, ease: "power3.out" }
       );
 
       const salesforceLetters = salesforceRef.current.innerText.split("");
-      salesforceRef.current.innerHTML = salesforceLetters.map((char) => `<span class="letter">${char}</span>`).join("");
+      salesforceRef.current.innerHTML = salesforceLetters
+        .map((char) => `<span class="letter">${char}</span>`)
+        .join("");
+
+      const consultingLetters = consultingRef.current.innerText.split("");
+      consultingRef.current.innerHTML = consultingLetters
+        .map((char) => `<span class="letter">${char}</span>`)
+        .join("");
 
       timeline
         .fromTo(
           salesforceRef.current.querySelectorAll(".letter"),
           { opacity: 0, y: 50 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 2,
-            stagger: 0.1,
-            ease: "power3.out",
-          }
+          { opacity: 1, y: 0, duration: 2, stagger: 0.1, ease: "power3.out" }
+        )
+        .fromTo(
+          consultingRef.current.querySelectorAll(".letter"),
+          { opacity: 0, y: 50 },
+          { opacity: 1, y: 0, duration: 2, stagger: 0.1, ease: "power3.out" },
+          "<" // Start at the same time as the previous animation
         )
         .fromTo(
           line1Ref.current,
           { scaleX: 0 },
-          { scaleX: 1, transformOrigin: "left", duration: 2, ease: "power3.out" },
-          "<"
-        );
-
-      const consultingLetters = consultingRef.current.innerText.split("");
-      consultingRef.current.innerHTML = consultingLetters.map((char) => `<span class="letter">${char}</span>`).join("");
-
-      timeline
-        .fromTo(
-          consultingRef.current.querySelectorAll(".letter"),
-          { opacity: 0, y: 50 },
           {
-            opacity: 1,
-            y: 0,
-            duration: 2,
-            stagger: 0.1,
+            scaleX: 1,
+            transformOrigin: "left",
+            duration: 3,
             ease: "power3.out",
           },
-          "+=0.2"
+          "<"
         )
         .fromTo(
           line2Ref.current,
           { scaleX: 0 },
-          { scaleX: 1, transformOrigin: "left", duration: 3.2, ease: "power3.out" },
+          {
+            scaleX: 1,
+            transformOrigin: "left",
+            duration: 3,
+            ease: "power3.out",
+          },
           "<"
         );
     }
-  }, [inView]);
+  }, [inView]); 
 
       
   const handleNavigation = () => {
@@ -125,12 +118,12 @@ const SalesForceCPQ = () => {
         {/* Left Section */}
         <div className="flex flex-col justify-start gap-6 ml-10">
           <div className=" text-left">
-            <h5 className="text-[32px] font-medium tracking-[4.8px]" ref={salesforceRef}>
-              SALESFORCE
+            <h5 className="uppercase text-[32px] font-medium tracking-[4.8px]" ref={salesforceRef}>
+            SalesforcE CPQ
             </h5>
             <div className="flex items-center" ref={line1Ref}>
               <hr
-                className="border-t-2  my-2 w-[255px]"
+                className="border-t-2  my-2 w-[380px]"
                 style={{
                   backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "2px",
@@ -144,11 +137,11 @@ const SalesForceCPQ = () => {
             </div>
 
             <h5 className="text-[32px] uppercase font-medium tracking-[4.8px]" ref={consultingRef}>
-            SalesForce CPQ
+            (configure, PrICE, qUOTE)
             </h5>
             <div className="flex items-center" ref={line2Ref}>
               <hr
-                className="border-t-2  my-2 w-[350px]"
+                className="border-t-2  my-2 w-[562px]"
                 style={{
                   backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "2px",
@@ -162,14 +155,14 @@ const SalesForceCPQ = () => {
             </div>
           </div>
 
-          <div className="text-[46px] font-medium mt-5  tracking-[3.02px] leading-normal text-left" ref={paraRef}>
-            <p>REVOLUTIONIZE</p>
-            <p>YOUR BUSINESS WITH</p>
-            <p>SALESFORCE CONSULTING</p>
+          <div className="text-[46px] uppercase font-medium mt-5  tracking-[3.02px] leading-normal text-left" ref={paraRef}>
+            <p>Automate & Optimize</p>
+            <p>Your Sales with </p>
+            <p>Salesforce CPQ</p>
           </div>
 
           <div className="uppercase text-base mt-5 font-medium  tracking-[2.4px] h-[38px] text-[16px] leading-[18.78px] w-[700px] text-left" ref={para2Ref}>
-            <p>Maximizing Salesforce capabilities to streamline your operations and drive growth.</p>
+            <p>Deliver accurate pricing, streamline approvals, and close deals faster with our CPQ solutions</p>
           </div>
 
           <div className="flex justify-center">
@@ -189,7 +182,7 @@ const SalesForceCPQ = () => {
         {/* Right Section */}
         <div className="relative flex justify-end w-full h-full">
           <img
-            src={salesFroceImg}
+            src={CPQ}
             alt="salesforce"
             className="h-[472px] w-auto max-w-[500px] lg:max-w-[700px] xl:max-w-[900px] mr-10 object-contain"
             ref={imgRef}
@@ -201,7 +194,7 @@ const SalesForceCPQ = () => {
       <div className="min-h-screen  mx-auto items-center justify-center">
   <div className="flex justify-center">
     <p className="w-[1118px] h-[75px] text-base font-raleway font-bold  text-[22px] leading-[23.59px] tracking-[0.1em] text-center">
-      {`"At the core of every successful Salesforce Service Cloud project is a thorough understanding  of the client&apos;s  unique business needs. Our consulting approach ensures that every solution aligns  with your customer service goals."`}
+      {`"We specialize in developing customized Service Cloud solutions that enhance the platform's out-of-the-box capabilities and meet unique client requirements."`}
     </p>
   </div>
 

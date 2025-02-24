@@ -58,12 +58,12 @@ const SalesForceServices = () => {
   return (
     <>
 
+      <NavBar />
     <div
       className={`w-full font-raleway salesforceservice  grid grid-row-5 gap-44 mt-1   ${
         isDarkTheme ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
-      <NavBar />
 
       <div className="flex flex-col items-center justify-center text-center uppercase mt-32 ">
         <div

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import serviceNowWhite from "../../../../public/images/Servicenow.png";
+// import serviceNowWhite from "../../../../public/images/ServicenowGreen.png"
 import serviceNowBlack from "../../../../public/images/ServiceNowBlack.png";
 import { useTheme } from "../../../Context/ThemeContext";
 

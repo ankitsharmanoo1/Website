@@ -30,7 +30,6 @@ const SalesForceManagedServices = () => {
 
 
   useEffect(() => {
-    
     if (!inView) return; // Only trigger animations when component is in view
 
     const timeline = gsap.timeline();
@@ -42,78 +41,70 @@ const SalesForceManagedServices = () => {
       gsap.fromTo(
         paraItems,
         { x: 430, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 2.5,
-          stagger: 0.2,
-          ease: "power3.out",
-        }
+        { x: 0, opacity: 1, duration: 2.5, stagger: 0.2, ease: "power3.out" }
       );
       gsap.fromTo(
         paraItems2,
         { y: 130, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 2.5,
-          stagger: 0.2,
-          ease: "power3.out",
-        }
+        { y: 0, opacity: 1, duration: 2.5, stagger: 0.2, ease: "power3.out" }
       );
-      gsap.fromTo(btnRef.current, { opacity: 0 }, { opacity: 1, x: 300, duration: 1.3, ease: "power3.inOut" });
+      gsap.fromTo(
+        btnRef.current,
+        { opacity: 0 },
+        { opacity: 1, x: 300, duration: 1.3, ease: "power3.inOut" }
+      );
       gsap.fromTo(
         imgRef.current,
-        { y: -400, opacity: 0 , scale:0},
-        { y: 0, opacity: 1, duration: 1.8, ease: "power3.out",scale:1 }
+        { y: -400, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.8, ease: "power3.out" }
       );
 
       const salesforceLetters = salesforceRef.current.innerText.split("");
-      salesforceRef.current.innerHTML = salesforceLetters.map((char) => `<span class="letter">${char}</span>`).join("");
+      salesforceRef.current.innerHTML = salesforceLetters
+        .map((char) => `<span class="letter">${char}</span>`)
+        .join("");
+
+      const consultingLetters = consultingRef.current.innerText.split("");
+      consultingRef.current.innerHTML = consultingLetters
+        .map((char) => `<span class="letter">${char}</span>`)
+        .join("");
 
       timeline
         .fromTo(
           salesforceRef.current.querySelectorAll(".letter"),
           { opacity: 0, y: 50 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 2,
-            stagger: 0.1,
-            ease: "power3.out",
-          }
+          { opacity: 1, y: 0, duration: 2, stagger: 0.1, ease: "power3.out" }
+        )
+        .fromTo(
+          consultingRef.current.querySelectorAll(".letter"),
+          { opacity: 0, y: 50 },
+          { opacity: 1, y: 0, duration: 2, stagger: 0.1, ease: "power3.out" },
+          "<" // Start at the same time as the previous animation
         )
         .fromTo(
           line1Ref.current,
           { scaleX: 0 },
-          { scaleX: 1, transformOrigin: "left", duration: 2, ease: "power3.out" },
-          "<"
-        );
-
-      const consultingLetters = consultingRef.current.innerText.split("");
-      consultingRef.current.innerHTML = consultingLetters.map((char) => `<span class="letter">${char}</span>`).join("");
-
-      timeline
-        .fromTo(
-          consultingRef.current.querySelectorAll(".letter"),
-          { opacity: 0, y: 50 },
           {
-            opacity: 1,
-            y: 0,
-            duration: 2,
-            stagger: 0.1,
+            scaleX: 1,
+            transformOrigin: "left",
+            duration: 3,
             ease: "power3.out",
           },
-          "+=0.2"
+          "<"
         )
         .fromTo(
           line2Ref.current,
           { scaleX: 0 },
-          { scaleX: 1, transformOrigin: "left", duration: 3.2, ease: "power3.out" },
+          {
+            scaleX: 1,
+            transformOrigin: "left",
+            duration: 3,
+            ease: "power3.out",
+          },
           "<"
         );
     }
-  }, [inView]);
+  }, [inView]); 
 
   const handleNavigation = () => {
     navigate("/get-in-touch", { state: { scrollToContact: true } }); // Ensure state is passed
@@ -162,14 +153,14 @@ const SalesForceManagedServices = () => {
             </div>
           </div>
 
-          <div className="text-[46px] font-medium mt-5  tracking-[3.02px] leading-normal text-left" ref={paraRef}>
-            <p>SEAMLESS SALESFORCE</p>
-            <p>IMPLEMENTATION FOR</p>
-            <p>YOUR BUSINESS SUCCESS</p>
+          <div className="text-[42px] uppercase font-medium mt-5  tracking-[3.02px] leading-normal text-left" ref={paraRef}>
+            <p>Maximize Your </p>
+            <p>Salesforce ROI with </p>
+            <p>Expert Managed Services.</p>
           </div>
 
           <div className="text-base uppercase mt-5 font-medium  tracking-[2.4px] h-[38px] text-[16px] leading-[18.78px] w-[700px] text-left" ref={para2Ref}>
-            <p>Accelerating your digital transformation with tailored Salesforce solutions</p>
+            <p>Proactive maintenance, seamless upgrades, and continuous optimization—so you can focus on growth</p>
           </div>
 
           <div className="flex justify-center">

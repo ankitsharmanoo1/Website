@@ -119,7 +119,7 @@ const AppexchangeAppDevelopmentServices = () => {
     >
       {" "}
       {/* Attach the observer reference here */}
-      <div className="w-full h-auto font-raleway grid grid-cols-2 relative min-h-screen">
+      <div className="w-full  font-raleway grid grid-cols-2 relative h-screen">
         {/* Left Section */}
         <div className="flex flex-col justify-start gap-6 ml-10">
           <div className=" text-left">

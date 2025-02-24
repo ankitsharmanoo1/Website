@@ -39,24 +39,12 @@ const SalesFroceImplementionServices = () => {
       gsap.fromTo(
         paraItems,
         { x: 430, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 2.5,
-          stagger: 0.2,
-          ease: "power3.out",
-        }
+        { x: 0, opacity: 1, duration: 2.5, stagger: 0.2, ease: "power3.out" }
       );
       gsap.fromTo(
         paraItems2,
         { y: 130, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 2.5,
-          stagger: 0.2,
-          ease: "power3.out",
-        }
+        { y: 0, opacity: 1, duration: 2.5, stagger: 0.2, ease: "power3.out" }
       );
       gsap.fromTo(
         btnRef.current,
@@ -65,8 +53,8 @@ const SalesFroceImplementionServices = () => {
       );
       gsap.fromTo(
         imgRef.current,
-        { y: -400, opacity: 0, scale: 0 },
-        { y: 0, opacity: 1, duration: 1.8, ease: "power3.out", scale: 1 }
+        { y: -400, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.8, ease: "power3.out" }
       );
 
       const salesforceLetters = salesforceRef.current.innerText.split("");
@@ -114,8 +102,7 @@ const SalesFroceImplementionServices = () => {
           "<"
         );
     }
-  }, [inView]);
-
+  }, [inView]); 
   const handleNavigation = () => {
     navigate("/get-in-touch", { state: { scrollToContact: true } }); // Ensure state is passed
   };

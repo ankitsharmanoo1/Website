@@ -6,10 +6,8 @@ import CustumDev from "../images/B2BMarketing.png";
 import CustumDev2 from "../images/B2CMarketing.png";
 import { useTheme } from "../../../Context/ThemeContext";
 import { useInView } from "react-intersection-observer";
-import backLetter from "../images/Envelop back.png";
-import frontLetter from "../images/Envelop Front.png"
 import '../../../App.css';
-import AllFeatures from "../FeaturesOfMarketingColud/AllFeatures";
+// import AllFeatures from "../FeaturesOfMarketingColud/AllFeatures";
 import { useNavigate } from "react-router-dom";
 
 
@@ -25,7 +23,6 @@ const SalesForceMarketingCloud = () => {
   const para2Ref = useRef(null);
   const btnRef = useRef(null);
   const imgRef = useRef(null);
-  const featuresRef = useRef(null);
 
   const salesforceRef = useRef(null);
   const consultingRef = useRef(null);
@@ -49,94 +46,70 @@ const SalesForceMarketingCloud = () => {
       gsap.fromTo(
         paraItems,
         { x: 430, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 2.5,
-          stagger: 0.2,
-          ease: "power3.out",
-        }
+        { x: 0, opacity: 1, duration: 2.5, stagger: 0.2, ease: "power3.out" }
       );
       gsap.fromTo(
         paraItems2,
         { y: 130, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 2.5,
-          stagger: 0.2,
-          ease: "power3.out",
-        }
+        { y: 0, opacity: 1, duration: 2.5, stagger: 0.2, ease: "power3.out" }
       );
-      gsap.fromTo(btnRef.current, { opacity: 0 }, { opacity: 1, x: 300, duration: 1.3, ease: "power3.inOut" });
+      gsap.fromTo(
+        btnRef.current,
+        { opacity: 0 },
+        { opacity: 1, x: 300, duration: 1.3, ease: "power3.inOut" }
+      );
       gsap.fromTo(
         imgRef.current,
-        { y: -400, opacity: 0, scale:0 },
-        { y: 0, opacity: 1, duration: 1.8, ease: "power3.out" ,scale:1}
+        { y: -400, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.8, ease: "power3.out" }
       );
 
       const salesforceLetters = salesforceRef.current.innerText.split("");
-      salesforceRef.current.innerHTML = salesforceLetters.map((char) => `<span class="letter">${char}</span>`).join("");
+      salesforceRef.current.innerHTML = salesforceLetters
+        .map((char) => `<span class="letter">${char}</span>`)
+        .join("");
+
+      const consultingLetters = consultingRef.current.innerText.split("");
+      consultingRef.current.innerHTML = consultingLetters
+        .map((char) => `<span class="letter">${char}</span>`)
+        .join("");
 
       timeline
         .fromTo(
           salesforceRef.current.querySelectorAll(".letter"),
           { opacity: 0, y: 50 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 2,
-            stagger: 0.1,
-            ease: "power3.out",
-          }
+          { opacity: 1, y: 0, duration: 2, stagger: 0.1, ease: "power3.out" }
+        )
+        .fromTo(
+          consultingRef.current.querySelectorAll(".letter"),
+          { opacity: 0, y: 50 },
+          { opacity: 1, y: 0, duration: 2, stagger: 0.1, ease: "power3.out" },
+          "<" // Start at the same time as the previous animation
         )
         .fromTo(
           line1Ref.current,
           { scaleX: 0 },
-          { scaleX: 1, transformOrigin: "left", duration: 2, ease: "power3.out" },
-          "<"
-        );
-
-      const consultingLetters = consultingRef.current.innerText.split("");
-      consultingRef.current.innerHTML = consultingLetters.map((char) => `<span class="letter">${char}</span>`).join("");
-
-      timeline
-        .fromTo(
-          consultingRef.current.querySelectorAll(".letter"),
-          { opacity: 0, y: 50 },
           {
-            opacity: 1,
-            y: 0,
-            duration: 2,
-            stagger: 0.1,
+            scaleX: 1,
+            transformOrigin: "left",
+            duration: 3,
             ease: "power3.out",
           },
-          "+=0.2"
+          "<"
         )
         .fromTo(
           line2Ref.current,
           { scaleX: 0 },
-          { scaleX: 1, transformOrigin: "left", duration: 3.2, ease: "power3.out" },
+          {
+            scaleX: 1,
+            transformOrigin: "left",
+            duration: 3,
+            ease: "power3.out",
+          },
           "<"
         );
-        gsap.fromTo(
-          featuresRef.current,
-          { x: 0, opacity: 1 },
-          {
-            x:1000,
-            opacity: 100,
-            // duration: 2,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: featuresRef.current,
-              start: "top center",
-              end: "top center",
-              scrub: true,
-            },
-          }
-        );
     }
-  }, [inView]);
+  }, [inView]); 
 
   const handleNavigation = () => {
     navigate("/get-in-touch", { state: { scrollToContact: true } }); // Ensure state is passed
@@ -148,7 +121,7 @@ const SalesForceMarketingCloud = () => {
   <>
 
     <div ref={ref} className={isDarkTheme ? "bg-black text-white" : "bg-white text-black"}>
-      <div className="w-full h-auto font-raleway grid grid-cols-1 md:grid-cols-2 relative min-h-screen px-4">
+      <div className="w-full h-auto font-raleway grid grid-cols-1 md:grid-cols-2 relative min-h-screen px-4 ">
         {/* Left Section */}
         <div className="flex flex-col justify-start gap-6 ml-10 md:ml-0">
           <div className=" text-left">                    
@@ -316,16 +289,9 @@ const SalesForceMarketingCloud = () => {
       </div>
       
     </div>
-      <div className="scrollanimation relative w-full h-[300px] top-20 font-raleway overflow-hidden">
-      <img src={backLetter} className="absolute top-0 left-10 z-0" />
-      <img src={frontLetter} className="absolute top-0 left-10 pb-10 pr-5 z-10 object-cover" style={{ width: "300px", height: "298.39px" }} />
-      <div className="absolute top-0 left-10 z-20 flex items-center justify-center pb-10" style={{ width: "300px", height: "298.39px" }}>
-        <h2 className="text-5xl text-center mr-16">Features</h2>
-      </div>
-      <div ref={featuresRef} className="relative">
-        <AllFeatures />
-      </div>
-    </div>
+
+
+       {/* <AllFeatures/> */}
   </>
   );
 }; 

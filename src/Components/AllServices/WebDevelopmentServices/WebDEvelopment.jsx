@@ -56,20 +56,20 @@ const WebDevelopment = () => {
   return (
     <>
 <NavBar/>
-    <div className={isDarkTheme ? "bg-black text-white" : "bg-white text-black"}>
+    <div className= {isDarkTheme ? "bg-black text-white" : "bg-white text-black"}>
 
     <div
       ref={containerRef}
-      className="flex flex-col items-center gap-10 font-raleway w-full h-screen"
+      className="flex flex-col items-center gap-10 font-raleway w-full h-screen "
     >
-      <h4 className="font-thin text-2xl uppercase tracking-[0.55em] leading-[36px]">
+      <h4 className="font-thin text-2xl uppercase tracking-[0.55em] leading-[36px] mt-32">
         Transform Ideas into Scalable Web Solutions
       </h4>
       <h4 className="font-thin justify-center text-3xl uppercase tracking-[0.55em] leading-[36px]">
         with
       </h4>
 
-      <div className="relative w-[600px] h-[600px] flex justify-center items-center">
+      <div className="relative w-[600px] h-[600px] flex justify-center items-center m-44">
         {/* Box-1 (Always Visible) */}
         {step === 0 && (
           <motion.img

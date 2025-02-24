@@ -6,7 +6,8 @@ import ResultDeliver from "../images/ResultDeliver.png";
 import OurSolutions from "../images/OurSolution.png";
 import { useTheme } from "../../../Context/ThemeContext";
 import { useInView } from "react-intersection-observer";
-import whyChoose from "../images/WhyChooseUs.png";
+import whyChooseWhite from "../images/WhyChooseUs.png";
+import whyChooseBlack from "../images/WhyChooseBlack.png";
 import { useNavigate } from "react-router-dom";
 
 
@@ -112,79 +113,71 @@ const SalesCloudSolutionServices = () => {
 
       gsap.fromTo(
         paraItems,
-        { x: "26.875rem", opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 2.5,
-          stagger: 0.2,
-          ease: "power3.out",
-        }
+        { x: 430, opacity: 0 },
+        { x: 0, opacity: 1, duration: 2.5, stagger: 0.2, ease: "power3.out" }
       );
       gsap.fromTo(
         paraItems2,
-        { y: "8.125rem", opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 2.5,
-          stagger: 0.2,
-          ease: "power3.out",
-        }
+        { y: 130, opacity: 0 },
+        { y: 0, opacity: 1, duration: 2.5, stagger: 0.2, ease: "power3.out" }
       );
-      gsap.fromTo(btnRef.current, { opacity: 0 }, { opacity: 1, x: "18.75rem", duration: 1.3, ease: "power3.inOut" });
+      gsap.fromTo(
+        btnRef.current,
+        { opacity: 0 },
+        { opacity: 1, x: 300, duration: 1.3, ease: "power3.inOut" }
+      );
       gsap.fromTo(
         imgRef.current,
-        { y: "-25rem", opacity: 0,scale:0 },
-        { y: 0, opacity: 1, duration: 1.8, scale:1, ease: "power3.out" }
+        { y: -400, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.8, ease: "power3.out" }
       );
 
       const salesforceLetters = salesforceRef.current.innerText.split("");
-      salesforceRef.current.innerHTML = salesforceLetters.map((char) => `<span class="letter">${char}</span>`).join("");
+      salesforceRef.current.innerHTML = salesforceLetters
+        .map((char) => `<span class="letter">${char}</span>`)
+        .join("");
+
+      const consultingLetters = consultingRef.current.innerText.split("");
+      consultingRef.current.innerHTML = consultingLetters
+        .map((char) => `<span class="letter">${char}</span>`)
+        .join("");
 
       timeline
         .fromTo(
           salesforceRef.current.querySelectorAll(".letter"),
-          { opacity: 0, y: "3.125rem" },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 2,
-            stagger: 0.1,
-            ease: "power3.out",
-          }
+          { opacity: 0, y: 50 },
+          { opacity: 1, y: 0, duration: 2, stagger: 0.1, ease: "power3.out" }
+        )
+        .fromTo(
+          consultingRef.current.querySelectorAll(".letter"),
+          { opacity: 0, y: 50 },
+          { opacity: 1, y: 0, duration: 2, stagger: 0.1, ease: "power3.out" },
+          "<" // Start at the same time as the previous animation
         )
         .fromTo(
           line1Ref.current,
           { scaleX: 0 },
-          { scaleX: 1, transformOrigin: "left", duration: 2, ease: "power3.out" },
-          "<"
-        );
-
-      const consultingLetters = consultingRef.current.innerText.split("");
-      consultingRef.current.innerHTML = consultingLetters.map((char) => `<span class="letter">${char}</span>`).join("");
-
-      timeline
-        .fromTo(
-          consultingRef.current.querySelectorAll(".letter"),
-          { opacity: 0, y: "3.125rem" },
           {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            stagger: 0.1,
+            scaleX: 1,
+            transformOrigin: "left",
+            duration: 3,
             ease: "power3.out",
           },
-          "+=0.2"
+          "<"
         )
         .fromTo(
           line2Ref.current,
           { scaleX: 0 },
-            { scaleX: 1, transformOrigin: "left", duration: 4, ease: "power3.out" },
+          {
+            scaleX: 1,
+            transformOrigin: "left",
+            duration: 3,
+            ease: "power3.out",
+          },
           "<"
         );
     }
-  }, [inView]);
+  }, [inView]); 
 
   
   const handleNavigation = () => {
@@ -374,7 +367,7 @@ Sales Cloud the #1 CRM for sales Let us help you sell faster, smarter, and more 
           </div>
           <div className="flex justify-center items-center w-full">
                 <hr
-                  className="w-[47.5rem] h-[0.0625rem] border-none"
+                  className="w-[56.5rem] h-[0.0625rem] border-none"
                   style={{
                     backgroundImage: "linear-gradient(to right, #9CFF00, #00D1FF)",
                     height: "0.0625rem",
@@ -385,7 +378,7 @@ Sales Cloud the #1 CRM for sales Let us help you sell faster, smarter, and more 
           <p className="font-thin text-[1.5rem] text-justify leading-[2.1000rem] tracking-[10%] justify-center p-16">{`"At softshala, we specialize in helping businesses unlock the full potential of Salesforce Sales Cloud to drive growth, enhance productivity, and build lasting customer relationships. With our expertise in consulting, development, integration, and implementation, we deliver solutions tailored to your sales needs."`}</p>
                                 
              <div className="flex flex-row  items-center mt-8 p-[0.625rem]">
-               <img src={whyChoose} className="w-[400px] mr-24 cursor-pointer" ref={img2Ref} onMouseEnter={handleImageClick}/>
+               <img src={isDarkTheme ? whyChooseWhite : whyChooseBlack} className="w-[400px] mr-24 cursor-pointer" ref={img2Ref} onMouseEnter={handleImageClick}/>
                 <div>
                   <ul className="hidden list-disc mt-16 font-raleway text-[1.4rem] leading-[1.9375rem]  tracking-[10%]" ref={listRef}>
                      <li>Certified Salesforce experts with a proven track record of success.</li>
@@ -407,32 +400,32 @@ Sales Cloud the #1 CRM for sales Let us help you sell faster, smarter, and more 
                 />
               </div>
 
-              <div className={`flex font-bold flex-row items-center mt-8 p-[0.625rem] gap-56 text-white font-raleway text-[0.9rem] cursor-pointer  `}>
-                <span className="option-span bg-white text-black w-[10rem] gap-[2rem] p-[1rem] rounded-[0.5rem] text-center" onClick={() => handleClick2(0)}>Enhance Sales Productivity</span>
-                <span className="option-span bg-white text-black w-[13rem] gap-[2rem] p-[1rem] rounded-[0.5rem] text-center" onClick={() => handleClick2(1)}>Build Stronger Customer Relationships</span>
-                <span className="option-span bg-white text-black w-[10rem] gap-[2rem] p-[1rem] rounded-[0.5rem] text-center" onClick={() => handleClick2(2)}>Drive Data-Driven Decisions</span>
+              <div className={` flex font-bold flex-row items-center mt-8 p-[0.625rem] gap-56  font-raleway text-[0.9rem] cursor-pointer `}>
+                <span className={`${isDarkTheme ? "bg-white text-black" : "bg-black text-white"} option-span  w-[10rem] gap-[2rem] p-[1rem] rounded-[0.5rem] text-center`} onClick={() => handleClick2(0)} >Enhance Sales Productivity</span>
+                <span className={` ${isDarkTheme ? "bg-white text-black" : "bg-black text-white"}  option-span w-[13rem] gap-[2rem] p-[1rem] rounded-[0.5rem] text-center`} onClick={() => handleClick2(1)}>Build Stronger Customer Relationships</span>
+                <span className={` ${isDarkTheme ? "bg-white text-black" : "bg-black text-white"} option-span  w-[10rem] gap-[2rem] p-[1rem] rounded-[0.5rem] text-center`} onClick={() => handleClick2(2)}>Drive Data-Driven Decisions</span>
               </div>
                {/* 1sttext */}
              <div className="1text mt-8 font-raleway hidden" ref={listRef2}>
-                   <ul className="font-[1rem] text-white text-justify leading-[1.837375rem] tracking-[0.1rem]">
-                     <li className="font-thin"><strong className="text-white font-bold opacity-100"> Workflow and Process Automation:</strong> Streamline tasks and eliminate manual work with custom workflows.</li>
-                     <li className="font-thin"><strong className="text-white font-bold opacity-100"> Quoting and Contract Approvals:</strong> Speed up deal cycles with seamless approval processes and accurate quotes.</li>
-                     <li className="font-thin"><strong className="text-white font-bold opacity-100">CRM Everywhere:</strong> Access and update your CRM anytime, anywhere with mobile apps and browser extensions.</li>
+                   <ul className="font-[1rem]  text-justify leading-[1.837375rem] tracking-[0.1rem]">
+                     <li className="font-thin"><strong className="font-bold opacity-100"> Workflow and Process Automation:</strong> Streamline tasks and eliminate manual work with custom workflows.</li>
+                     <li className="font-thin"><strong className=" font-bold opacity-100"> Quoting and Contract Approvals:</strong> Speed up deal cycles with seamless approval processes and accurate quotes.</li>
+                     <li className="font-thin"><strong className=" font-bold opacity-100">CRM Everywhere:</strong> Access and update your CRM anytime, anywhere with mobile apps and browser extensions.</li>
                    </ul>
                 </div>
                     {/* 2ndText */}
                 <div className="2nd text mt-8 font-raleway hidden" ref={listRef3}>
-                   <ul className="font-[1rem] text-white text-justify leading-[1.837375rem] tracking-[0.1rem]">
-                     <li className="font-thin"><strong className="text-white font-bold opacity-100">Lead Management:</strong> Capture, nurture, and convert leads efficiently with smart tools</li>
-                     <li className="font-thin"><strong className="text-white font-bold opacity-100">Account and Opportunity Management:</strong> Gain a 360-degree view of customer accounts to close deals faster.</li>
-                     <li className="font-thin"><strong className="text-white font-bold opacity-100">Activity Management:</strong>Track interactions and ensure seamless collaboration across teams.</li>
+                   <ul className="font-[1rem] text-justify leading-[1.837375rem] tracking-[0.1rem]">
+                     <li className="font-thin"><strong className=" font-bold opacity-100">Lead Management:</strong> Capture, nurture, and convert leads efficiently with smart tools</li>
+                     <li className="font-thin"><strong className=" font-bold opacity-100">Account and Opportunity Management:</strong> Gain a 360-degree view of customer accounts to close deals faster.</li>
+                     <li className="font-thin"><strong className=" font-bold opacity-100">Activity Management:</strong>Track interactions and ensure seamless collaboration across teams.</li>
                    </ul>
                 </div>
                   {/* 3rdText */}
                   <div className="3nd text mt-8 font-raleway hidden" ref={listRef4}>
-                   <ul className="font-[1rem] text-white text-justify leading-[1.837375rem] tracking-[0.1rem]">
-                     <li className="font-thin"><strong className="text-white font-bold opacity-100">Sales AI:</strong>Use Einstein AI to guide your sales team at every step of the sales cycle.</li>
-                     <li className="font-thin"><strong className="text-white font-bold opacity-100">Sales Analytics:</strong> Optimize revenue and grow your pipeline with insights from Tableau and Data Cloud.</li>
+                   <ul className="font-[1rem]  text-justify leading-[1.837375rem] tracking-[0.1rem]">
+                     <li className="font-thin"><strong className=" font-bold opacity-100">Sales AI:</strong>Use Einstein AI to guide your sales team at every step of the sales cycle.</li>
+                     <li className="font-thin"><strong className=" font-bold opacity-100">Sales Analytics:</strong> Optimize revenue and grow your pipeline with insights from Tableau and Data Cloud.</li>
                    </ul>
                 </div>
           </div>
@@ -477,8 +470,8 @@ Sales Cloud the #1 CRM for sales Let us help you sell faster, smarter, and more 
       <style>
         {`
           .option-span.active {
-            background-color: black;
-            color: white;
+            background-color: ${ isDarkTheme ? "black" : "white"};
+            color: ${isDarkTheme ? "white" : "black" };
           }
         `}
       </style>

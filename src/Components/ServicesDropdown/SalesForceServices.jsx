@@ -18,7 +18,7 @@ const services = [
 function SalesForceServices() {
   return (
     <nav
-      className="absolute left-[300px] top-0 flex flex-col p-[20px] gap-[10px] text-xl [font-family:'Raleway-Regular',Helvetica] text-white bg-[#343434] bg-opacity-80 w-[480px] h-auto rounded-[0px_21px_21px_21px] shadow-lg z-50"
+      className="absolute left-[300px] top-0 flex flex-col p-[20px] gap-[10px] text-xl [font-family:'Raleway-Regular',Helvetica] text-white bg-[#343434] bg-opacity-80 w-[480px] h-auto rounded-[0px_21px_21px_21px] shadow-lg z-50 mt-6"
       role="navigation"
       aria-label="Salesforce services navigation"
       onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside

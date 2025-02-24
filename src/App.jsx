@@ -71,6 +71,9 @@ const App = () => {
           />
       
       <Route path="/get-in-touch" element={<GetInTouch/>}/>
+      <Route path="/about" element={<AboutUs/>}/>
+
+
           <Route path="salesforce-services" element={<SalesForceServices/>}>
           {/* <Route path="/get-in-touch" element={<GetInTouch/>}/> */}
 

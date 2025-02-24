@@ -71,7 +71,7 @@ const AboutUs = () => {
     <div
       id="about-section"
       ref={sectionRef}
-      className={`flex font-raleway flex-col items-center w-full min-h-screen  p-5 gap-10 ${
+      className={`flex font-raleway flex-col items-center w-full min-h-screen   p-5 gap-10 ${
         isDarkTheme ? "bg-[#000000]" : "bg-white"
       }`}
     >

@@ -14,6 +14,8 @@ import lines from ".././images/2x lines.png";
 import blackLines from ".././images/blackLines.png";
 import { useTheme } from "../../../Context/ThemeContext";
 import NavBar from "../../NavBar";
+import { useNavigate } from "react-router-dom";
+
 
 const ServiceNow = () => {
   const textRef = useRef(null);
@@ -23,7 +25,9 @@ const ServiceNow = () => {
   const span3Ref = useRef(null);
   const movingImageRef = useRef(null);
   const { isDarkTheme } = useTheme(); // Access theme state and toggle function
-
+  
+  const navigate = useNavigate();
+   
   useEffect(() => {
     gsap.fromTo(
       textRef.current,
@@ -63,13 +67,20 @@ const ServiceNow = () => {
     });
   }, []);
 
+  const handleNavigation = () => {
+    navigate("/get-in-touch", { state: { scrollToContact: true } }); // Ensure state is passed
+  };
+
   return (
+
+    <>
+
+      <NavBar />
     <div
-      className={`w-full font-raleway salesforceservice min-h-screen  grid grid-row-5 gap-28 ${
+      className={`w-full font-raleway salesforceservice min-h-screen  grid grid-row-5 mt-2 gap-28 ${
         isDarkTheme ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
-      <NavBar />
       <div className="flex flex-col items-center justify-center text-center uppercase pt-20">
         <div
           ref={textRef}
@@ -105,6 +116,7 @@ const ServiceNow = () => {
                 ? "bg-white text-black hover:bg-gray-500"
                 : "bg-black text-white hover:bg-gray-500"
             }`}
+            onClick={handleNavigation}
         >
           Schedule a Consultation
         </button>
@@ -216,6 +228,7 @@ const ServiceNow = () => {
                 ? "bg-white text-black hover:bg-gray-500"
                 : "bg-black text-white hover:bg-gray-500"
             }`}
+            onClick={handleNavigation}
         >
           Contact Us Today
         </button>
@@ -227,6 +240,7 @@ const ServiceNow = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 

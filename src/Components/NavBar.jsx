@@ -6,11 +6,10 @@ import { useTheme } from "../Context/ThemeContext";
 import BlackLogo from "../../public/images/BlackLogo.png";
 import WhiteLogo from "../../public/images/WhiteLogo.png";
 
-
 const NavBar = () => {
   const [isSkillsMenuVisible, setSkillsMenuVisible] = useState(false);
   const { isDarkTheme, toggleTheme } = useTheme();
- 
+
   const handleServicesClick = () => {
     setSkillsMenuVisible((prev) => !prev);
   };
@@ -30,12 +29,20 @@ const NavBar = () => {
   };
 
   return (
-    <div className={`${isDarkTheme ? "bg-black bg-opacity-10" : "bg-white"} z-1000 fixed top-0 w-full h-24  backdrop-blur-md`}>
+    <div
+      className={`${
+        isDarkTheme ? "bg-black bg-opacity-80" : "bg-white"
+      } z-[99999] fixed top-0 w-full h-24  backdrop-blur-md`}
+    >
       <div className=" flex flex-col w-full items-start gap-2.5 px-[70px] text-base py-2.5 cursor-pointer font-raleway">
         <div className="flex items-center relative self-stretch w-full">
           {/* Logo */}
           <div className="inline-flex items-center gap-2.5 p-2.5">
-            <img className="w-[74px] h-[74px]" alt="logo" src={isDarkTheme ? WhiteLogo : BlackLogo} />
+            <img
+              className="w-[74px] h-[74px]"
+              alt="logo"
+              src={isDarkTheme ? WhiteLogo : BlackLogo}
+            />
           </div>
 
           {/* Navigation Links */}
@@ -124,7 +131,6 @@ const NavBar = () => {
             </button>
           </div>
         </div>
-
         {/* Skills Menu */}
         <div
           className={`absolute top-[70px] left-[250px] z-10 rounded-[0px_45px_45px_0px] transition-all duration-500 ${
@@ -132,7 +138,7 @@ const NavBar = () => {
               ? "opacity-100 transform translate-y-0"
               : "opacity-0 transform translate-y-4"
           }`}
-          onMouseLeave={() => setSkillsMenuVisible(false)}
+          // onMouseLeave={() => setSkillsMenuVisible(false)}
         >
           {isSkillsMenuVisible && <SkillsMenu />}
         </div>
