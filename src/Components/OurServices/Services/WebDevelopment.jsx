@@ -116,11 +116,11 @@ const handleMouseEnter = () => {
                 alt="WebDevelopment"
                 className="service-img absolute" // Position image absolutely inside the container
               />
-              <h1 className="w-[388px] h-[31px] font-raleway font-thin text-3xl p-[10px] gap-[10px] ml-28 mb-24" ref={headingRef}>
+              <h1 className="w-[388px] h-[31px] font-raleway font-thin text-3xl p-[10px] gap-[10px] ml-28 mb-16" ref={headingRef}>
               Web Devlopment Services
               </h1>
     
-              <p className="w-[1035px] h-[225px] font-raleway text-[20px] text-justify leading-[24.6px] p-[10px] gap-[10px] mb-9" ref={paragraphRef}>
+              <p className="w-[1035px] h-[225px] font-raleway text-[20px] text-justify leading-[24.6px] p-[10px] gap-[10px] mb-4  " ref={paragraphRef}>
               At Softshala Technologies, we specialize in providing end-to-end Full Stack Web Development solutions that empower businesses to thrive in today’s digital landscape. From front-end design to back-end architecture, our expert developers combine the best technologies and practices to create scalable, efficient, and high-performance web applications.<br/>
               With a deep understanding of both the technical and creative aspects of web development, we craft custom solutions that bring your ideas to life while ensuring seamless functionality, user experience, and business alignment. Whether you’re building a new website, enhancing an existing platform, or integrating web-based solutions, we provide comprehensive development services designed to meet your unique needs.
               </p>

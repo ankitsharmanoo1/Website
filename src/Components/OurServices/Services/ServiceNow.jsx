@@ -137,7 +137,7 @@ const handleMouseEnter = () => {
 
 
       <p
-        className="w-[1035px] h-[225px] font-raleway text-[20px] text-justify leading-[24.6px] p-[10px] gap-[10px] mb-9"
+        className="w-[1035px] h-[225px] font-raleway text-[20px] text-justify leading-[24.6px] p-[10px] gap-[10px]"
         ref={paragraphRef}
       >
         Elevate your digital transformation journey with Softshala Technologies, your reliable ally

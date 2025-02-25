@@ -1,4 +1,4 @@
-import Implementation from "../images/Implementation.png";
+import Implementation from "../images/SalesForceManaged.png";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import CustumDev from "../images/salesforceDev.png";
@@ -163,7 +163,7 @@ const SalesForceManagedServices = () => {
             <p>Proactive maintenance, seamless upgrades, and continuous optimization—so you can focus on growth</p>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-left mt-14">
             <button
               type="submit"
               className={`w-[210px] h-[42px] font-raleway leading-[18.78px] text-[16px] font-bold rounded-[13px] p-[10px] gap-[10px] 

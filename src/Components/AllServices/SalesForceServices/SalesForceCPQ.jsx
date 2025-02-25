@@ -165,7 +165,7 @@ const SalesForceCPQ = () => {
             <p>Deliver accurate pricing, streamline approvals, and close deals faster with our CPQ solutions</p>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-left mt-14">
             <button
               type="submit"
               className={`w-[210px] h-[42px] font-raleway leading-[18.78px] text-[16px] font-bold rounded-[13px] p-[10px] gap-[10px] 

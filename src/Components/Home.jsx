@@ -22,15 +22,15 @@ const Home = () => {
 
     // Set initial size and position for "Innovator"
     gsap.set(inno, {
-      x:  -4700,
-      y: -1850,
+     x: [-4600, 9600],
+      y: -3750,
     
       letterSpacing:"530px",
       opacity: 1,
       width: "100vw", // Ensure it covers width
       height: "100vh", 
       // top:"-40px",
-      fontSize: "3378px",
+      fontSize: "6978px",
     });
 
     // Animate "Be The" text from left to right
@@ -53,7 +53,8 @@ const Home = () => {
 
     gsap.to(inno, {
       y: 0,
-      x: 0,
+      x: [0,0],
+  
       opacity: 1,
       width: "auto",
       height: "auto",

@@ -1,4 +1,4 @@
-import Implementation from "../images/Implementation.png";
+import Implementation from "../images/SalesForceIntegration.png";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import CustumDev from "../images/salesforceDev.png";
@@ -115,7 +115,7 @@ const SalesforceIntegrationServices = () => {
         {/* Left Section */}
         <div className="flex flex-col justify-start gap-6 ml-10">
           <div className=" text-left">
-            <h5 className="text-[32px] font-medium tracking-[4.8px]" ref={salesforceRef}>
+            <h5 className="text-[30px] font-medium tracking-[4.8px]" ref={salesforceRef}>
               SALESFORCE
             </h5>
             <div className="flex items-center" ref={line1Ref}>
@@ -133,7 +133,7 @@ const SalesforceIntegrationServices = () => {
               ></div>
             </div>
 
-            <h5 className="text-[29px] uppercase font-medium tracking-[4.8px]" ref={consultingRef}>
+            <h5 className="text-[30px] uppercase font-medium tracking-[4.8px]" ref={consultingRef}>
             Salesforce Integration Services
             </h5>
             <div className="flex items-center" ref={line2Ref}>
@@ -162,7 +162,7 @@ const SalesforceIntegrationServices = () => {
             <p>Accelerating your digital transformation with tailored Salesforce solutions</p>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-left mt-14">
             <button
               type="submit"
               className={`w-[210px] h-[42px] font-raleway leading-[18.78px] text-[16px] font-bold rounded-[13px] p-[10px] gap-[10px] 

@@ -1,8 +1,8 @@
 import Implementation from "../images/Implementation.png";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import CustumDev from "../images/CustomFeature.png";
-import CustumFeature from "../images/case management.png";
+import CustumDev from "../images/salesforceDev.png";
+import CustumFeature from "../images/CustomFeature.png";
 import { useTheme } from "../../../Context/ThemeContext";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
@@ -191,7 +191,7 @@ const SalesFroceImplementionServices = () => {
             </p>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-left mt-14">
             <button
               type="submit"
               className={`w-[210px] h-[42px] font-raleway leading-[18.78px] text-[16px] font-bold rounded-[13px] p-[10px] gap-[10px] 

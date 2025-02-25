@@ -15,6 +15,7 @@ import Map from "../GetInTouch/Map";
 import BackgroundAnimation from "../BackgroundAnimation/BackgroundAnimation";
 import { useTheme } from "../../Context/ThemeContext";
 import { useLocation } from "react-router-dom";
+import NavBar from "../NavBar";
 
 gsap.registerPlugin(ScrollTrigger); 
 
@@ -117,11 +118,16 @@ const GetInTouch = () => {
   };
 
   return (
+    <>
+
+    <NavBar/>
+     
     <div id="contact-us" className={` flex flex-col items-center w-full  px-10 py-5  relative z-10 
     ${
         isDarkTheme ? "bg-[#000000]" : "bg-white"
       }
     `}>
+    
       <div className="relative z-10 top-0">
         <Map ref={mapRef} />
       </div>
@@ -258,6 +264,7 @@ const GetInTouch = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

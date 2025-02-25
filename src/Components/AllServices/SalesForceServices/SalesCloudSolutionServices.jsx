@@ -237,7 +237,7 @@ const SalesCloudSolutionServices = () => {
             <p>Empowering sales teams with cutting-edge tools to close deals faster</p>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-left mt-14">
             <button
               type="submit"
               className={`w-[13.125rem] h-[2.625rem] font-raleway leading-[1.17375rem] text-[1rem] font-bold rounded-[0.8125rem] p-[0.625rem] gap-[0.625rem] 

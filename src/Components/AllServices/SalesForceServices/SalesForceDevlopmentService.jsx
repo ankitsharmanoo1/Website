@@ -164,7 +164,7 @@ const SalesForceDevlopmentServices = () => {
             <p>Customized solutions and seamless integrations to enhance your Salesforce ecosystem</p>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-left mr-56 mt-14">
             <button
               type="submit"
               className={`w-[210px] h-[42px] font-raleway leading-[18.78px] text-[16px] font-bold rounded-[13px] p-[10px] gap-[10px] 
@@ -259,12 +259,12 @@ const SalesForceDevlopmentServices = () => {
 
   <div className="text-left max-w-[920px] max-h-[190px] p-[10px] gap-[10px] md:order-2">
     <h6 className="font-bold text-[30px] leading-[45.49px] tracking-[0.1em] text-left">
-    Solution Design:
+    Custom Features:
     </h6>
 
     <div className="flex justify-left items-center mt-0.5">
       <hr
-        className="w-[273px] h-[1px] border-none"
+        className="w-[290px] h-[1px] border-none"
         style={{
           backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
           height: "px",

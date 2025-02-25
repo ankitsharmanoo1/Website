@@ -1,4 +1,4 @@
-import CloudSolution from "../images/SalesCloudSolutionServices.png";
+import CloudSolution from "../images/ServiceCloudSolution.png";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import CaseManagement from "../images/case management.png";
@@ -123,7 +123,7 @@ const SalesCloudSolutions = () => {
         {/* Left Section */}
         <div className="flex flex-col justify-start gap-6 ml-10">
           <div className=" text-left">
-            <h5 className="text-[30px] font-medium tracking-[4.8px]" ref={salesforceRef}>
+            <h5 className="text-[32px] font-medium tracking-[4.8px]" ref={salesforceRef}>
               SALESFORCE
             </h5>
             <div className="flex items-center" ref={line1Ref}>
@@ -141,7 +141,7 @@ const SalesCloudSolutions = () => {
               ></div>
             </div>
 
-            <h5 className="uppercase text-[30px] font-medium tracking-[4.8px]" ref={consultingRef}>
+            <h5 className="uppercase text-[32px] font-medium tracking-[4.8px]" ref={consultingRef}>
             Service cloud Solutions SERVICE
             </h5>
             <div className="flex items-center" ref={line2Ref}>
@@ -170,10 +170,10 @@ const SalesCloudSolutions = () => {
             <p>AI-driven, omni-channel solutions to enhance customer experience and boost agent productivity</p>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-left mt-14">
             <button
               type="submit"
-              className={`w-[210px] h-[42px] font-raleway leading-[18.78px] text-[16px] font-bold rounded-[13px] p-[10px] gap-[10px] 
+              className={`w-[150px] h-[42px] font-raleway leading-[18.78px] text-[16px] font-bold rounded-[13px] p-[10px] gap-[10px] 
                 ${isDarkTheme ? "bg-white text-black hover:bg-gray-500" : "bg-black text-white hover:bg-[#525252]"}
                 form-item`}
               ref={btnRef}
@@ -181,7 +181,7 @@ const SalesCloudSolutions = () => {
 
               // onClick={() => setShowModal(true)} // Open modal
             >
-              Talk to Our Experts
+               Get Started
             </button>
               {/* {showModal && <GetInTouch onClose={() => setShowModal(false)} />} */}
           </div>
@@ -200,18 +200,18 @@ const SalesCloudSolutions = () => {
         {/* Additional Content Section */}
       </div>
       <div className="min-h-screen  mx-auto items-center justify-center">
-  <div className="flex justify-center">
+  {/* <div className="flex justify-center">
     <p className="w-[1118px] h-[75px] text-base font-raleway font-bold  text-[22px] leading-[21.59px] tracking-[0.1em] text-center">
    {`"Our implementation process ensures that Service Cloud is not only set up to meet your current requirements but also aligned with your future growth plans."`}
     </p>
-  </div>
+  </div> */}
 
-  <div className="flex justify-center items-center mt-8 p-[10px]">
+  {/* <div className="flex justify-center items-center mt-8 p-[10px]">
     <h6 className="font-bold text-[37px] leading-[45.49px] tracking-[0.1em] text-center">
       What We Do
     </h6>
-  </div>
-  <div className="flex justify-center items-center mt-0.5">
+  </div> */}
+  {/* <div className="flex justify-center items-center mt-0.5">
     <hr
       className="w-[250px] h-[1px] border-none"
       style={{
@@ -220,10 +220,10 @@ const SalesCloudSolutions = () => {
         border: "none",
       }}
     />
-  </div>
+  </div> */}
   <div className="">
 
-  <div className="firstdiv flex flex-col md:flex-row justify-between items-center mt-8 gap-8">
+  <div className="firstdiv flex flex-col md:flex-row justify-between items-center  gap-8">
     <div className="text-left max-w-[920px] max-h-[190px] p-[10px] gap-[10px] ml-8">
   <h6 className="font-bold text-[30px] leading-[45.49px] tracking-[0.1em] text-left">
   Case Management

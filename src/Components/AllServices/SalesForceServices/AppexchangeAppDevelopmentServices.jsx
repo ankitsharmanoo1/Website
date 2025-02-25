@@ -1,8 +1,8 @@
-import CloudSolution from "../images/salesfroce.png";
+import Appex from "../images/AppexChange.png";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import CustumDev from "../images/salesforceDev.png";
-import CustumFeature from "../images/CustomFeature.png";
+import CustumDev from "../images/AppexInvest.png";
+import CustumFeature from "../images/WhatWeProvide.png";
 import { useTheme } from "../../../Context/ThemeContext";
 import { useInView } from "react-intersection-observer";
 // import { Link } from "react-router-dom"; // Import Link from react-router-dom
@@ -113,6 +113,9 @@ const AppexchangeAppDevelopmentServices = () => {
 
   
   return (
+
+    <>
+
     <div
       ref={ref}
       className={isDarkTheme ? "bg-black text-white" : "bg-white text-black"}
@@ -197,11 +200,11 @@ const AppexchangeAppDevelopmentServices = () => {
             </p>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-left mt-14">
             <div>
               <button
                 type="submit"
-                className={`w-[210px] h-[42px] font-raleway leading-[18.78px] text-[16px] font-bold rounded-[13px] p-[10px] gap-[10px] 
+                className={`w-[160px] h-[42px] font-raleway leading-[18.78px] text-[16px] font-bold rounded-[13px] p-[10px] gap-[10px] 
                 ${
                   isDarkTheme
                     ? "bg-white text-black hover:bg-gray-500"
@@ -220,7 +223,7 @@ const AppexchangeAppDevelopmentServices = () => {
         {/* Right Section */}
         <div className="relative flex justify-end w-full h-full">
           <img
-            src={CloudSolution}
+            src={Appex}
             alt="salesforce"
             className="h-[472px] w-auto max-w-[500px] lg:max-w-[700px] xl:max-w-[900px] mr-10 object-contain"
             ref={imgRef}
@@ -234,26 +237,10 @@ const AppexchangeAppDevelopmentServices = () => {
           </p>
         </div>
 
-        <div className="flex justify-center items-center mt-8 p-[10px]">
-          <h6 className="font-bold text-[37px] leading-[45.49px] tracking-[0.1em] text-center">
-            What We Do
-          </h6>
-        </div>
-        <div className="flex justify-center items-center mt-0.5">
-          <hr
-            className="w-[250px] h-[1px] border-none"
-            style={{
-              backgroundImage: isDarkTheme
-                ? "linear-gradient(to right, #9CFF00, #00D1FF)"
-                : "linear-gradient(to right, #000000, #1F4B55)",
-              height: "px",
-              border: "none",
-            }}
-          />
-        </div>
+       
         <div className="">
           <div className="firstdiv flex flex-col md:flex-row justify-between items-center mt-8 gap-8">
-            <div className="text-left  max-w-[950px] max-h-[190px] p-[10px] gap-[10px] ml-8">
+            <div className="text-left  max-w-[950px] max-h-[190px] gap-[10px] ml-8">
               <h6 className="font-bold text-[30px] leading-[45.49px] tracking-[0.1em] text-left">
                 Why Invest in Salesforce AppExchange Development?
                 <hr
@@ -268,9 +255,9 @@ const AppexchangeAppDevelopmentServices = () => {
                 />
               </h6>
 
-              <div className="flex justify-left items-center mt-0.5"></div>
+              {/* <div className="flex justify-left items-center mt-0.5"></div> */}
               <p className="font-raleway font-medium   p-[10px] text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
-                AppExchange offers an incredible opportunity for businesses to
+                App Exchange offers an incredible opportunity for businesses to
                 enhance their Salesforce experience. By developing applications
                 for the AppExchange marketplace, companies can:
                 <ul className="list-disc p-6 font-raleway font-medium  text-[20px] text-justify leading-[24.59px] tracking-[0.1em]">
@@ -287,11 +274,11 @@ const AppexchangeAppDevelopmentServices = () => {
               </p>
             </div>
 
-            <div className="flex justify-center items-center mr-10">
+            <div className="mr-10">
               <img
                 src={CustumDev}
                 alt="Discovery & Analysis"
-                className="max-w-[300px]  max-h-[298.39px] object-contain"
+                className="w-[300px]  h-[298.39px] object-contain "
               />
             </div>
           </div>
@@ -340,6 +327,34 @@ const AppexchangeAppDevelopmentServices = () => {
         </div>
       </div>
     </div>
+
+
+        <div className="KeyFeatures flex flex-row gap-3">
+              <div className="flex flex-row gap-3 ">
+
+                 <h1 className="flex">Key Features</h1>
+                 <div className="flex flex-row">
+                   <span>Lightning Ready Apps:</span>
+                   <span>Mobile Optimization:</span>
+                   <span>Scalability:</span>
+                   <span>Robust Security:</span>
+                 </div>
+              </div>
+
+              <div className="flex flex-row gap-3">
+
+                <h1>Benefits</h1>
+                <div className="flex flex-row">
+                  <span>Enhanced Functionality:</span>
+                  <span>Increased Efficiency:</span>
+                  <span>Revenue Generation:</span>
+                  <span>Seamless Integration:</span>
+                </div>
+              </div>
+
+        </div>
+    </>
+
   );
 };
 

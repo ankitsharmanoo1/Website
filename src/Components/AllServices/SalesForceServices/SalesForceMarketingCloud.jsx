@@ -7,7 +7,9 @@ import CustumDev2 from "../images/B2CMarketing.png";
 import { useTheme } from "../../../Context/ThemeContext";
 import { useInView } from "react-intersection-observer";
 import '../../../App.css';
+
 // import AllFeatures from "../FeaturesOfMarketingColud/AllFeatures";
+
 import { useNavigate } from "react-router-dom";
 
 
@@ -143,12 +145,12 @@ const SalesForceMarketingCloud = () => {
               ></div>
             </div>
 
-            <h5 className="text-[31px]  uppercase font-medium tracking-[4.8px]" ref={consultingRef}>
+            <h5 className="text-[32px] uppercase font-medium tracking-[4.8px]" ref={consultingRef}>
               Marketing Cloud Solutions
             </h5>
             <div className="flex items-center" ref={line2Ref}>
               <hr
-                className="border-t-2 my-2 w-[600px]"
+                className="border-t-2 my-2 w-[615px]"
                 style={{
                   backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "2px",
@@ -178,7 +180,7 @@ const SalesForceMarketingCloud = () => {
             <p>Personalized, data-driven marketing solutions to engage your customers anywhere</p>
           </div>
 
-          <div className="flex justify-center mt-6">
+          <div className="flex justify-left mt-14">
             <button
               type="submit"
               className={`w-[180px] h-[42px] font-raleway leading-[18.78px] text-[16px] font-bold rounded-[13px] p-[10px] gap-[10px] 
@@ -291,7 +293,7 @@ const SalesForceMarketingCloud = () => {
     </div>
 
 
-       {/* <AllFeatures/> */}
+     {/* <AllFeatures/>  */}
   </>
   );
 }; 

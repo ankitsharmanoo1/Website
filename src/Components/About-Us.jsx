@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import image from "../../public/images/about-us.png";
 import { useTheme } from "../Context/ThemeContext";
+import NavBar from "./NavBar";
 
 const AboutUs = () => {
   const aboutRef = useRef(null);
@@ -68,15 +69,15 @@ const AboutUs = () => {
   }, []);
 
   return (
+    <>
+
     <div
       id="about-section"
       ref={sectionRef}
-      className={`flex font-raleway flex-col items-center w-full min-h-screen   p-5 gap-10 ${
-        isDarkTheme ? "bg-[#000000]" : "bg-white"
-      }`}
-    >
+      className={`flex font-raleway flex-col items-center w-full min-h-screen    p-5 gap-10 ${isDarkTheme ? "bg-[#000000]" : "bg-white"}`}>
       {/* About Us Section */}
-      <div className="ml-20">
+    <NavBar/>
+      <div className="ml-20 w-full mt-20 overflow-hidden">
         <div
           className={`flex w-full ${
             isDarkTheme ? "bg-[#ffffff1a]" : "bg-gray-200"
@@ -92,7 +93,7 @@ const AboutUs = () => {
               About Us
             </h2>
             <p
-              className={`font-raleway text-lg leading-relaxed text-justify ${
+              className={`font-raleway text-lg leading-relaxed w-[130%]  text-justify ${
                 isDarkTheme ? "text-white" : "text-black"
               }`}
             >
@@ -107,7 +108,7 @@ const AboutUs = () => {
               ensuring solutions that drive real business value.
             </p>
           </div>
-          <div className="flex-1 relative  flex gap-2.5">
+          <div className="flex-1 relative  flex gap-2.5 ">
             <img
               src={image}
               alt="About Us"
@@ -178,6 +179,7 @@ const AboutUs = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

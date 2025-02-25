@@ -110,14 +110,14 @@ const SalesForce = () => {
         className="service-img absolute z-20" // Position image absolutely inside the container
       />
       <h1
-        className="w-[288px] h-[31px] font-raleway font-thin text-3xl p-[10px] gap-[10px] ml-28 mb-12"
+        className="w-[288px] h-[20px] font-raleway font-thin text-3xl p-[10px] gap-[10px] ml-28 mb-12"
         ref={headingRef}
       >
         Salesforce Services
       </h1>
 
       <p
-        className="w-[1035px] h-[225px] font-raleway text-[20px] text-justify leading-[24.6px] p-[10px] gap-[10px] mb-9 z-0"
+        className="w-[1035px] h-[225px] mt-16 font-raleway text-[20px] text-justify leading-[24.6px] p-[10px] gap-[10px] mb-9 z-0"
         ref={paragraphRef}
       >
         At Softshala Technologies, as a Premium Salesforce Consulting Partner, we are dedicated to

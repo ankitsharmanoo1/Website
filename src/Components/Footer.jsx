@@ -5,12 +5,15 @@ import AgentForceBlack from "../../public/images/AgentForce/AgentForceRoboBlack.
 import AgentForceWhite from "../../public/images/AgentForce/AgentForceRoboWhite.mov";
 import { useTheme } from "../Context/ThemeContext";
 import SalesForcePartnerBlack from "../../public/images/SalesForcePartnersFooter.png";
+import { useNavigate } from "react-router-dom";
 
  // Import the logo imag
 
 const Footer = () => {
 
   const { isDarkTheme } = useTheme();
+  const navigate = useNavigate();
+
 
   const handleAboutClick = () => {
     const aboutSection = document.getElementById("about-section");
@@ -19,13 +22,11 @@ const Footer = () => {
     }
   };
 
-  const handleContactClick = () => {
-    const contactUs = document.getElementById("contact-us");
-    if (contactUs) {
-      contactUs.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
+
+  const handleNavigation = () => {
+    navigate("/get-in-touch", { state: { scrollToContact: true } }); // Ensure state is passed
+  };
 
   return (
     <div className="relative w-full">
@@ -56,7 +57,7 @@ const Footer = () => {
           <ul className="space-y-2 cursor-pointer mt-24 ml-10 text-[20px] leading-[1.23rem] tracking-[0.15em] text-justify font-semibold flex flex-col gap-2">
             <li><div  onClick={handleAboutClick} className="hover:text-blue-500">About</div></li>
             <li><a href="#" className="hover:text-blue-500">Career</a></li>
-            <li><div  onClick={handleContactClick} className="hover:text-blue-500">Contact Us</div></li>
+            <li><div  onClick={handleNavigation} className="hover:text-blue-500">Contact Us</div></li>
           </ul>
         </div>
   

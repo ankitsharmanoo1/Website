@@ -5,28 +5,48 @@ import darkThemeImage from "../../public/images/themeChnager/Moon.png";
 import { useTheme } from "../Context/ThemeContext";
 import BlackLogo from "../../public/images/BlackLogo.png";
 import WhiteLogo from "../../public/images/WhiteLogo.png";
+import { useNavigate } from "react-router-dom";
+
+
 
 const NavBar = () => {
   const [isSkillsMenuVisible, setSkillsMenuVisible] = useState(false);
   const { isDarkTheme, toggleTheme } = useTheme();
+  const navigate = useNavigate();
+
 
   const handleServicesClick = () => {
     setSkillsMenuVisible((prev) => !prev);
   };
 
-  const handleAboutClick = () => {
-    const aboutSection = document.getElementById("about-section");
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: "smooth" });
-    }
+  // const handleAboutClick = () => {
+  //   const aboutSection = document.getElementById("about-section");
+  //   if (aboutSection) {
+  //     aboutSection.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
+
+
+  const handleNavigation = () => {
+    navigate("/get-in-touch", { state: { scrollToContact: true } }); // Ensure state is passed
   };
 
-  const handleContactClick = () => {
-    const contactUs = document.getElementById("contact-us");
-    if (contactUs) {
-      contactUs.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleHome = () => {
+    navigate("/home", { state: { scrollToContact: true } }); // Ensure state is passed
   };
+
+  const handleAbout = () =>{
+    navigate("/about", { state: { scrollToContact: true } })
+  }
+
+  const LwsNavigation = () =>{
+    alert("Comming Soon")
+  }
+
+  const careersNavigation =()=>{
+    alert("Comming Soon")
+  }
+
 
   return (
     <div
@@ -42,6 +62,7 @@ const NavBar = () => {
               className="w-[74px] h-[74px]"
               alt="logo"
               src={isDarkTheme ? WhiteLogo : BlackLogo}
+              onClick={handleHome}
             />
           </div>
 
@@ -51,7 +72,7 @@ const NavBar = () => {
               className={`relative ${
                 isDarkTheme ? "text-white" : "text-black"
               } text-base font-medium tracking-[0.80px] whitespace-nowrap cursor-pointer`}
-              onClick={handleAboutClick}
+              onClick={handleAbout}
             >
               ABOUT
             </div>
@@ -71,6 +92,7 @@ const NavBar = () => {
               className={`relative ${
                 isDarkTheme ? "text-white" : "text-black"
               } text-base font-medium tracking-[0.80px] whitespace-nowrap`}
+              onClick={careersNavigation}
             >
               CAREERS
             </div>
@@ -78,7 +100,7 @@ const NavBar = () => {
               className={`relative ${
                 isDarkTheme ? "text-white" : "text-black"
               } text-base font-medium tracking-[0.80px] whitespace-nowrap`}
-              onClick={handleContactClick}
+              onClick={handleNavigation}
             >
               CONTACT US
             </div>
@@ -86,6 +108,7 @@ const NavBar = () => {
               className={`relative ${
                 isDarkTheme ? "text-white" : "text-black"
               } text-base font-medium tracking-[0.80px] whitespace-nowrap`}
+              onClick={LwsNavigation}
             >
               LWS
             </div>
