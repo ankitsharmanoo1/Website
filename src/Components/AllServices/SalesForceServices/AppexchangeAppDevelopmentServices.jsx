@@ -1,5 +1,5 @@
 import Appex from "../images/AppexChange.png";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import CustumDev from "../images/AppexInvest.png";
 import CustumFeature from "../images/WhatWeProvide.png";
@@ -7,10 +7,17 @@ import { useTheme } from "../../../Context/ThemeContext";
 import { useInView } from "react-intersection-observer";
 // import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import { useNavigate } from "react-router-dom";
+import NavBar from "../../NavBar";
 
 const AppexchangeAppDevelopmentServices = () => {
   const navigate = useNavigate();
   const { isDarkTheme } = useTheme();
+
+  const [expanded, setExpanded] = useState(null);
+
+  const toggleExpand = (index) => {
+    setExpanded(expanded === index ? null : index);
+  };
 
   const paraRef = useRef(null);
   const para2Ref = useRef(null);
@@ -20,6 +27,54 @@ const AppexchangeAppDevelopmentServices = () => {
   const consultingRef = useRef(null);
   const line1Ref = useRef(null);
   const line2Ref = useRef(null);
+  const sectionRef = useRef(null);
+
+
+  const items = [
+    {
+      title: "Lightning Ready Apps",
+      description:
+        "We develop applications compatible with Salesforce Lightning for a modern user experience.",
+    },
+    {
+      title: "Mobile Optimization",
+      description:
+        "Our apps work seamlessly across mobile devices, ensuring accessibility for users on-the-go.",
+    },
+    {
+      title: "Scalability",
+      description:
+        "Our solutions are built to scale with your business, supporting increasing user demands and feature expansions.",
+    },
+    {
+      title: "Robust Security",
+      description:
+        "We implement data encryption, OAuth authentication, and other security measures to protect user data.",
+    },
+  ];
+
+  const benefits = [
+    {
+      title: "Enhanced Functionality",
+      description:
+        "Extend Salesforce’s CRM capabilities with custom-built applications.",
+    },
+    {
+      title: "Increased Efficiency",
+      description:
+        "Automate processes, streamline workflows, and improve operational efficiency.",
+    },
+    {
+      title: "Revenue Generation",
+      description:
+        "Monetize applications by selling them as paid offerings on AppExchange.",
+    },
+    {
+      title: "Seamless Integration",
+      description:
+        "Easily integrate applications with third-party services to enhance business processes.",
+    },
+  ];
 
   // Using Intersection Observer Hook
   const { ref, inView } = useInView({
@@ -55,6 +110,12 @@ const AppexchangeAppDevelopmentServices = () => {
         imgRef.current,
         { y: -400, opacity: 0 },
         { y: 0, opacity: 1, duration: 1.8, ease: "power3.out" }
+      );
+
+      gsap.fromTo(
+        sectionRef.current,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }
       );
 
       const salesforceLetters = salesforceRef.current.innerText.split("");
@@ -96,7 +157,7 @@ const AppexchangeAppDevelopmentServices = () => {
           {
             scaleX: 1,
             transformOrigin: "left",
-            duration: 3,
+            duration: 5.5,
             ease: "power3.out",
           },
           "<"
@@ -115,6 +176,7 @@ const AppexchangeAppDevelopmentServices = () => {
   return (
 
     <>
+    <NavBar/>
 
     <div
       ref={ref}
@@ -122,9 +184,9 @@ const AppexchangeAppDevelopmentServices = () => {
     >
       {" "}
       {/* Attach the observer reference here */}
-      <div className="w-full  font-raleway grid grid-cols-2 relative h-screen">
+      <div className="w-full  font-raleway grid grid-cols-2 relative h-screen overflow-hidden">
         {/* Left Section */}
-        <div className="flex flex-col justify-start gap-6 ml-10">
+        <div className="flex flex-col justify-start gap-6 ml-10 mt-28">
           <div className=" text-left">
             <h5
               className="text-[32px] font-medium tracking-[4.8px]"
@@ -221,7 +283,7 @@ const AppexchangeAppDevelopmentServices = () => {
         </div>
 
         {/* Right Section */}
-        <div className="relative flex justify-end w-full h-full">
+        <div className="relative flex justify-end w-full h-full mt-28">
           <img
             src={Appex}
             alt="salesforce"
@@ -283,16 +345,16 @@ const AppexchangeAppDevelopmentServices = () => {
             </div>
           </div>
 
-          <div className="seconddiv flex flex-col md:flex-row justify-between items-center mt-8 gap-8">
+          <div className="seconddiv flex flex-col md:flex-row justify-between items-center mt-14 gap-8">
             <div className="flex  m-10">
               <img
                 src={CustumFeature}
                 alt="Solution Design"
-                className="max-w-[300px] max-h-[298.39px] object-contain"
+                className="max-w-[300px] pt-7  max-h-[298.39px] object-contain"
               />
             </div>
 
-            <div className="text-left max-w-[720px] max-h-[190px] p-[10px] gap-[10px] md:order-2">
+            <div className="text-left max-w-[920px] max-h-[190px] p-[10px] gap-[10px] md:order-2">
               <h6 className="font-bold text-[30px] leading-[45.49px] tracking-[0.1em] text-left">
                 What We Provide
                 <hr
@@ -329,30 +391,43 @@ const AppexchangeAppDevelopmentServices = () => {
     </div>
 
 
-        <div className="KeyFeatures flex flex-row gap-3">
-              <div className="flex flex-row gap-3 ">
-
-                 <h1 className="flex">Key Features</h1>
-                 <div className="flex flex-row">
-                   <span>Lightning Ready Apps:</span>
-                   <span>Mobile Optimization:</span>
-                   <span>Scalability:</span>
-                   <span>Robust Security:</span>
-                 </div>
-              </div>
-
-              <div className="flex flex-row gap-3">
-
-                <h1>Benefits</h1>
-                <div className="flex flex-row">
-                  <span>Enhanced Functionality:</span>
-                  <span>Increased Efficiency:</span>
-                  <span>Revenue Generation:</span>
-                  <span>Seamless Integration:</span>
-                </div>
-              </div>
-
+    <div className="flex flex-col items-center cursor-pointer font-raleway">
+      {/* Key Features Section */}
+      <div className="text-center mb-10">
+        <h1 className="text-3xl font-bold mb-4">Key Features</h1>
+        <hr className="w-[200px] h-[1px] mx-auto mb-6 border-none" style={{backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)": "linear-gradient(to right, #000000, #1F4B55)",}}/>
+           <div className="flex flex-row gap-10 text-lg">
+             {items.map((item, index) => (
+               <p key={index} className={`px-4 py-2 bg-gradient-to-b from-black to-gray-50 text-white  rounded-b-[25px] w-[285px] transition-all duration-300 ease-in-out ${
+                expanded === index ? "h-auto" : "h-[40px] overflow-hidden"
+              }`}
+              onClick={() => toggleExpand(index)}
+            >
+              {item.title} <span className={`block mt-4 text-[1rem] ${isDarkTheme ? 'text-black': 'text-white' }`}>{item.description}</span>
+            </p>
+          ))}
         </div>
+      </div>
+
+      {/* Benefits Section */}
+      <div className="text-center">
+        <h1 className="text-3xl font-bold mb-4">Benefits</h1>
+        <hr className="w-[140px] h-[1px] mx-auto mb-6 border-none" style={{backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)": "linear-gradient(to right, #000000, #1F4B55)",}}/>
+        <div className="flex flex-row gap-10 text-lg">
+          {benefits.map((benefit, index) => (
+            <p
+              key={index + items.length}
+              className={`px-4  py-2 bg-gradient-to-b from-black to-gray-50 text-white rounded-b-[25px] w-[285px] transition-all duration-300 ease-in-out ${
+                expanded === index + items.length ? "h-auto" : "h-[40px] overflow-hidden"
+              }`}
+              onClick={() => toggleExpand(index + items.length)}
+            >
+              {benefit.title} <span className={`block mt-4 text-[1rem] ${isDarkTheme ? 'text-black': 'text-white' }`}>{benefit.description}</span>
+            </p >
+          ))}
+        </div>
+      </div>
+    </div>
     </>
 
   );

@@ -16,6 +16,7 @@ import BackgroundAnimation from "../BackgroundAnimation/BackgroundAnimation";
 import { useTheme } from "../../Context/ThemeContext";
 import { useLocation } from "react-router-dom";
 import NavBar from "../NavBar";
+import Footer from "../Footer";
 
 gsap.registerPlugin(ScrollTrigger); 
 
@@ -264,6 +265,7 @@ const GetInTouch = () => {
         </div>
       </div>
     </div>
+    <Footer/>
     </>
   );
 };

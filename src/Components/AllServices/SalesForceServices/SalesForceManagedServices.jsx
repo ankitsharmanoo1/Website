@@ -6,6 +6,7 @@ import CustumFeature from "../images/CustomFeature.png";
 import { useTheme } from "../../../Context/ThemeContext";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
+import NavBar from "../../NavBar";
 
 
 
@@ -98,7 +99,7 @@ const SalesForceManagedServices = () => {
           {
             scaleX: 1,
             transformOrigin: "left",
-            duration: 3,
+            duration: 5.1,
             ease: "power3.out",
           },
           "<"
@@ -111,10 +112,13 @@ const SalesForceManagedServices = () => {
   };
 
   return (
+
+  <>
+    <NavBar/>
     <div ref={ref} className={isDarkTheme ? "bg-black text-white" : "bg-white text-black"}>
       <div className="w-full h-auto font-raleway grid grid-cols-2 relative min-h-screen">
         {/* Left Section */}
-        <div className="flex flex-col justify-start gap-6 ml-10">
+        <div className="flex flex-col justify-start gap-6 ml-10 mt-28">
           <div className=" text-left">
             <h5 className="text-[32px] font-medium tracking-[4.8px]" ref={salesforceRef}>
               SALESFORCE
@@ -178,7 +182,7 @@ const SalesForceManagedServices = () => {
         </div>
 
         {/* Right Section */}
-        <div className="relative flex justify-end w-full h-full">
+        <div className="relative flex justify-end w-full h-full mt-28">
           <img
             src={Implementation}
             alt="salesforce"
@@ -290,6 +294,7 @@ const SalesForceManagedServices = () => {
 
 </div>
     </div>
+  </>
   );
 };
 

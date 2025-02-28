@@ -8,6 +8,8 @@ import KnowledgeBase from "../images/KnowledgeBaseImplementation.png";
 import { useTheme } from "../../../Context/ThemeContext";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
+import NavBar from "../../NavBar";
+
 
 
 
@@ -104,7 +106,7 @@ const SalesCloudSolutions = () => {
           {
             scaleX: 1,
             transformOrigin: "left",
-            duration: 3,
+            duration: 6,
             ease: "power3.out",
           },
           "<"
@@ -118,10 +120,13 @@ const SalesCloudSolutions = () => {
   };
 
   return (
+    <>
+
+    <NavBar/>
     <div ref={ref} className={isDarkTheme ? "bg-black text-white" : "bg-white text-black"}>
       <div className="w-full h-auto font-raleway grid grid-cols-2 relative min-h-screen">
         {/* Left Section */}
-        <div className="flex flex-col justify-start gap-6 ml-10">
+        <div className="flex flex-col justify-start gap-6 ml-10 mt-28">
           <div className=" text-left">
             <h5 className="text-[32px] font-medium tracking-[4.8px]" ref={salesforceRef}>
               SALESFORCE
@@ -141,12 +146,12 @@ const SalesCloudSolutions = () => {
               ></div>
             </div>
 
-            <h5 className="uppercase text-[32px] font-medium tracking-[4.8px]" ref={consultingRef}>
+            <h5 className="uppercase text-[32px] w-[900px] font-medium tracking-[4.8px]" ref={consultingRef}>
             Service cloud Solutions SERVICE
             </h5>
-            <div className="flex items-center" ref={line2Ref}>
+            <div className="flex items-center w-[900px]" ref={line2Ref} >
               <hr
-                className="border-t-2 my-2 w-[747px]"
+                className="border-t-2 my-2 w-[740px]"
                 style={{
                   backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "2px",
@@ -188,7 +193,7 @@ const SalesCloudSolutions = () => {
         </div>
 
         {/* Right Section */}
-        <div className="relative flex justify-end w-full h-full">
+        <div className="relative flex justify-end w-full mt-28 h-full">
           <img
             src={CloudSolution}
             alt="salesforce"
@@ -369,6 +374,7 @@ const SalesCloudSolutions = () => {
 
 </div>
     </div>
+    </>
   );
 };
 

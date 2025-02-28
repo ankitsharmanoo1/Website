@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider } from "./Context/ThemeContext";
 import HOME from "./HOME";
+import Careers from "./Components/CAREERS/Careers";
+import Lws from "./Components/LWS/Lws";
 import AboutUs from "./Components/About-Us";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";
 import SalesForceServices from "./Components/AllServices/SalesForceServices";
@@ -25,28 +27,59 @@ const App = () => {
         <Routes>
           {/* Redirect to home if root is accessed */}
           <Route path="/" element={<Navigate to="/home" />} />
-          
+
           {/* Home Route */}
           <Route path="/home" element={<HOME />} />
-          
+
           {/* Other Routes */}
           <Route path="/get-in-touch" element={<GetInTouch />} />
           <Route path="/about" element={<AboutUs />} />
-
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/lws" element={<Lws />} />
+           
+          <Route path="/salesForce" element={<SalesForceServices/>}/>
           {/* Salesforce Services Routes */}
-          <Route path="/salesforce-services" element={<SalesForceServices />}>
-            <Route path="sales-force-consulting" element={<SalesForceConsultingService />} />
-            <Route path="salesforce-development" element={<SalesForceDevelopmentServices />} />
-            <Route path="salesforce-implementation" element={<SalesForceImplementationServices />} />
-            <Route path="sales-cloud-solutions" element={<SalesCloudSolutions />} />
-            <Route path="appexchange-app" element={<AppexchangeAppDevelopmentServices />} />
-            <Route path="salesforce-cpq" element={<SalesForceCPQ />} />
-            <Route path="experience-cloud" element={<SalesforceExperienceCloud />} />
-            <Route path="integration-services" element={<SalesforceIntegrationServices />} />
-            <Route path="managed-services" element={<SalesForceManagedServices />} />
-            <Route path="marketing-cloud" element={<SalesForceMarketingCloud />} />
-            <Route path="sales-cloud-solution-services" element={<SalesCloudSolutionServices />} />
-          </Route>
+          <Route
+            path="/sales-force-consulting"
+            element={<SalesForceConsultingService />}
+          />
+          <Route
+            path="/salesforce-development"
+            element={<SalesForceDevelopmentServices />}
+          />
+          <Route
+            path="/salesforce-implementation"
+            element={<SalesForceImplementationServices />}
+          />
+          <Route
+            path="/sales-cloud-solutions"
+            element={<SalesCloudSolutions />}
+          />
+          <Route
+            path="/appexchange-app"
+            element={<AppexchangeAppDevelopmentServices />}
+          />
+          <Route path="/salesforce-cpq" element={<SalesForceCPQ />} />
+          <Route
+            path="/experience-cloud"
+            element={<SalesforceExperienceCloud />}
+          />
+          <Route
+            path="/integration-services"
+            element={<SalesforceIntegrationServices />}
+          />
+          <Route
+            path="/managed-services"
+            element={<SalesForceManagedServices />}
+          />
+          <Route
+            path="/marketing-cloud"
+            element={<SalesForceMarketingCloud />}
+          />
+          <Route
+            path="/sales-solution-services"
+            element={<SalesCloudSolutionServices />}
+          />
 
           {/* Other Services */}
           <Route path="/service-now" element={<ServiceNow />} />

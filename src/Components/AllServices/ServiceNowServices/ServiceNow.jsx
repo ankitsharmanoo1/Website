@@ -2,6 +2,7 @@ import ServiceNowpng from "./images/ServiceNow.png";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import allServices from "./images/ServicesNoww.png";
+import BlackAllServices from "./images/BlackAllServices.png";
 import ServiceNowConsulting from "./ServicesNowServices/ServiceNowConsulting";
 import ServiceNowImplementation from "./ServicesNowServices/ServiceNowImplementation";
 import ServiceNowIntegration from "./ServicesNowServices/ServiceNowIntegration";
@@ -149,10 +150,10 @@ const ServiceNow = () => {
         </div>
         <div className="w-full h-70 p-20 overflow-hidden relative">
           <div className="flex absolute left-0" ref={movingImageRef}>
-            <img src={allServices} className="w-auto h-auto" alt="Services" />
-            <img src={allServices} className="w-auto h-auto" alt="Services" />
-            <img src={allServices} className="w-auto h-auto" alt="Services" />
-            <img src={allServices} className="w-auto h-auto" alt="Services" />
+            <img src={isDarkTheme ? allServices : BlackAllServices  } className="w-auto h-auto" alt="Services" />
+            <img src={isDarkTheme ? allServices : BlackAllServices} className="w-auto h-auto" alt="Services" />
+            <img src={isDarkTheme ? allServices : BlackAllServices} className="w-auto h-auto" alt="Services" />
+            <img src={isDarkTheme ? allServices : BlackAllServices} className="w-auto h-auto" alt="Services" />
           </div>
         </div>
         <div className="flex justify-left items-center mt-8 p-[10px] ml-20">

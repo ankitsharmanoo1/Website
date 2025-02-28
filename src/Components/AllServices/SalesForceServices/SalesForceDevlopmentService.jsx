@@ -6,6 +6,8 @@ import CustumFeature from "../images/CustomFeature.png";
 import { useTheme } from "../../../Context/ThemeContext";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
+import NavBar from "../../NavBar";
+
 
 
 const SalesForceDevlopmentServices = () => {
@@ -112,10 +114,13 @@ const SalesForceDevlopmentServices = () => {
   };
 
   return (
+
+    <>
+      <NavBar/>
     <div ref={ref} className={isDarkTheme ? "bg-black text-white" : "bg-white text-black"}>
       <div className="w-full h-auto font-raleway grid grid-cols-2 relative min-h-screen">
         {/* Left Section */}
-        <div className="flex flex-col justify-start gap-6 ml-10">
+        <div className="flex flex-col justify-start gap-6 ml-10 mt-28">
           <div className=" text-left">
             <h5 className="text-[32px] font-medium tracking-[4.8px]" ref={salesforceRef}>
               SALESFORCE
@@ -179,7 +184,7 @@ const SalesForceDevlopmentServices = () => {
         </div>
 
         {/* Right Section */}
-        <div className="relative flex justify-end w-full h-full">
+        <div className="relative flex justify-end w-full h-full mt-28">
           <img
             src={SalesForceDev}
             alt="salesforce"
@@ -217,7 +222,7 @@ const SalesForceDevlopmentServices = () => {
   <div className="firstdiv flex flex-col md:flex-row justify-between items-center mt-8 gap-8">
     <div className="text-left max-w-[920px] max-h-[190px] p-[10px] gap-[10px] ml-8">
   <h6 className="font-bold text-[30px] leading-[45.49px] tracking-[0.1em] text-left">
-  Custom Development
+  Custom Development:
   </h6>   
   
   <div className="flex justify-left items-center mt-0.5">
@@ -290,6 +295,7 @@ const SalesForceDevlopmentServices = () => {
 
 </div>
     </div>
+    </>
   );
 };
 

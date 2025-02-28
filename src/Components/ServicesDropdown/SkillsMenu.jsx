@@ -65,7 +65,7 @@ function SkillsMenu() {
       {/* Skills Menu */}
       <nav
         ref={menuRef}
-        className="flex flex-col p-[20px] gap-[10px] text-xl [font-family:'Raleway-Regular',Helvetica] text-white bg-[#343434] bg-opacity-80 w-[274px] h-auto rounded-[0px_21px_21px_21px]"
+        className="flex flex-col p-[20px] gap-[10px] text-xl [font-family:'Raleway-Regular',Helvetica] text-white bg-[#343434] bg-opacity-100 w-[274px] h-auto rounded-[0px_21px_21px_21px]"
         role="navigation"
         aria-label="Skills navigation"
       >

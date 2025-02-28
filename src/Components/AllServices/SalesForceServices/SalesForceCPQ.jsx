@@ -7,6 +7,8 @@ import { useTheme } from "../../../Context/ThemeContext";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
 import CPQ from "../images/CPQ.png";
+import NavBar from "../../NavBar";
+
 
 const SalesForceCPQ = () => {
   const { isDarkTheme } = useTheme();
@@ -99,7 +101,7 @@ const SalesForceCPQ = () => {
           {
             scaleX: 1,
             transformOrigin: "left",
-            duration: 3,
+            duration: 5,
             ease: "power3.out",
           },
           "<"
@@ -113,10 +115,12 @@ const SalesForceCPQ = () => {
   };
 
   return (
+  <>
+  <NavBar/>
     <div ref={ref} className={isDarkTheme ? "bg-black text-white" : "bg-white text-black"}>
       <div className="w-full h-auto font-raleway grid grid-cols-2 relative min-h-screen">
         {/* Left Section */}
-        <div className="flex flex-col justify-start gap-6 ml-10">
+        <div className="flex flex-col justify-start gap-6 ml-10 mt-28">
           <div className=" text-left">
             <h5 className="uppercase text-[32px] font-medium tracking-[4.8px]" ref={salesforceRef}>
             SalesforcE CPQ
@@ -180,7 +184,7 @@ const SalesForceCPQ = () => {
         </div>
 
         {/* Right Section */}
-        <div className="relative flex justify-end w-full h-full">
+        <div className="relative flex justify-end w-full h-full mt-28">
           <img
             src={CPQ}
             alt="salesforce"
@@ -324,6 +328,7 @@ const SalesForceCPQ = () => {
 
 </div>
     </div>
+</>    
   );
 };
 

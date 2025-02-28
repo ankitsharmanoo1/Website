@@ -6,6 +6,8 @@ import CustumFeature from "../images/CustomFeature.png";
 import { useTheme } from "../../../Context/ThemeContext";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
+import NavBar from "../../NavBar";
+
 
 const SalesFroceImplementionServices = () => {
   const { isDarkTheme } = useTheme();
@@ -85,7 +87,7 @@ const SalesFroceImplementionServices = () => {
           {
             scaleX: 1,
             transformOrigin: "left",
-            duration: 3,
+            duration: 4,
             ease: "power3.out",
           },
           "<"
@@ -96,7 +98,7 @@ const SalesFroceImplementionServices = () => {
           {
             scaleX: 1,
             transformOrigin: "left",
-            duration: 3,
+            duration: 4,
             ease: "power3.out",
           },
           "<"
@@ -109,13 +111,15 @@ const SalesFroceImplementionServices = () => {
 
 
   return (
+  <>
+    <NavBar/>
     <div
       ref={ref}
       className={isDarkTheme ? "bg-black text-white" : "bg-white text-black"}
     >
       <div className="w-full h-auto font-raleway grid grid-cols-2 relative min-h-screen">
         {/* Left Section */}
-        <div className="flex flex-col justify-start gap-6 ml-10">
+        <div className="flex flex-col justify-start gap-6 ml-10 mt-28">
           <div className=" text-left">
             <h5
               className="text-[32px] font-medium tracking-[4.8px]"
@@ -210,7 +214,7 @@ const SalesFroceImplementionServices = () => {
         </div>
 
         {/* Right Section */}
-        <div className="relative flex justify-end w-full h-full">
+        <div className="relative flex justify-end w-full h-full mt-28">
           <img
             src={Implementation}
             alt="salesforce"
@@ -338,6 +342,7 @@ const SalesFroceImplementionServices = () => {
         </div>
       </div>
     </div>
+  </>
   );
 };
 

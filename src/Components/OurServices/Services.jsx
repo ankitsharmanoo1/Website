@@ -29,14 +29,16 @@ const { isDarkTheme } = useTheme();
          `}
       >
         {/* Our Services Title */}
-        <h1 className="services-title font-raleway font-bold text-4xl text-center leading-custom mb-8" >
+        <h1 className="services-title font-raleway font-bold text-4xl text-center mr-9 md:mr-0 leading-custom mb-8" >
           Our Services
          
         </h1>
+          <div className="flex flex-col gap-11">
 
               <SalesForce/>
               <ServiceNow/>
               <WebDevelopment/>
+          </div>
       </div>
     </div>
   );

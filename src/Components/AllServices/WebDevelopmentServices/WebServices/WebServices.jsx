@@ -58,11 +58,11 @@ const WebServices = () => {
   ];
 
   return (
-    <div className="gap-20 mt-32 flex flex-wrap justify-center cursor-pointer max-w-[1424px] mx-auto font-raleway">
-      {services.map((service) => (
+    <div className="gap-5 md:gap-20 mt-96 p-3 flex flex-wrap justify-center cursor-pointer w-[390px] md:w-[1424px] mx-auto font-raleway overflow-hidden">
+      {services.map((service, index) => (
         <div
           key={service.id}
-          className="relative w-[245px] h-[303px] perspective-1000"
+          className={`relative w-[170px] md:w-[245px] h-[240px] md:h-[303px] perspective-1000 ${index % 2 === 0 ? "sm:mr-5" : ""}`}
           onMouseEnter={() => toggleFlip(service.id)}
           onMouseLeave={() => resetFlip(service.id)}
         >
@@ -74,7 +74,7 @@ const WebServices = () => {
           >
             {/* Front Side */}
             <div
-              className={`absolute w-full h-full flex items-center justify-center rounded-[35px] font-extrabold text-[1.3rem] text-center backface-hidden ${
+              className={`absolute w-full h-full flex items-center justify-center rounded-[35px] font-extrabold text-[1rem] md:text-[1.3rem] text-center backface-hidden ${
                 isDarkTheme ? "bg-white text-black" : "bg-black text-white"
               }`}
             >
@@ -83,7 +83,7 @@ const WebServices = () => {
 
             {/* Back Side (Initially Rotated) */}
             <div
-              className={`absolute w-full h-full  flex items-center justify-center rounded-[35px]  text-[1rem] font-thin text-center rotate-y-180 backface-hidden ${
+              className={`absolute w-full h-full flex items-center justify-center rounded-[35px] text-[0.8rem] md:text-[1rem] font-thin text-center rotate-y-180 backface-hidden ${
                 isDarkTheme ? "bg-white text-black" : "bg-black text-white"
               }`}
             >

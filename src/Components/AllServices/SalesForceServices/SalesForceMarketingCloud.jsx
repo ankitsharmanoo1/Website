@@ -7,6 +7,8 @@ import CustumDev2 from "../images/B2CMarketing.png";
 import { useTheme } from "../../../Context/ThemeContext";
 import { useInView } from "react-intersection-observer";
 import '../../../App.css';
+import NavBar from "../../NavBar";
+
 
 // import AllFeatures from "../FeaturesOfMarketingColud/AllFeatures";
 
@@ -53,7 +55,7 @@ const SalesForceMarketingCloud = () => {
       gsap.fromTo(
         paraItems2,
         { y: 130, opacity: 0 },
-        { y: 0, opacity: 1, duration: 2.5, stagger: 0.2, ease: "power3.out" }
+        { y: 0, opacity: 1, duration: 2, stagger: 0.2, delay:1, ease: "power3.out" }
       );
       gsap.fromTo(
         btnRef.current,
@@ -105,7 +107,7 @@ const SalesForceMarketingCloud = () => {
           {
             scaleX: 1,
             transformOrigin: "left",
-            duration: 3,
+            duration: 5,
             ease: "power3.out",
           },
           "<"
@@ -121,11 +123,11 @@ const SalesForceMarketingCloud = () => {
   return (
 
   <>
-
+   <NavBar/>
     <div ref={ref} className={isDarkTheme ? "bg-black text-white" : "bg-white text-black"}>
       <div className="w-full h-auto font-raleway grid grid-cols-1 md:grid-cols-2 relative min-h-screen px-4 ">
         {/* Left Section */}
-        <div className="flex flex-col justify-start gap-6 ml-10 md:ml-0">
+        <div className="flex flex-col justify-start gap-6 ml-10 md:ml-0 mt-28">
           <div className=" text-left">                    
             <h5 className="text-[32px] md:text-[40px] font-medium tracking-[4.8px]" ref={salesforceRef}>
               SALESFORCE
@@ -145,12 +147,12 @@ const SalesForceMarketingCloud = () => {
               ></div>
             </div>
 
-            <h5 className="text-[32px] uppercase font-medium tracking-[4.8px]" ref={consultingRef}>
-              Marketing Cloud Solutions
+            <h5 className="text-[32px] uppercase font-medium w-[900px] tracking-[4.8px]" ref={consultingRef}>
+              Marketing Cloud Solutions Services
             </h5>
-            <div className="flex items-center" ref={line2Ref}>
+            <div className="flex items-center w-[900px]" ref={line2Ref} >
               <hr
-                className="border-t-2 my-2 w-[615px]"
+                className="border-t-2 my-2 w-[825px]"
                 style={{
                   backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)" : "linear-gradient(to right, #000000, #1F4B55)",
                   height: "2px",
@@ -195,7 +197,7 @@ const SalesForceMarketingCloud = () => {
         </div>
 
         {/* Right Section */}
-        <div className="relative flex justify-end w-full h-full mt-6 md:mt-0">
+        <div className="relative flex justify-end w-full h-full  md:mt-28">
           <img
             src={Implementation}
             alt="salesforce"
@@ -207,11 +209,7 @@ const SalesForceMarketingCloud = () => {
 
       {/* Additional Content Section */}
       <div className="min-h-screen  mx-auto items-center justify-center">
-        <div className="flex justify-center">
-          <p className="w-[1118px] h-[75px] text-base font-raleway font-bold  text-[20px] leading-[21.59px] tracking-[0.1em] text-center">
-            {`"Our implementation process ensures that Service Cloud is not only set up to meet your current requirements but also aligned with your future growth plans."`}
-          </p>
-        </div>
+       
 
         <div className="firstdiv flex flex-col md:flex-row justify-between items-center mt-8 gap-8">
           <div className="text-center max-w-[790px] p-4 gap-[10px] ml-8">
@@ -238,11 +236,11 @@ const SalesForceMarketingCloud = () => {
             </p>
           </div>
 
-          <div className="flex justify-center items-center mr-10">
+          <div className="flex justify-center items-center mr-10 ">
             <img
               src={CustumDev}
               alt="Discovery & Analysis"
-              className="max-w-[300px] max-h-[298.39px] object-contain"
+              className="max-w-[400px] max-h-[398.39px] object-contain"
             />
           </div>
         </div>

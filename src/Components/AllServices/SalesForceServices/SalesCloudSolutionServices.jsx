@@ -9,6 +9,8 @@ import { useInView } from "react-intersection-observer";
 import whyChooseWhite from "../images/WhyChooseUs.png";
 import whyChooseBlack from "../images/WhyChooseBlack.png";
 import { useNavigate } from "react-router-dom";
+import NavBar from "../../NavBar";
+
 
 
 const SalesCloudSolutionServices = () => {
@@ -171,7 +173,7 @@ const SalesCloudSolutionServices = () => {
           {
             scaleX: 1,
             transformOrigin: "left",
-            duration: 3,
+            duration: 6,
             ease: "power3.out",
           },
           "<"
@@ -185,10 +187,13 @@ const SalesCloudSolutionServices = () => {
   };
 
   return (
+
+  <>
+  <NavBar/>
     <div ref={ref} className={isDarkTheme ? "bg-black text-white" : "bg-white text-black"}>
       <div className="w-full h-auto font-raleway grid grid-cols-2 relative min-h-screen">
         {/* Left Section */}
-        <div className="flex flex-col justify-start gap-6 ml-10">
+        <div className="flex flex-col justify-start gap-6 ml-10 mt-28">
           <div className=" text-left">
             <h5 className="text-[2rem] font-medium tracking-[0.3rem]" ref={salesforceRef}>
               SALESFORCE
@@ -208,7 +213,7 @@ const SalesCloudSolutionServices = () => {
               ></div>
             </div>
 
-            <h5 className="text-[2rem] uppercase font-medium tracking-[0.3rem]" ref={consultingRef}>
+            <h5 className="text-[32px] uppercase font-medium tracking-[0.3rem]" ref={consultingRef}>
               Sales Cloud Solution Service
             </h5>
             <div className="flex items-center" ref={line2Ref}>
@@ -253,11 +258,11 @@ const SalesCloudSolutionServices = () => {
         </div>
 
         {/* Right Section */}
-        <div className="relative flex justify-end w-full h-full right-0">
+        <div className="relative flex justify-end w-full h-full right-0 mt-28">
           <img
             src={SolutionServices}
             alt="salesforce"
-            className="absolute right-0  h-[29.5rem] w-auto max-w-[31.25rem] lg:max-w-[43.75rem] xl:max-w-[56.25rem]  object-contain"
+            className="absolute   h-[29.5rem] w-auto max-w-[31.25rem] lg:max-w-[43.75rem] xl:max-w-[56.25rem]  object-contain"
             ref={imgRef}
           />
         </div>
@@ -296,7 +301,7 @@ Sales Cloud the #1 CRM for sales Let us help you sell faster, smarter, and more 
                 Our Expertise:
               </h6>
 
-              <div className="flex justify-left items-center mt-0.5">
+              <div className="flex justify-left w-[300px] items-center mt-0.5">
                 <hr
                   className="w-[14.375rem] h-[0.0625rem] border-none"
                   style={{
@@ -431,7 +436,7 @@ Sales Cloud the #1 CRM for sales Let us help you sell faster, smarter, and more 
           </div>
 
           <div className="firstdiv flex flex-col md:flex-row justify-between items-center mt-11 gap-8">
-            <div className="text-left max-w-[45rem] p-[0.625rem] gap-[0.625rem] ml-8">
+            <div className="text-left max-w-[60rem] p-[0.625rem] gap-[0.625rem] ml-8">
               <h6 className="font-bold text-[1.875rem] leading-[2.843125rem] tracking-[0.1em] text-left">
               The Results We Deliver:
               </h6>
@@ -476,6 +481,7 @@ Sales Cloud the #1 CRM for sales Let us help you sell faster, smarter, and more 
         `}
       </style>
     </div>
+  </>
   );
 };
 
