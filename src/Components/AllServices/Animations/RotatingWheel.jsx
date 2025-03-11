@@ -40,9 +40,9 @@ const RotatingWheel = () => {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen  text-white">
-      <div className="text-center text-2xl font-extrabold mb-6 text-purple-400 drop-shadow-md uppercase tracking-wider">
+      {/* <div className="text-center text-2xl font-extrabold mb-6 text-purple-400 drop-shadow-md uppercase tracking-wider">
         {selectedService}
-      </div>
+      </div> */}
       <div className="w-[800px] h-[800px] flex justify-center items-center relative">
         <div
           ref={wheelRef}

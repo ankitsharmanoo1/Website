@@ -7,7 +7,16 @@ import BlackLogo from "../../public/images/BlackLogo.png";
 import WhiteLogo from "../../public/images/WhiteLogo.png";
 import { useNavigate } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
-
+import BlackAboutNav from "../../public/BlackAboutNav.png";
+import BlackCareerNav from "../../public/BlackCareerNav.png";
+import BlackContactUs from "../../public/BlackContactUs Nav.png";
+import BlackLWS from "../../public/BlackLWSNav.png";
+import BlackService from "../../public/BlackServicesNav.png";
+import WhiteAbout from "../../public/WhiteHomeNav.png";
+import WhiteCareer from "../../public/WhiteCareerNav.png";
+import WhiteContact from "../../public/WhiteContactNav.png";
+import WhiteLWS from "../../public/WhiteLWSNav.png";
+import WhiteServices from "../../public/WhiteServicesNav.png";
 
 
 const NavBar = () => {
@@ -118,11 +127,11 @@ const NavBar = () => {
           </div>
 
 
-          <div className="md:hidden flex items-center ml-auto">
-        <button className="text-2xl text-gray-600 dark:text-white" onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
+        <div className="md:hidden flex items-center ml-auto">
+         <button className="text-2xl text-gray-600 dark:text-white" onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
           {isMobileMenuOpen ? <FiX /> : <FiMenu />}
-        </button>
-      </div>
+         </button>
+        </div>
 
 
           {/* Theme Toggle Button */}
@@ -182,22 +191,25 @@ const NavBar = () => {
 
 
       {isMobileMenuOpen && (
+       <div className="flex flex-col  justify-center items-center  right-0 ">
 
-        <div className={`absolute top-20 left-0 w-full ${ isDarkTheme ? 'bg-black text-white': 'bg-white text-black' } shadow-lg py-5 md:hidden flex flex-col items-center gap-4 z-[0] `}>
+        <div className={`absolute  top-20  left-0 w-full h-[49px] ${ isDarkTheme ? 'bg-black text-white': 'bg-white text-black' } shadow-lg md:hidden flex flex-row  z-[0] gap-5 m-2 ml-8    text-[0.7rem]`}>
           {/* Theme Toggle Centered */}
         
-          <div onClick={() => handleNavigation("/about")} className="cursor-pointer">ABOUT</div>
-          <div onClick={handleServicesClick} className="cursor-pointer">SERVICES
-          {/* {isSkillsMenuVisible && <SkillsMenu />} */}
-          <span className="">{isSkillsMenuVisible ? "▼" : "▶"}</span>
-          </div>
-          <div onClick={() => handleNavigation("/careers")} className="cursor-pointer">CAREERS</div>
-          <div onClick={() => handleNavigation("/get-in-touch")} className="cursor-pointer">CONTACT US</div>
-          <div onClick={() => handleNavigation("/lws")} className="cursor-pointer">LWS</div>
+          <img onClick={() => handleNavigation("/about")} className="cursor-pointer" src={ isDarkTheme ? WhiteAbout : BlackAboutNav} />
+          <img onClick={handleServicesClick} className="cursor-pointer" src={ isDarkTheme ?  WhiteServices : BlackService} />
+          {/* <span className="">{isSkillsMenuVisible ? "▼" : "▶"}</span> */}
+          <img onClick={() => handleNavigation("/careers")} className="cursor-pointer" src={ isDarkTheme ?  WhiteCareer : BlackCareerNav}   />
+          <img onClick={() => handleNavigation("/get-in-touch")} className="cursor-pointer" src={ isDarkTheme ? WhiteContact :  BlackContactUs } />
+          <img onClick={() => handleNavigation("/lws")} className="cursor-pointer" src={isDarkTheme ? WhiteLWS : BlackLWS } />
         </div>
+       </div>
       )}
     </div>
   );
 };
 
 export default NavBar;
+
+
+

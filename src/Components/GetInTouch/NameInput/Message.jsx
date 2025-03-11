@@ -20,7 +20,7 @@ const Message = ({ onChange }) => {
     <div
       role="region"
       aria-label="message input section"
-      className={`relative flex items-center p-4 rounded-xl border-2 w-[580px] transition-all duration-300 ${
+      className={`relative flex items-center p-4 rounded-xl border-2 w-[230px] h-[58px] md:h-auto md:w-[580px] transition-all duration-300 ${
         isDarkTheme ? "border-white text-white" : "border-black text-black"
       }`}
     >

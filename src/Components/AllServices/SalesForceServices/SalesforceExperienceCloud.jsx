@@ -116,7 +116,7 @@ const SalesforceExperienceCloud = () => {
 
   return (
 
-  <>
+  <div className="overflow-hidden">
     <NavBar/>
     <div ref={ref} className={isDarkTheme ? "bg-black text-white" : "bg-white : text-black"}>
       <div className="w-full h-auto font-raleway grid grid-cols-2 relative min-h-screen">
@@ -231,7 +231,7 @@ const SalesforceExperienceCloud = () => {
 
 </div>
     </div>
-  </>
+  </div>
   );
 };
 

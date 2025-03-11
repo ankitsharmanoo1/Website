@@ -7,6 +7,7 @@ import WebServicesHeading from "./WebServices/WebServicesHeading";
 import { useTheme } from "../../../Context/ThemeContext";
 import NavBar from "../../NavBar";
 import CircleDesign from "../Animations/CircleDesign";
+import RopeAnimation from "../Animations/RopeAnimation";
 
 const WebDevelopment = () => {
  
@@ -16,14 +17,14 @@ const WebDevelopment = () => {
  
 
   return (
-    <>
+    <div className="">
       <NavBar />
       <div
         className={isDarkTheme ? "bg-black text-white" : "bg-white text-black" }
       >
         <div
           // ref={containerRef}
-          className="flex flex-col items-center gap-10 font-raleway w-full h-screen"
+          className="flex flex-col items-center gap-10 font-raleway "
         >
           <h4 className="font-thin text-2xl uppercase tracking-[0.55em] leading-[36px] mt-32">
             Transform Ideas into Scalable Web Solutions
@@ -37,7 +38,7 @@ const WebDevelopment = () => {
           <CircleDesign />
           {/* </div> */}
 
-          <div className="2nd content pb-24">
+          <div className="2nd content">
             <div className="flex justify-left items-center ml-20">
               <h6 className="font-bold text-[34px] leading-[45.49px] tracking-[0.1em] text-center">
                 Our Full-Stack Web Development Services
@@ -52,7 +53,7 @@ const WebDevelopment = () => {
                 />
               </h6>
             </div>
-            <p className="text-start ml-28 justify-start text-[1.4rem] font-normal leading-[1.837rem] tracking-[0.125rem] pt-6 mr-24 text-2xl">
+            <p className="text-start  ml-28 justify-start text-[1.4rem] font-normal leading-[1.837rem] tracking-[0.125rem] mr-24 text-2xl">
               We offer comprehensive end-to-end web development solutions,
               ensuring seamless functionality, security, and scalability across
               all aspects of your application.
@@ -83,8 +84,10 @@ const WebDevelopment = () => {
         </div>
 
         <WebServicesHeading />
+
+        <RopeAnimation />
       </div>
-    </>
+    </div>
   );
 };
 

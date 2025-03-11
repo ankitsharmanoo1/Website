@@ -58,16 +58,16 @@ const SalesForceServices = () => {
   }, []);
 
   return (
-    <>
+    <div className="overflow-hidden">
 
       <NavBar />
     <div
-      className={`w-full font-raleway salesforceservice  grid grid-row-5 gap-44 mt-1 overflow-hidden ${
+      className={`w-full  h-screen font-raleway salesforceservice  grid grid-row-5 gap-44 mt-1 overflow-hidden ${
         isDarkTheme ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
 
-      <div className="flex flex-col items-center justify-center text-center uppercase mt-32 ">
+      <div className="overflow-hidden flex flex-col items-center justify-center text-center uppercase mt-32 ">
         <div
           ref={textRef}
           className="leading-[4rem] tracking-[0.4em] text-[2.25rem] font-bold"
@@ -155,7 +155,7 @@ const SalesForceServices = () => {
 
 
     </div>
-    </>
+    </div>
   );
 };
 

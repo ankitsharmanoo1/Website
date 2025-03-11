@@ -20,7 +20,7 @@ const Phone = ({onChange}) => {
     <div
       role="region"
       aria-label="phone input section"
-      className={`flex items-center p-4 rounded-xl border-2 w-[580px] relative transition-all duration-300 ${
+      className={`flex items-center p-4 rounded-xl border-2 w-[230px] h-[58px] md:h-auto md:w-[580px] relative transition-all duration-300 ${
         isDarkTheme
           ? "border-white text-white"
           : "border-black text-black"

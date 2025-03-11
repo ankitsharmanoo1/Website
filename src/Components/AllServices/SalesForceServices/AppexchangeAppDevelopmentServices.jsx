@@ -184,7 +184,7 @@ const AppexchangeAppDevelopmentServices = () => {
     >
       {" "}
       {/* Attach the observer reference here */}
-      <div className="w-full  font-raleway grid grid-cols-2 relative h-screen overflow-hidden">
+      <div className="w-full  font-raleway grid grid-cols-2 relative h-full overflow-hidden">
         {/* Left Section */}
         <div className="flex flex-col justify-start gap-6 ml-10 mt-28">
           <div className=" text-left">
@@ -287,12 +287,12 @@ const AppexchangeAppDevelopmentServices = () => {
           <img
             src={Appex}
             alt="salesforce"
-            className="h-[472px] w-auto max-w-[500px] lg:max-w-[700px] xl:max-w-[900px] mr-10 object-contain"
+            className="h-[472px] w-auto max-w-[500px] lg:max-w-[700px] xl:max-w-[900px] sm:w-[300px] mr-10 object-contain"
             ref={imgRef}
           />
         </div>
       </div>
-      <div className="min-h-screen mx-auto items-center justify-center">
+      <div className="min-h-screen mx-auto mt-7 items-center justify-center">
         <div className="flex justify-center">
           <p className="w-[1118px] h-[75px] text-base font-raleway font-bold  text-[20px] leading-[21.59px] tracking-[0.1em] text-center">
             {`"AppExchange is a marketplace offering solutions, such as apps, components, and consulting services. To make your own solution publicly available to potential customers, you must be a Salesforce partner."`}
@@ -391,9 +391,9 @@ const AppexchangeAppDevelopmentServices = () => {
     </div>
 
 
-    <div className="flex flex-col items-center cursor-pointer font-raleway">
+    <div className={`flex flex-col overflow-hidden items-center cursor-pointer font-raleway ${isDarkTheme ? 'bg-black text-white' : 'bg-white text-black ' }`}>
       {/* Key Features Section */}
-      <div className="text-center mb-10">
+      <div className="text-center mb-10 mt-24">
         <h1 className="text-3xl font-bold mb-4">Key Features</h1>
         <hr className="w-[200px] h-[1px] mx-auto mb-6 border-none" style={{backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)": "linear-gradient(to right, #000000, #1F4B55)",}}/>
            <div className="flex flex-row gap-10 text-lg">
@@ -413,7 +413,7 @@ const AppexchangeAppDevelopmentServices = () => {
       <div className="text-center">
         <h1 className="text-3xl font-bold mb-4">Benefits</h1>
         <hr className="w-[140px] h-[1px] mx-auto mb-6 border-none" style={{backgroundImage: isDarkTheme ? "linear-gradient(to right, #9CFF00, #00D1FF)": "linear-gradient(to right, #000000, #1F4B55)",}}/>
-        <div className="flex flex-row gap-10 text-lg">
+        <div className="flex flex-row gap-10 text-lg mb-16">
           {benefits.map((benefit, index) => (
             <p
               key={index + items.length}

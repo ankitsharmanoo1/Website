@@ -119,11 +119,11 @@ const GetInTouch = () => {
   };
 
   return (
-    <>
+    <div className="overflow-hidden">
 
     <NavBar/>
      
-    <div id="contact-us" className={` flex flex-col items-center w-full  px-10 py-5  relative z-10 
+    <div id="contact-us" className={` flex flex-col items-center w-full  px-10 py-5 overflow-hidden  relative z-10 
     ${
         isDarkTheme ? "bg-[#000000]" : "bg-white"
       }
@@ -136,7 +136,7 @@ const GetInTouch = () => {
       {/* Centered Header */}
       <h2
         ref={headingRef}
-        className={`heading-item text-5xl self-stretch font-normal text-[44px] text-center mb-8 mt-5 max-md:max-w-full font-raleway tracking-[0] leading-[normal] relative z-10 
+        className={`heading-item  text-3xl md:text-5xl self-stretch font-normal  text-center mb-8 mt-8 md:mt-5 max-md:max-w-full font-raleway tracking-[0] leading-[normal] relative z-10 
         ${
         isDarkTheme ? "text-white" : "text-black"
       }
@@ -149,9 +149,9 @@ const GetInTouch = () => {
         <BackgroundAnimation />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full overflow-hidden">
         {/* Left Side: Form */}
-        <div className={`form-container flex flex-col items-center w-full px-10 py-5 
+        <div className={`form-container flex flex-col items-center w-[331px] md:w-full   md:h-auto px-10 py-5 
          
         `}>
           <form
@@ -182,7 +182,7 @@ const GetInTouch = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className={`w-[186px] h-[42px] font-raleway leading-[21.32px] text-[18px] font-bold rounded-[13px] p-[10px] gap-[10px] 
+              className={`w-[165px] h-[39px] md:w-[186px] md:h-[42px] font-raleway leading-[21.32px] text-[13px]  md:text-[18px] font-bold rounded-[13px] p-[10px] gap-[10px] 
                ${isDarkTheme ? 'bg-white text-black hover:bg-gray-500' : 'bg-black text-white hover:bg-[#525252]' }
                form-item`}
             >
@@ -201,9 +201,9 @@ const GetInTouch = () => {
         {/* Right Side: Address */}
         <div
           ref={addressRef}
-          className="address-div flex flex-col gap-[28px] p-5 w-full h-[278px] relative z-10"
+          className="address-div flex flex-col gap-[28px] p-5 w-[300px]  md:w-full h-[278px] relative z-10"
         >
-          <p className={` w-[600px] h-[140px] text-[22px] p-[10px] gap-[10px] mt-7 leading-[24px] font-albert font-normal text-justify
+          <p className={` w-[330px]  md:w-[600px] h-[140px] text-sm md:text-[22px] p-[10px] gap-[10px] mt-0  md:mt-7 leading-[24px] font-albert font-normal text-justify
              ${
         isDarkTheme ? "text-white" : "text-black"
       }
@@ -215,13 +215,13 @@ const GetInTouch = () => {
           </p>
 
           {/* Contact Info Sections */}
-          <div className={`w-[540px] flex flex-row justify-center items-start gap-10 mt-5 ml-10 ${
+          <div className={` w-[300px] md:w-[540px] h-[40px] md:h-auto flex flex-row justify-center items-start gap-10   md:mt-5 ml-0 md:ml-10 ${
         isDarkTheme ? " text-white" : "text-black"
       } `}>
             {/* Call Us Section */}
-            <div className="w-[150px] h-[81px] flex flex-col items-center gap-2 all-item">
+            <div className=" w-[50px]  md:w-[150px] h-[40px] md:h-[81px] flex flex-col items-center gap-2 all-item">
               <img src={isDarkTheme ? mobileImgWhite : mobileImgBlack} alt="Call Icon" className="w-8 h-8 mb-1" />
-              <h3 className={`text-xl font-semibold text-center           `}>
+              <h3 className={` text-sm md:text-xl font-semibold text-center           `}>
                 Call Us
               </h3>
               <a href="tel:+9119079671033" className={` text-sm text-center `}>
@@ -230,9 +230,9 @@ const GetInTouch = () => {
             </div>
 
             {/* Write Us Section */}
-            <div className="w-[166px] flex flex-col items-center gap-2 all-item">
+            <div className=" w-[120px] md:w-[166px] flex flex-col items-center gap-2 all-item ml-3">
               <img src={isDarkTheme ? emailImgWhite : emailImgBlack} alt="Email Icon" className="w-8 h-8 mb-1" />
-              <h3 className={` text-xl font-semibold text-center          ${
+              <h3 className={` text-sm md:text-xl font-semibold text-center          ${
         isDarkTheme ? "text-white" : "text-black"
       }`}>
                 Write Us
@@ -248,9 +248,9 @@ const GetInTouch = () => {
             </div>
 
             {/* Main Office Section */}
-            <div className="w-[166px] flex flex-col items-center gap-2 all-item">
+            <div className="w-[100px]  md:w-[166px] flex flex-col items-center gap-2 all-item">
               <img src={isDarkTheme ? officeImgWhite : officeImgBlack} alt="Location Icon" className="w-8 h-8 mb-1" />
-              <h3 className={` text-xl font-semibold text-center          ${
+              <h3 className={`text-sm md:text-xl font-semibold text-center          ${
         isDarkTheme ? "text-white" : "text-black"
       }`}>
                 Main Office
@@ -266,7 +266,7 @@ const GetInTouch = () => {
       </div>
     </div>
     <Footer/>
-    </>
+    </div>
   );
 };
 

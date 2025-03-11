@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import serviceNowWhite from "../../../../public/images/Servicenow.png";
-import serviceNowBlack from "../../../../public/images/ServiceNowBlack.png";
+import serviceNowWhite from "../../../../public/ServicenowWhitee.png";
+import serviceNowBlack from "../../../../public/ServicenowWhitee.png";
+
 import { useTheme } from "../../../Context/ThemeContext";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -73,9 +74,10 @@ const ServiceNow = () => {
       }`}
       onMouseEnter={handleMouseEnter}
     >
+    
       <img
         ref={imageRef}
-        src={isDarkTheme ? serviceNowWhite : serviceNowBlack}
+        src={isDarkTheme ? serviceNowWhite : serviceNowBlack }
         alt="ServiceNow"
         className={`w-full md:w-auto max-w-[400px] mr-9 md:mr-0 md:max-w-none service-img ${isMobile ? "relative" : "absolute z-20"}`}
       />
