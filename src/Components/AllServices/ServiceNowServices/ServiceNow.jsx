@@ -15,6 +15,7 @@ import lines from ".././images/2x lines.png";
 import blackLines from ".././images/blackLines.png";
 import { useTheme } from "../../../Context/ThemeContext";
 import NavBar from "../../NavBar";
+import Footer from "../../Footer"
 import { useNavigate } from "react-router-dom";
 
 
@@ -241,6 +242,7 @@ const ServiceNow = () => {
         </p>
       </div>
     </div>
+    <Footer/>
     </>
   );
 };

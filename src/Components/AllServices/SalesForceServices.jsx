@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { Outlet } from "react-router-dom";
 
 import lines from "./images/2x lines.png";
+import Footer from "../Footer";
 import blacklines from "./images/blackLines.png";
 import SalesForce from "./images/SalesForceIn Services.png";
 import NavBar from "../NavBar";
@@ -155,6 +156,7 @@ const SalesForceServices = () => {
 
 
     </div>
+    <Footer/>
     </>
   );
 };
