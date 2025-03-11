@@ -1,5 +1,4 @@
-// import { motion } from "framer-motion";
-// import { useState, useEffect, useRef } from "react";
+
 
 import WebServices from "./WebServices/WebServices";
 import "./WebServices/web.css";
@@ -8,6 +7,8 @@ import { useTheme } from "../../../Context/ThemeContext";
 import NavBar from "../../NavBar";
 import CircleDesign from "../Animations/CircleDesign";
 import RopeAnimation from "../Animations/RopeAnimation";
+import Footer from "../../Footer"
+
 
 const WebDevelopment = () => {
  
@@ -86,7 +87,9 @@ const WebDevelopment = () => {
         <WebServicesHeading />
 
         <RopeAnimation />
+        
       </div>
+        <Footer/>
     </div>
   );
 };
